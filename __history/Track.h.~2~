@@ -1,0 +1,47 @@
+//---------------------------------------------------------------------------
+
+// Instance of TTrack are place in an stl vector, hence we meet the
+// vector requirements.
+
+//---------------------------------------------------------------------------
+
+#ifndef TrackH
+#define TrackH
+
+//---------------------------------------------------------------------------
+
+#include <Vcl.h>
+
+//---------------------------------------------------------------------------
+
+class TTrack
+{
+private:
+    // The name of the track. D1, D1, M1 (Stereo), etc.
+    
+	AnsiString FTrackName;
+    
+    // The selection state of this track. Either 0 or 1.
+    
+	int FState;
+
+	// Is this a mono track or a stereo track.
+
+    BOOL FIsMono;
+
+public:
+	TTrack
+	(
+	);
+
+	TTrack(const TTrack& Rhs);
+	TTrack& operator = (const TTrack& Rhs);
+	bool operator != (const TTrack& Rhs);
+};
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------
+

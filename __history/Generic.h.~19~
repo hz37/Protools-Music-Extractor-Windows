@@ -1,0 +1,86 @@
+//---------------------------------------------------------------------------
+
+// Generic header for all classes.
+// Based on the Harold Howe article, speeds up precompiled headers.
+
+/*
+
+Every source file only includes (case sensitive):
+
+#include "Generic.h"
+#pragma hdrstop
+
+(any STL headers below #pragma hdrstop)
+
+*/
+
+//---------------------------------------------------------------------------
+
+#ifndef GenericH
+#define GenericH
+
+//---------------------------------------------------------------------------
+
+// VCL.
+
+#include <Buttons.hpp>
+#include <Classes.hpp>
+#include <ComCtrls.hpp>
+#include <Controls.hpp>
+#include <ExtCtrls.hpp>
+#include <Forms.hpp>
+#include <Graphics.hpp>
+#include <IniFiles.hpp>
+#include <Registry.hpp>
+#include <StdCtrls.hpp>
+#include <Vcl.h>
+
+// STL.
+
+#include <algorithm>
+#include <map>
+
+// C RTL.
+
+#include <limits.h>
+#include <pcre.h>
+
+// Custom.
+
+#include "Controller.h"
+#include "MiniUniverse.h"
+#include "ProtoolsData.h"
+#include "Region.h"
+#include "RegionUsage.h"
+#include "SettingsUnit.h"
+#include "Storage.h"
+#include "Track.h"
+
+//---------------------------------------------------------------------------
+
+// Constants (also see Generic.cpp).
+
+extern const AnsiString CCombineSimilarKey;
+extern const AnsiString CIgnoreAfterExtensionKey;
+extern const AnsiString CIgnoreAfterNewKey;
+extern const AnsiString CIgnoreFadeKey;
+extern const AnsiString CIgnoreShorterThanKey;
+extern const AnsiString CIgnoreShorterThanSecondsKey;
+extern const AnsiString CSuppressFramesKey;
+
+//---------------------------------------------------------------------------
+
+// Prototypes for global functions
+
+//---------------------------------------------------------------------------
+
+bool DirectoryExists(const AnsiString Directory);
+AnsiString FramesToHMSF(int Frames, const bool IncludeFrames, const int FrameRate);
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------
+
+

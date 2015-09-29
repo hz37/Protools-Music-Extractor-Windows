@@ -1,0 +1,35 @@
+//---------------------------------------------------------------------------
+
+#ifndef MiniUniverseH
+#define MiniUniverseH
+
+//---------------------------------------------------------------------------
+
+#include <Vcl.h>
+
+//---------------------------------------------------------------------------
+
+class TMiniUniverse
+{
+private:
+	std::auto_ptr <TImage> FRenderBuffer;
+	std::auto_ptr <TImage> FDeselectedRenderBuffer;
+
+	TCanvas* FDestinationCanvas;
+
+protected:
+	TMiniUniverse();
+	TMiniUniverse(const TMiniUniverse& Rhs);
+	TMiniUniverse& operator = (const TMiniUniverse&);
+
+public:
+	static TMiniUniverse* Instance(TCanvas* DestinationCanvas);
+	~TMiniUniverse();
+
+};
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------

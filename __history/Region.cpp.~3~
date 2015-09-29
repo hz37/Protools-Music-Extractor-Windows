@@ -1,0 +1,28 @@
+//---------------------------------------------------------------------------
+
+#include "Generic.h"
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+TRegion::TRegion
+(
+	const AnsiString Name,
+	const AnsiString TrackName,
+	const int StartFrame,
+	const int StopFrame,
+	const int Length,
+	const bool IsMono
+) :
+FName(Name),
+FTrackName(TrackName),
+FStartFrame(StartFrame),
+FStopFrame(StopFrame),
+FLength(Length),
+FIsMono(IsMono)
+{
+
+}
+
+
+//---------------------------------------------------------------------------

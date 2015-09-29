@@ -1,0 +1,65 @@
+object SettingsForm: TSettingsForm
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Settings'
+  ClientHeight = 292
+  ClientWidth = 622
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CheckBox1: TCheckBox
+    Left = 8
+    Top = 8
+    Width = 409
+    Height = 17
+    Caption = 'Ignore string data after extension (aif, m4a, mp3, wav)'
+    TabOrder = 0
+  end
+  object CheckBox2: TCheckBox
+    Left = 8
+    Top = 31
+    Width = 97
+    Height = 17
+    Caption = 'Ignore string data after .new'
+    TabOrder = 1
+  end
+  object CheckBox3: TCheckBox
+    Left = 8
+    Top = 54
+    Width = 97
+    Height = 17
+    Caption = 'CheckBox3'
+    TabOrder = 2
+  end
+  object CheckBox4: TCheckBox
+    Left = 8
+    Top = 77
+    Width = 97
+    Height = 17
+    Caption = 'CheckBox4'
+    TabOrder = 3
+  end
+  object CheckBox5: TCheckBox
+    Left = 8
+    Top = 100
+    Width = 97
+    Height = 17
+    Caption = 'CheckBox5'
+    TabOrder = 4
+  end
+  object CheckBox6: TCheckBox
+    Left = 8
+    Top = 123
+    Width = 97
+    Height = 17
+    Caption = 'CheckBox6'
+    TabOrder = 5
+  end
+end

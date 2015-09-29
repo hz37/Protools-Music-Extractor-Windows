@@ -1,0 +1,62 @@
+//---------------------------------------------------------------------------
+
+// A RegionUsage object represents the output of the program. which will be saved
+// to a file or represented in a table (or both). A RegionUsage object has a name
+// and a length. RegionObjects will be collected in an array to represent the
+// output of the program, based on user choices.
+
+//---------------------------------------------------------------------------
+
+#ifndef RegionUsageH
+#define RegionUsageH
+
+//---------------------------------------------------------------------------
+
+#include <Vcl.h>
+#include <vector>
+
+//---------------------------------------------------------------------------
+
+class TRegionUsage
+{
+private:
+    // Region name as filtered down by ProtoolsData MODEL.
+    // This can be a more readable condensed version of what
+    // was actually read from the Protools session, i.e. stripped of extraneous shit.
+    // Several regions can also be combined by ProtoolsData and added together under
+    // a single name.
+    
+	AnsiString FName;
+
+    // Length in frames. Possibly added from different regions (see comment above).
+    
+	int FLength;
+
+    // In order to let the user combine similar regions manually,
+    // we must have a way to refer back to the original names.
+    
+    std::vector <AnsiString> FOriginalNames;
+
+public:
+	TRegionUsage
+	(
+		const AnsiString Name,
+		const int Length,
+		std::vector <AnsiString> OriginalNames
+	);
+	TRegionUsage(const TRegionUsage& Rhs);
+	TRegionUsage& operator = (const TRegionUsage& Rhs);
+	bool operator != (const TRegionUsage& Rhs);
+
+    void GetOriginalNames(std::vector <AnsiString>& OriginalNames);
+
+	__property AnsiString Name = {read = FName, write = FName};
+	__property int Length = {read = FLength};
+};
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------
+

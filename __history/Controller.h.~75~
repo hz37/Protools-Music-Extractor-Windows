@@ -1,0 +1,150 @@
+//---------------------------------------------------------------------------
+
+// Controller for Protools Music Extractor.
+// Intercepts all UI commands and delegates or processes as necessary.
+// H.Zimmerman <henszimmerman@gmail.com>
+// Turbo C++ 2006.
+
+//---------------------------------------------------------------------------
+
+#ifndef ControllerH
+#define ControllerH
+
+//---------------------------------------------------------------------------
+
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <Buttons.hpp>
+#include <ComCtrls.hpp>
+#include <ExtCtrls.hpp>
+#include <CheckLst.hpp>
+#include <Mask.hpp>
+#include <Dialogs.hpp>
+#include <Dialogs.hpp>
+
+#include "MiniUniverse.h"
+#include "ProtoolsData.h"
+#include "Storage.h"
+#include <Menus.hpp>
+
+//---------------------------------------------------------------------------
+
+class TControllerForm : public TForm
+{
+__published:	// IDE-managed Components
+	TButton *OpenButton;
+	TButton *SaveButton;
+	TButton *PrintButton;
+	TButton *SelectAllTracksButton;
+	TButton *DeselectAllTracksButton;
+	TButton *SelectAllStereoTracksButton;
+	TButton *SelectAllMTracksButton;
+	TButton *CopyButton;
+	TBitBtn *SettingsButton;
+	TTrackBar *StartSelectionTrackBar;
+	TTrackBar *StopSelectionTrackBar;
+	TImage *MiniUniverseImage;
+	TListView *RegionTimeListView;
+	TCheckListBox *TracksCheckListBox;
+	TMaskEdit *StartTCMaskEdit;
+	TMaskEdit *StopTCMaskEdit;
+	TBitBtn *SelectAllButton;
+	TOpenDialog *TextExportOpenDialog;
+	TStatusBar *StatusBar;
+	TSaveDialog *SaveDialog;
+	TPopupMenu *RightClickMenu;
+	TMenuItem *CombineMenuItem;
+	void __fastcall OpenButtonClick(TObject *Sender);
+	void __fastcall SettingsButtonClick(TObject *Sender);
+	void __fastcall SelectAllTracksButtonClick(TObject *Sender);
+	void __fastcall DeselectAllTracksButtonClick(TObject *Sender);
+	void __fastcall SelectAllStereoTracksButtonClick(TObject *Sender);
+	void __fastcall SelectAllMTracksButtonClick(TObject *Sender);
+	void __fastcall RegionTimeListViewColumnClick(TObject *Sender,
+          TListColumn *Column);
+	void __fastcall TracksCheckListBoxClickCheck(TObject *Sender);
+	void __fastcall StartSelectionTrackBarChange(TObject *Sender);
+	void __fastcall StopSelectionTrackBarChange(TObject *Sender);
+	void __fastcall SelectAllButtonClick(TObject *Sender);
+	void __fastcall StartTCMaskEditKeyPress(TObject *Sender, char &Key);
+	void __fastcall StopTCMaskEditKeyPress(TObject *Sender, char &Key);
+	void __fastcall MiniUniverseImageMouseDown(TObject *Sender,
+          TMouseButton Button, TShiftState Shift, int X, int Y);
+	void __fastcall MiniUniverseImageMouseMove(TObject *Sender, TShiftState Shift,
+          int X, int Y);
+	void __fastcall MiniUniverseImageMouseUp(TObject *Sender, TMouseButton Button,
+          TShiftState Shift, int X, int Y);
+	void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
+	void __fastcall SaveButtonClick(TObject *Sender);
+	void __fastcall CopyButtonClick(TObject *Sender);
+	void __fastcall RegionTimeListViewKeyPress(TObject *Sender, char &Key);
+	void __fastcall PrintButtonClick(TObject *Sender);
+
+private:
+	// Instance of TProtoolsData model.
+
+	TProtoolsData* FProtoolsData;
+
+	// Instance of persistent storage.
+
+	TStorage* FStorage;
+	std::auto_ptr <TMiniUniverse> FMiniUniverse;
+
+	// FDragging is true when we are selecting with the mouse in the MiniUniverse.
+
+	bool FDragging;
+
+	// FXToFramesDragging is the multiplier for X when dragging a selection
+	// in the MiniUniverse.
+
+	int FXToFramesDragging;
+
+	// FSessionStart is the adder for X when dragging a selection in the
+	// MiniUniverse.
+
+	int FSessionStart;
+
+	// Selection fields when dragging.
+
+	int FSelectionStart, FSelectionStop;
+
+	// Drag selection started here.
+
+	int FDraggingAnchor;
+
+	// Temporary filename for printing.
+
+	AnsiString FTempFile;
+
+	void FillTracksListBox();
+	void GenerateAndDisplayOutput();
+	void ProcessFileWithName(const AnsiString Filename);
+	int TextToFrames(const AnsiString Text);
+	void UpdateInfoWindow(const bool Full = true);
+	void UpdateMiniUniverse();
+	void UpdateOutputTable();
+	void __fastcall WmDropFiles(TWMDropFiles& Message);
+
+public:
+	__fastcall TControllerForm(TComponent* Owner);
+	__fastcall ~TControllerForm();
+
+	// Message map to allow files dropped on the form to be read.
+
+	BEGIN_MESSAGE_MAP
+		MESSAGE_HANDLER(WM_DROPFILES, TWMDropFiles, WmDropFiles)
+	END_MESSAGE_MAP(TForm)
+};
+
+//---------------------------------------------------------------------------
+
+extern PACKAGE TControllerForm *ControllerForm;
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------
+

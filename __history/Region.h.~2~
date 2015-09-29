@@ -1,0 +1,27 @@
+//---------------------------------------------------------------------------
+
+#ifndef RegionH
+#define RegionH
+
+//---------------------------------------------------------------------------
+
+class TRegion
+{
+private:
+public:
+	TRegion
+	(
+		const AnsiString Name,
+		const AnsiString TrackName,
+		const int StartFrame,
+		const int StopFrame,
+		const int Length,
+		const bool IsMono
+	);
+};
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------

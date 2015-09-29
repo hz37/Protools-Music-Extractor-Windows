@@ -1,0 +1,50 @@
+//---------------------------------------------------------------------------
+
+#include "Generic.h"
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+TStorage::TStorage()
+{
+
+}
+
+//---------------------------------------------------------------------------
+
+// Copy constructor in terms of assignment operator.
+
+TStorage::TStorage(const TStorage& Rhs)
+{
+	operator = (Rhs);
+}
+
+//---------------------------------------------------------------------------
+
+TStorage& TStorage::operator = (const TStorage&)
+{
+	// Singleton class, there's only one instance, so:
+
+	return *this;
+}
+
+//---------------------------------------------------------------------------
+
+// Singleton's single point of access.
+
+TStorage* TStorage::Instance()
+{
+	static TStorage Storage;
+
+	return &Storage;
+}
+
+//---------------------------------------------------------------------------
+
+TStorage::~TStorage()
+{
+
+}
+
+//---------------------------------------------------------------------------
+

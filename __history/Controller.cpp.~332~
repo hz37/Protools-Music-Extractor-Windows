@@ -1,0 +1,1048 @@
+//---------------------------------------------------------------------------
+
+#include "Generic.h"
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+
+//---------------------------------------------------------------------------
+
+TControllerForm* ControllerForm;
+
+//---------------------------------------------------------------------------
+
+// A few keyboard constants to avoid magic numbers floating around in the source.
+
+const int CBackspaceKey = 8;
+const int CEnterKey = 13;
+
+//---------------------------------------------------------------------------
+
+__fastcall TControllerForm::TControllerForm(TComponent* Owner) :
+	TForm(Owner),
+	FDragging(false),
+	FXToFramesDragging(0),
+	FSessionStart(0),
+	FTempFile("")
+{
+	// Attach instance of TProtoolsData.
+
+	FProtoolsData = TProtoolsData::Instance();
+
+	// Attach instance of TStorage.
+
+	FStorage = TStorage::Instance();
+
+	// Instantiate Mini Universe.
+
+	TMiniUniverse* MiniUniverse = new TMiniUniverse
+	(
+		MiniUniverseImage->Canvas,
+		MiniUniverseImage->Width,
+		MiniUniverseImage->Height
+	);
+
+	// Transfer ownership to auto_ptr.
+
+	FMiniUniverse.reset(MiniUniverse);
+
+	// This program allows for dropped files.
+
+	DragAcceptFiles(Handle, true);
+
+	// Restore form position.
+
+	Left = FStorage->GetValue("Left", 40);
+	Top = FStorage->GetValue("Top", 40);
+}
+
+//---------------------------------------------------------------------------
+
+__fastcall TControllerForm::~TControllerForm()
+{
+	// If there is a printer tempfile, erase it.
+
+	if(FileExists(FTempFile))
+	{
+        DeleteFile(FTempFile);
+    }
+}
+
+//---------------------------------------------------------------------------
+
+// User proposes to combine selected items to one aggregate item.
+
+void __fastcall TControllerForm::CombineMenuItemClick(TObject *Sender)
+{
+
+	// Get indices of selected items.
+
+	int Count = RegionTimeListView->Items->Count;
+
+	if(!Count)
+	{
+		return;
+	}
+
+	// Build a vector.
+	// It will be passed by reference to the controller.
+
+	std::vector <int> Indices;
+
+	for(int Idx = 0; Idx < Count; ++Idx)
+	{
+		if(RegionTimeListView->Items->Item[Idx]->Selected)
+		{
+			Indices.push_back(Idx);
+		}
+	}
+
+	// Ask controller to combine selection.
+
+	FProtoolsData->CombineSelectedItems(Indices);
+
+	// Redisplay.
+
+	UpdateOutputTable();
+}
+
+//---------------------------------------------------------------------------
+
+// User wants to copy current list to the Windows clipboard.
+
+void __fastcall TControllerForm::CopyButtonClick(TObject *Sender)
+{
+	// Do we want frames in our output?
+
+	bool SuppressFrames = FStorage->GetValue(CSuppressFramesKey, true);
+
+	// Pass a TStringList to be filled by FProtoolsData.
+
+	std::auto_ptr <TStringList> TextData(new TStringList);
+
+	FProtoolsData->GetRegionUsages(TextData.get(), !SuppressFrames);
+
+    // Put the TStringList on the clipboard as text.
+
+	Clipboard()->AsText = TextData->Text;
+}
+
+//---------------------------------------------------------------------------
+
+void __fastcall TControllerForm::DeleteMenuItemClick(TObject *Sender)
+{
+	DeleteSelectedItems();
+}
+
+//---------------------------------------------------------------------------
+
+// Private function: delete all selected items.
+
+void TControllerForm::DeleteSelectedItems()
+{
+	int Count = RegionTimeListView->Items->Count;
+
+	if(!Count)
+	{
+		return;
+	}
+
+	// Traverse backwards to avoid indices to get messed up.
+
+	for(int Idx = Count - 1; Idx >= 0; --Idx)
+	{
+		if(RegionTimeListView->Items->Item[Idx]->Selected)
+		{
+			FProtoolsData->DeleteRegionUsage(Idx);
+		}
+	}
+
+	UpdateOutputTable();
+}
+
+//---------------------------------------------------------------------------
+
+// User deselects all tracks.
+
+void __fastcall TControllerForm::DeselectAllTracksButtonClick(TObject *Sender)
+{
+	int Count = TracksCheckListBox->Count;
+
+	for(int Idx = 0; Idx < Count; ++Idx)
+	{
+		TracksCheckListBox->Checked[Idx] = false;
+		FProtoolsData->SetTrackState(false, Idx);
+	}
+
+    // This will result in an empty list.
+
+	GenerateAndDisplayOutput();
+}
+
+//---------------------------------------------------------------------------
+
+// Fill tracks listing checboxes (top right) with names and their states.
+
+void TControllerForm::FillTracksListBox()
+{
+	// Remove previous data.
+
+	TracksCheckListBox->Clear();
+
+	// Fill with tracks in vector order (equals order in Protools session).
+
+	const int Count = FProtoolsData->TrackCount();
+
+	for(int Idx = 0; Idx < Count; ++Idx)
+	{
+		TracksCheckListBox->Items->Add(FProtoolsData->TrackNameAtIndex(Idx));
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// Just before the user interface Form gets destroyed, remember its
+// position on the screen for the next run. This is especially useful
+// in our environment with the dual monitors.
+
+void __fastcall TControllerForm::FormCloseQuery(TObject *Sender, bool &CanClose)
+{
+	// Store form position.
+
+	FStorage->PutValue("Left", Left);
+	FStorage->PutValue("Top", Top);
+
+	CanClose = true;
+}
+
+//---------------------------------------------------------------------------
+
+// This will regenerate a sorted list of TRegionUsage objects and
+// update the output table and info window (the StatusBar at the bottom).
+
+void TControllerForm::GenerateAndDisplayOutput()
+{
+	// Let user know this might take a while.
+	// Disabled because it irritates when you select in the miniuniverse.
+
+	//Screen->Cursor = crHourGlass;
+
+	FProtoolsData->GenerateListing();
+	UpdateOutputTable();
+	UpdateInfoWindow(false);
+
+	// Let user know we are finished.
+
+	//Screen->Cursor = crDefault;
+}
+
+//---------------------------------------------------------------------------
+
+// User begins selecting a portion of the timeline ("MiniUniverse")
+// with the mouse.
+
+void __fastcall TControllerForm::MiniUniverseImageMouseDown(TObject *Sender,
+	  TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	FDragging = true;
+
+	// Remember the frame where we started.
+
+	int Query = FSessionStart + (FXToFramesDragging * X);
+
+	// If shift is held down, we extend a selection (Windows style).
+
+	if(Shift.Contains(ssShift))
+	{
+		if(Query < FSelectionStart)
+		{
+			// In this case, we extend the selection to the left, i.e.
+			// the selection end stays the same.
+
+			FDraggingAnchor = FSelectionStop;
+		}
+		else
+		{
+			// In this case, we extend the selection to the right, i.e.
+			// the selection start stays the same.
+
+			FDraggingAnchor = FSelectionStart;
+		}
+	}
+	else
+	{
+		// In this case we begin a new selection.
+
+		FSelectionStart = Query;
+
+		FDraggingAnchor = FSelectionStart;
+
+		// Immediately (on click) see this happen.
+
+		FMiniUniverse->SetSelectionStart(FSelectionStart);
+		FProtoolsData->SetSelectionStart(FSelectionStart);
+	}
+
+	FMiniUniverse->SetSelectionStop(FSelectionStop);
+	FProtoolsData->SetSelectionStop(FSelectionStop);
+
+	GenerateAndDisplayOutput();
+
+	// Update both timecode displays.
+
+	int FrameRate = FProtoolsData->GetFrameRate();
+
+	StartTCMaskEdit->Text = FramesToHMSF
+	(
+		FSelectionStart,
+		true,
+		FrameRate
+	);
+
+	StopTCMaskEdit->Text = FramesToHMSF
+	(
+		FSelectionStop,
+		true,
+		FrameRate
+	);
+}
+
+//---------------------------------------------------------------------------
+
+// User might continue selecting a portion of the timeline ("MiniUniverse")
+// with the mouse.
+
+void __fastcall TControllerForm::MiniUniverseImageMouseMove(TObject *Sender,
+	  TShiftState Shift, int X, int Y)
+{
+	if(FDragging)
+	{
+		// Yes, we are selecting, not merely hovering over the image.
+
+		int Query = FSessionStart + (FXToFramesDragging * X);
+
+		if(Query < FDraggingAnchor)
+		{
+			// Moving selection start.
+
+			FSelectionStart = FProtoolsData->SmallestStartFrame(Query);
+			FMiniUniverse->SetSelectionStart(FSelectionStart);
+			FProtoolsData->SetSelectionStart(FSelectionStart);
+
+			// Update timecode display.
+
+			StartTCMaskEdit->Text = FramesToHMSF
+			(
+				FSelectionStart,
+				true,
+				FProtoolsData->GetFrameRate()
+			);
+		}
+		else
+		{
+			// Moving selection stop.
+
+			FSelectionStop = FProtoolsData->LargestStopFrame(Query);
+			FMiniUniverse->SetSelectionStop(FSelectionStop);
+			FProtoolsData->SetSelectionStop(FSelectionStop);
+
+			// Update timecode display.
+
+			StopTCMaskEdit->Text = FramesToHMSF
+			(
+				FSelectionStop,
+				true,
+				FProtoolsData->GetFrameRate()
+			);
+		}
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// User ends selecting a portion of the timeline ("MiniUniverse").
+// Order of events in this function is critical.
+
+void __fastcall TControllerForm::MiniUniverseImageMouseUp(TObject *Sender,
+	  TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	GenerateAndDisplayOutput();
+
+	// This must happen BEFORE we stop dragging.
+
+	StartSelectionTrackBar->Position = FSelectionStart;
+	StopSelectionTrackBar->Position = FSelectionStop;
+
+	// This must happen AFTER updating the trackbars.
+	
+	FDragging = false;
+}
+
+//---------------------------------------------------------------------------
+
+// User attempts to Open a Protools *.txt file.
+
+void __fastcall TControllerForm::OpenButtonClick(TObject *Sender)
+{
+	AnsiString InitialDirectory = FProtoolsData->GetInitialDirectory();
+
+	if(DirExists(InitialDirectory))
+	{
+		TextExportOpenDialog->InitialDir = InitialDirectory;
+	}
+
+	if(TextExportOpenDialog->Execute())
+	{
+		ProcessFileWithName(TextExportOpenDialog->FileName);
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// ProcessFileWithName gets its input from the Open... button or
+// a dropped file. It assumes the file exists and passes control
+// to the appropriate function in the ProtoolsData object (MODEL) which knows
+// what to do with it.
+
+void TControllerForm::ProcessFileWithName(const AnsiString Filename)
+{
+   // Let protoolsData MODEL do the parsing.
+
+	if(!FProtoolsData->LoadFileWithName(Filename))
+	{
+		// Something went haywire. Most likely a different *.txt file.
+
+		FillTracksListBox();
+		UpdateMiniUniverse();
+
+		return;
+	}
+
+	// Now that the file is parsed completely, we can update our interface.
+
+	FillTracksListBox();
+	UpdateMiniUniverse();
+
+	// Update timecode displays.
+
+	int SessionStop;
+
+	FProtoolsData->GetSessionBoundaries(FSessionStart, SessionStop);
+
+	StartTCMaskEdit->Text = FramesToHMSF
+	(
+		FSessionStart,
+		true,
+		FProtoolsData->GetFrameRate()
+	);
+
+	StopTCMaskEdit->Text = FramesToHMSF
+	(
+		SessionStop,
+		true,
+		FProtoolsData->GetFrameRate()
+	);
+
+	// Compute multiplier for drag selecting in the MiniUniverse.
+
+	FXToFramesDragging = (SessionStop - FSessionStart) / MiniUniverseImage->Width;
+
+    // The entire timeline is selected as a default.
+
+	FSelectionStart = FSessionStart;
+	FSelectionStop = SessionStop;
+
+	// Display table.
+
+	GenerateAndDisplayOutput();
+
+    // Show some info in StatusBar.
+
+	UpdateInfoWindow();
+}
+
+//---------------------------------------------------------------------------
+
+// The output can be sorted on alphabetic names or on duration. If the user
+// clicks a column header, we have to re-generate output with the requested
+// sort.
+
+void __fastcall TControllerForm::RegionTimeListViewColumnClick(TObject *Sender,
+	  TListColumn *Column)
+{
+	// Column Tag defines the sort order.
+
+	if(FProtoolsData->SortOnName(Column->Tag == 0))
+    {
+		GenerateAndDisplayOutput();
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// A user can multiselect one or more items from the output list
+// and delete those with the backspace key.
+// NB: these items will be regenerated when something changes, like
+// sort order or track selection.
+
+void __fastcall TControllerForm::RegionTimeListViewKeyPress(TObject *Sender,
+	  char &Key)
+{
+	if(Key == CBackspaceKey)
+	{
+		DeleteSelectedItems();
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// Rename a single selected item.
+
+void __fastcall TControllerForm::RenameMenuItemClick(TObject *Sender)
+{
+	if(RegionTimeListView->SelCount != 1)
+	{
+    	ShowMessage("This only works for a single selected item.");
+		return;
+	}
+
+	int Index = RegionTimeListView->ItemIndex;
+
+	AnsiString OriginalValue = FProtoolsData->RegionUsageNameAtIndex(Index);
+
+	AnsiString NewValue;
+
+	InputQuery("Rename item", OriginalValue, NewValue);
+
+}
+
+//---------------------------------------------------------------------------
+
+// User request to save current output table to a regular text file.
+// It appears all users of this program overwrite the original file.
+// The SaveDialog currently warns against such an overwrite.
+
+void __fastcall TControllerForm::SaveButtonClick(TObject *Sender)
+{
+	// Is this a geek director who requires frames?
+
+	bool SuppressFrames = FStorage->GetValue(CSuppressFramesKey, true);
+
+	std::auto_ptr <TStringList> TextData(new TStringList);
+
+	FProtoolsData->GetRegionUsages(TextData.get(), !SuppressFrames);
+
+	AnsiString InitialDirectory = FProtoolsData->GetInitialDirectory();
+
+	if(DirExists(InitialDirectory))
+	{
+		SaveDialog->InitialDir = InitialDirectory;
+	}
+
+	if(SaveDialog->Execute())
+	{
+		TextData->SaveToFile(SaveDialog->FileName);
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// Special button that selects the entire timeline.
+
+void __fastcall TControllerForm::SelectAllButtonClick(TObject *Sender)
+{
+	// We request current session boundaries from the model
+	// (FProtoolsData) but it would also be possible to simply
+	// ask the selection trackbars to assume their min and max values.
+
+	int SessionStart, SessionStop;
+
+	FProtoolsData->GetSessionBoundaries(SessionStart, SessionStop);
+
+	StartSelectionTrackBar->Position = SessionStart;
+	StopSelectionTrackBar->Position = SessionStop;
+
+	FSelectionStart = SessionStart;
+	FSelectionStop = SessionStop;
+}
+
+//---------------------------------------------------------------------------
+
+// Select all tracks that start with an 'M' or 'm', followed by at least
+// one number, i.e. trackname =~ /^[M]{1}\d+/i;
+// This is simply a convention and clearly the first button to hit
+// to generate a music listing, since all music regions will live on
+// such tracks if the Protools user has worked in a clean way.
+
+void __fastcall TControllerForm::SelectAllMTracksButtonClick(TObject *Sender)
+{
+	int Count = TracksCheckListBox->Count;
+
+	for(int Idx = 0; Idx < Count; ++Idx)
+	{
+		AnsiString TrackName = TracksCheckListBox->Items->Strings[Idx] + " ";
+
+		if((TrackName[1] == 'M' || TrackName[1] == 'm') &&
+		   (TrackName[2] >= '0' && TrackName[2] <= '9'))
+		{
+			TracksCheckListBox->Checked[Idx] = true;
+			FProtoolsData->SetTrackState(true, Idx);
+		}
+	}
+
+	GenerateAndDisplayOutput();
+}
+
+//---------------------------------------------------------------------------
+
+// Select all stereo tracks. Right now (Protools 8, 9 and 10), Protools
+// itself will tag on "Stereo" to the trackname in the *.txt output file.
+// Let's keep our fingers crossed this isn't pulled from the implementation
+// in a future version.
+
+void __fastcall TControllerForm::SelectAllStereoTracksButtonClick(
+	  TObject *Sender)
+{
+	int Count = TracksCheckListBox->Count;
+
+	for(int Idx = 0; Idx < Count; ++Idx)
+	{
+		AnsiString TrackName = TracksCheckListBox->Items->Strings[Idx];
+
+		if(LowerCase(TrackName).Pos("(stereo)") > 0)
+		{
+			TracksCheckListBox->Checked[Idx] = true;
+			FProtoolsData->SetTrackState(true, Idx);
+		}
+	}
+
+	GenerateAndDisplayOutput();
+}
+
+//---------------------------------------------------------------------------
+
+// Simply select all tracks. 
+
+void __fastcall TControllerForm::SelectAllTracksButtonClick(TObject *Sender)
+{
+	int Count = TracksCheckListBox->Count;
+
+	for(int Idx = 0; Idx < Count; ++Idx)
+	{
+		TracksCheckListBox->Checked[Idx] = true;
+		FProtoolsData->SetTrackState(true, Idx);
+	}
+
+	GenerateAndDisplayOutput();
+}
+
+//---------------------------------------------------------------------------
+
+// Give user option to change some settings. A bit non standard, because
+// the dialog has no way to cancel/bail out. Might change in the future.
+
+void __fastcall TControllerForm::SettingsButtonClick(TObject *Sender)
+{
+	// "Easter egg" shows my name.
+
+	if(GetAsyncKeyState(VK_SHIFT) & 0x8000) // Shift down.
+	{
+		Caption = " programming by Hens Zimmerman <henszimmerman@gmail.com>";
+		return;
+	}
+
+	std::auto_ptr <TSettingsForm> Settings(new TSettingsForm(0));
+
+	Settings->ShowModal();
+
+	GenerateAndDisplayOutput();
+}
+
+//---------------------------------------------------------------------------
+
+// User changes selection in mini universe.
+
+void __fastcall TControllerForm::StartSelectionTrackBarChange(TObject *Sender)
+{
+	// When a user is selecting a portion of the mini universe with the
+	// mouse, we also update the trackbars' positions. Because this will
+	// fire this event, we have to bail out to avoid stack exhaustion.
+	// Hence the check for the FDragging flag.
+
+	if(FDragging)
+	{
+		return;
+	}
+
+	FSelectionStart = StartSelectionTrackBar->Position;
+	FSelectionStop = StopSelectionTrackBar->Position;
+
+	if (FSelectionStart > FSelectionStop)
+	{
+		StopSelectionTrackBar->Position = FSelectionStart;
+	}
+                                
+    // Update objects who need to know about this.
+
+	FMiniUniverse->SetSelectionStart(FSelectionStart);
+	FProtoolsData->SetSelectionStart(FSelectionStart);
+
+	// Update timecode display.
+
+	StartTCMaskEdit->Text = FramesToHMSF
+	(
+		FSelectionStart,
+		true,
+		FProtoolsData->GetFrameRate()
+	);
+
+	// Display output table.
+
+	GenerateAndDisplayOutput();
+}
+
+//---------------------------------------------------------------------------
+
+// User has entered a timecode to start selection manually. This can be utter garbage
+// which we need to pretty profile into a frame offset.
+// Win32 trackbar guards against moving beyond Min and Max so we don't
+// check for that.
+
+void __fastcall TControllerForm::StartTCMaskEditKeyPress(TObject *Sender,
+	  char &Key)
+{
+	if(Key == CEnterKey)
+	{
+		StartSelectionTrackBar->Position = TextToFrames(StartTCMaskEdit->EditText);
+		StartSelectionTrackBarChange(0);
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// User has entered a timecode to end selection manually. This can be utter garbage
+// which we need to pretty profile into a frame offset.
+// Win32 trackbar guards against moving beyond Min and Max so we don't
+// check for that.
+
+void __fastcall TControllerForm::StopTCMaskEditKeyPress(TObject *Sender,
+	  char &Key)
+{
+	if(Key == CEnterKey)
+	{
+		StopSelectionTrackBar->Position = TextToFrames(StopTCMaskEdit->EditText);
+		StopSelectionTrackBarChange(0);
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// User changes selection in mini universe.
+
+void __fastcall TControllerForm::StopSelectionTrackBarChange(TObject *Sender)
+{
+	// When a user is selecting a portion of the mini universe with the
+	// mouse, we also update the trackbars' positions. Because this will
+	// fire this event, we have to bail out to avoid stack exhaustion.
+	// Hence the check for the FDragging flag.
+
+	if(FDragging)
+	{
+		return;
+	}
+
+	FSelectionStart = StartSelectionTrackBar->Position;
+	FSelectionStop = StopSelectionTrackBar->Position;
+
+	// User might move selection stop before selection start.
+	// Which is perfectly fine with us. It results in a zero selection, is all.
+
+	if (FSelectionStart > FSelectionStop)
+	{
+		StartSelectionTrackBar->Position = FSelectionStop;
+	}
+
+	// Update objects who need to know about this.
+
+	FMiniUniverse->SetSelectionStop(FSelectionStop);
+	FProtoolsData->SetSelectionStop(FSelectionStop);
+
+	// Update timecode display.
+
+	StopTCMaskEdit->Text = FramesToHMSF
+	(
+		FSelectionStop,
+		true,
+		FProtoolsData->GetFrameRate()
+	);
+
+	// Display output table.
+
+	GenerateAndDisplayOutput();
+}
+
+//---------------------------------------------------------------------------
+
+// When a user types something into the timecode editors, we attempt to guess
+// what kind of timecode this was and convert it to frames.
+// The output of TextToFrames() is not guarded against moving beyond
+// session boundaries; this is left to the calling function.
+
+int TControllerForm::TextToFrames(const AnsiString Text)
+{
+	// Reduce to nothing but numbers and truncate at 8 digits.
+
+	int DigitsCounted = 0;
+
+	int H = 0;
+	int M = 0;
+	int S = 0;
+	int F = 0;
+
+	int Len = Text.Length();
+
+	for (int Idx = Len; Idx > 0; --Idx)
+	{
+		char C = Text[Idx];
+		int Num = C - '0';
+
+		if(isdigit(C))
+		{
+			++DigitsCounted;
+
+			switch (DigitsCounted)
+			{
+				case 1:
+					F += Num;
+					break;
+				case 2:
+					F += (10 * Num);
+					break;
+				case 3:
+					S += Num;
+					break;
+				case 4:
+					S += (10 * Num);
+					break;
+				case 5:
+					M += Num;
+					break;
+				case 6:
+					M += (10 * Num);
+					break;
+				case 7:
+					H += Num;
+					break;
+				case 8:
+					H += (10 * Num);
+					break;
+			}
+		}
+	}
+
+	// Convert hmsf to frames.
+
+	int FrameRate = FProtoolsData->GetFrameRate();
+
+	return F + (FrameRate * S) + (FrameRate * 60 * M) + (FrameRate * 3600 * H);
+}
+
+//---------------------------------------------------------------------------
+
+// User checks or unchecks a track. There may be a more efficient way
+// to get the checked state of the single item that's been changed.
+// Right now we brute force iterate over all the checkboxes.
+
+void __fastcall TControllerForm::TracksCheckListBoxClickCheck(TObject *Sender)
+{
+	int Count = TracksCheckListBox->Count;
+
+	for(int Idx = 0; Idx < Count; ++Idx)
+	{
+		FProtoolsData->SetTrackState(TracksCheckListBox->Checked[Idx], Idx);
+	}
+
+	GenerateAndDisplayOutput();
+}
+
+//---------------------------------------------------------------------------
+
+// Update standard Win32 status panel at the bottom of the window.
+// If Full is true, some basic info about the imported *.txt file is
+// also updated. Since this does not change after a file is scanned,
+// we can call this function with Full=false to only update the
+// dynamic portion(s) of it.
+
+void TControllerForm::UpdateInfoWindow(const bool Full)
+{
+	if(Full)
+	{
+		// Called only once after *.txt import.
+
+		StatusBar->Panels[0][0]->Text =
+			IntToStr(FProtoolsData->GetSampleRate()) + " Hz";
+		StatusBar->Panels[0][1]->Text =
+			IntToStr(FProtoolsData->GetFrameRate()) + " fps";
+		StatusBar->Panels[0][2]->Text =
+			FProtoolsData->GetTitle();
+		StatusBar->Panels[0][3]->Text =
+			IntToStr(FProtoolsData->TrackCount()) + " tracks";
+	}
+
+	StatusBar->Panels[0][4]->Text =
+		IntToStr(FProtoolsData->RegionUsageCount()) + " regions selected";
+}
+
+//---------------------------------------------------------------------------
+
+// When a new file has been loaded, a new mini representation of the session
+// needs to be drawn in the MiniUniverse view. The sliders above and below
+// the view also need to be updated to represent the new session boundaries.
+
+void TControllerForm::UpdateMiniUniverse()
+{
+	int SessionStart, SessionStop;
+
+	FProtoolsData->GetSessionBoundaries(SessionStart, SessionStop);
+
+	// Redraw the mini universe.
+
+	FMiniUniverse->RedrawUniverse
+	(
+		FProtoolsData->GetRegions(),
+		FProtoolsData->GetTracks(),
+		SessionStart,
+		SessionStop
+	);
+
+	// Update the selection sliders.
+	// ORDER OF NEXT LINES IS IMPORTANT.
+	// Max before Min prevents nastiness in case of sessions that
+	// begin (Min) at a very large timecode.
+
+	StartSelectionTrackBar->Max = SessionStop;
+	StartSelectionTrackBar->Min = SessionStart;
+	StartSelectionTrackBar->Position = SessionStart;
+
+	StopSelectionTrackBar->Max = SessionStop;
+	StopSelectionTrackBar->Min = SessionStart;
+	StopSelectionTrackBar->Position = SessionStop;
+
+	// Tell Protools data MODEL object about the new selection.
+
+	FProtoolsData->SetSelectionStart(SessionStart);
+	FProtoolsData->SetSelectionStop(SessionStop);
+}
+
+//---------------------------------------------------------------------------
+
+// Display current list of regions with their times in bottom left table.
+
+void TControllerForm::UpdateOutputTable()
+{
+	// Erase previous contents.
+
+	RegionTimeListView->Clear();
+
+	// Get vars that define how we output.
+
+	int FrameRate = FProtoolsData->GetFrameRate();
+	bool SuppressFrames = FStorage->GetValue(CSuppressFramesKey, true);
+
+	// Fill with (sorted) regions and their times.
+
+	int Count = FProtoolsData->RegionUsageCount();
+
+	for(int Idx = 0; Idx < Count; ++Idx)
+	{
+		AnsiString Name = FProtoolsData->RegionUsageNameAtIndex(Idx);
+		int Frames = FProtoolsData->RegionUsageTimeAtIndex(Idx);
+
+		TListItem* ListItem = RegionTimeListView->Items->Add();
+		ListItem->Caption = Name;
+		ListItem->SubItems->Add
+		(
+			FramesToHMSF(Frames, !SuppressFrames, FrameRate)
+		);
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// Low level Windows event when one or more files are dropped onto our form.
+
+void __fastcall TControllerForm::WmDropFiles(TWMDropFiles& Message)
+{
+	TCursor Cursor = Screen->Cursor;
+
+	Screen->Cursor = crHourGlass;
+
+	HDROP DropHandle = reinterpret_cast <HDROP> (Message.Drop);
+
+	char Filename[MAX_PATH];
+
+	// Ignore everyting except the first dropped file.
+
+	DragQueryFile(DropHandle, 0, Filename, sizeof(Filename));
+
+	DragFinish(DropHandle);
+
+	Screen->Cursor = Cursor;
+
+	if(LowerCase(ExtractFileExt(Filename)) == ".txt")
+	{
+		ProcessFileWithName(Filename);
+	}
+	else
+	{
+		ShowMessage("I only understand files that end with .txt");
+	}
+}
+
+//---------------------------------------------------------------------------
+
+void __fastcall TControllerForm::PrintButtonClick(TObject *Sender)
+{
+	// Write to temp file.
+
+	char TempFileNameBuffer[MAX_PATH];
+
+	if(GetTempPath(MAX_PATH, TempFileNameBuffer))
+	{
+		FTempFile = IncludeTrailingBackslash(TempFileNameBuffer) + "print_me.txt";
+	}
+	else
+	{
+		FTempFile = "c:\\print_me.txt";
+	}
+	// Is this a geek director who requires frames?
+
+	bool SuppressFrames = FStorage->GetValue(CSuppressFramesKey, true);
+
+	std::auto_ptr <TStringList> TextData(new TStringList);
+
+	FProtoolsData->GetRegionUsages(TextData.get(), !SuppressFrames);
+
+	TextData->SaveToFile(FTempFile);
+
+	// Print the lazy way (via notepad if that is associated with *.txt).
+
+	ShellExecute
+	(
+		0,
+		"print",
+		FTempFile.c_str(),
+		0,
+		0,
+		SW_SHOW
+	);
+
+	// Tempfile is erased on exit.
+}
+
+//---------------------------------------------------------------------------
+
+

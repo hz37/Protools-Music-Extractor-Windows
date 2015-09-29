@@ -1,0 +1,150 @@
+//---------------------------------------------------------------------------
+
+#include "Generic.h"
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+// Constants (also see Generic.h).
+
+extern const AnsiString CCombineSimilarKey = "CombineSimilar";
+extern const AnsiString CIgnoreAfterExtensionKey = "IgnoreAfterExtension";
+extern const AnsiString CIgnoreAfterNewKey = "IgnoreAfterNew";
+extern const AnsiString CIgnoreFadeKey = "IgnoreFade";
+extern const AnsiString CIgnoreShorterThanKey = "IgnoreShorterThan";
+extern const AnsiString CIgnoreShorterThanSecondsKey = "IgnoreShorterThanSeconds";
+extern const AnsiString CSuppressFramesKey = "SuppressFrames";
+
+//---------------------------------------------------------------------------
+
+// Global functions.
+
+//---------------------------------------------------------------------------
+
+// Return true if Directory exists, else false.
+// This is our own rewrite of the FileCtrl.pas function,
+// because it is so simple and we didn't want to add the
+// entire Delphi-file to the program, which is large enough as it is.
+
+bool DirectoryExists(const AnsiString Directory)
+{
+  DWORD Code = GetFileAttributes(Directory.c_str());
+
+  // Returnvalue in case of an error.
+  static const DWORD ErrorReturn = 0xFFFFFFFF;
+
+  return (Code != ErrorReturn) && (Code & FILE_ATTRIBUTE_DIRECTORY);
+}
+
+//---------------------------------------------------------------------------
+
+// Convert frames to HH:MM:SS:FF based on framerate.
+// User can specify whether or not frames should be included in output.
+
+AnsiString FramesToHMSF(int Frames, const bool IncludeFrames, const int FrameRate)
+{
+    // Avoid divide by zero.
+
+	if (FrameRate == 0)
+	{
+		return "00:00:00:00";
+	}
+
+	int H = Frames / (3600 * FrameRate);
+	Frames -= (H * 3600 * FrameRate);
+	int M = Frames / (60 * FrameRate);
+	Frames -= (M * 60 * FrameRate);
+	int S = Frames / FrameRate;
+	Frames %= FrameRate;
+
+	if (Frames < 0)
+	{
+		Frames = 0;
+	}
+
+	if (IncludeFrames)
+	{
+		return AnsiString().sprintf("%.2d:%.2d:%.2d:%.2d", H, M, S, Frames);
+	}
+	else
+	{
+		// Round frames.
+
+		if(FrameRate % 2)
+		{
+			// Avoid off by 1 in rounding, e.g. for PAL 25 fps.
+
+			--Frames;
+		}
+
+		if (Frames >= (FrameRate / 2))
+		{
+			++S;
+
+			if(S == 60)
+			{
+				// Avoid 60 seconds or minutes.
+
+				++M;
+				S = 0;
+
+				if(M == 60)
+				{
+					++H;
+					M = 0;
+				}
+			}
+		}
+
+		return AnsiString().sprintf("%.2d:%.2d:%.2d", H, M, S);
+	}
+}
+
+//---------------------------------------------------------------------------
+
+void GetExeVersion(int& Major, int& Minor, int& Release, int& Build)
+{
+	//----------------------------------------------------------------------//
+	//                                                                      //
+	// Obtain the length of the version information available.              //
+	// If the length is not zero, create a buffer of the appropriate size,  //
+	// and retrieve the information block.                                  //
+	// Then retrieve the language-independant version information.          //
+	//                                                                      //
+	//----------------------------------------------------------------------//
+
+	DWORD TempHandle = 0;
+
+	DWORD InfoLen = GetFileVersionInfoSize(ParamStr(0).c_str(), &TempHandle);
+
+	if (InfoLen > 0)
+	{
+		char* Buffer = (char *) malloc(InfoLen);
+
+		unsigned int ValueLen;
+
+		GetFileVersionInfo(ParamStr(0).c_str(), 0, InfoLen, Buffer);
+
+		VS_FIXEDFILEINFO* FileInfo;
+
+		if (VerQueryValue(Buffer, "\\", (void **)&FileInfo, &ValueLen))
+		{
+			Major   = (int)((FileInfo->dwFileVersionMS >> 16) & 0xffff);
+			Minor   = (int)((FileInfo->dwFileVersionMS      ) & 0xffff);
+			Release = (int)((FileInfo->dwFileVersionLS >> 16) & 0xffff);
+			Build   = (int)((FileInfo->dwFileVersionLS      ) & 0xffff);
+		}
+		else
+		{
+			Major   = 0;
+			Minor   = 0;
+			Release = 0;
+			Build   = 0;
+		}
+
+		free(Buffer);
+	}
+}
+
+//---------------------------------------------------------------------------
+

@@ -1,0 +1,66 @@
+//---------------------------------------------------------------------------
+
+#include "Generic.h"
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+TRegion::TRegion
+(
+	const AnsiString Name,
+	const AnsiString TrackName,
+	const int StartFrame,
+	const int StopFrame,
+	const int Length,
+	const bool IsMono
+) :
+FName(Name),
+FTrackName(TrackName),
+FStartFrame(StartFrame),
+FStopFrame(StopFrame),
+FLength(Length),
+FIsMono(IsMono)
+{
+	
+}
+
+//---------------------------------------------------------------------------
+
+// Copy constructor implemented in terms of = operator.
+
+TRegion::TRegion(const TRegion& Rhs)
+{
+	operator = (Rhs);
+}
+
+//---------------------------------------------------------------------------
+
+// Assignment operator, used by copy constructor as well.
+
+TRegion& TRegion::operator = (const TRegion& Rhs)
+{
+	if(&Rhs != this)
+	{
+		FName = Rhs.FName;
+		FTrackName = Rhs.FTrackName;
+		FStartFrame = Rhs.FStartFrame;
+		FStopFrame = Rhs.FStopFrame;
+		FLength = Rhs.FLength;
+		FIsMono = Rhs.FIsMono;
+	}
+
+	return *this;
+}
+
+//---------------------------------------------------------------------------
+
+// No two regions with the same name start on the same track at the same point.
+
+bool TRegion::operator != (const TRegion& Rhs)
+{
+	return ((FName != Rhs.FName) && (FTrackName != Rhs.FTrackName) &&
+			(FStartFrame != Rhs.FStartFrame));
+}
+
+//---------------------------------------------------------------------------
+

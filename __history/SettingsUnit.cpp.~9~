@@ -1,0 +1,55 @@
+//---------------------------------------------------------------------------
+
+#include "Generic.h"
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+#include "SettingsUnit.h"
+
+//---------------------------------------------------------------------------
+
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+
+//---------------------------------------------------------------------------
+
+TSettingsForm* SettingsForm;
+
+//---------------------------------------------------------------------------
+__fastcall TSettingsForm::TSettingsForm(TComponent* Owner)
+	: TForm(Owner)
+{
+	// Read persistent values and set controls to those values.
+
+	FStorage = TStorage::Instance();
+
+	CombineSimilarCheckBox->Checked = FStorage->GetValue(CCombineSimilarKey, 1);
+	IgnoreAfterExtensionCheckBox->Checked = FStorage->GetValue(CIgnoreAfterExtensionKey, 1);
+	IgnoreAfterNewCheckBox->Checked = FStorage->GetValue(CIgnoreAfterNewKey, 1);
+	IgnoreFadeCheckBox->Checked = FStorage->GetValue(CIgnoreFadeKey, 1);
+	IgnoreShorterThanCheckBox->Checked = FStorage->GetValue(CIgnoreShorterThanKey, 0);
+	IgnoreShorterThanUpDown->Position = FStorage->GetValue(CIgnoreShorterThanSecondsKey, 1);
+	SuppressFramesCheckBox->Checked = FStorage->GetValue(CSuppressFramesKey, 1);
+}
+
+//---------------------------------------------------------------------------
+
+void __fastcall TSettingsForm::IgnoreShorterThanUpDownClick(TObject *Sender,
+	  TUDBtnType Button)
+{
+	UpdateSeconds(IgnoreShorterThanUpDown->Position);
+
+}
+
+//---------------------------------------------------------------------------
+
+void TSettingsForm::UpdateSeconds(const short Seconds)
+{
+	IgnoreShorterThanCheckBox->Caption = "Ignore regions shorter than " +
+		IntToStr(Seconds)+ " second" + (Seconds > 1 ? "s" : "");
+}
+
+//---------------------------------------------------------------------------
+
+

@@ -1,0 +1,32 @@
+//---------------------------------------------------------------------------
+
+#ifndef RegionUsageH
+#define RegionUsageH
+
+//---------------------------------------------------------------------------
+
+#include <Vcl.h>
+
+//---------------------------------------------------------------------------
+
+class TRegionUsage
+{
+private:
+	AnsiString FName;
+	int FLength;
+public:
+	TRegionUsage(const AnsiString Name, const int Length);
+	TRegionUsage(const TRegionUsage& Rhs);
+	TRegionUsage& operator = (const TRegionUsage& Rhs);
+	bool operator != (const TRegionUsage& Rhs);
+
+	__property AnsiString Name = {read = FName};
+	__property int Length = {read = FLength};
+};
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------
+

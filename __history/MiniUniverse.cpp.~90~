@@ -1,0 +1,241 @@
+//---------------------------------------------------------------------------
+
+#include "Generic.h"
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+// Color elements as constants so they can be edited in one place.
+
+// * * * * * * * BEGIN COLOR CONSTANTS * * * * * * * 
+
+// Selected background color.
+
+const TColor HZ37_SelectedBackground = 0x00e65623; // 0x00800000;
+
+// Deselected background color.
+
+const TColor HZ37_DeselectedBackground = 0x00000000;
+
+// Region on even track.
+
+const TColor HZ37_EvenTrack = 0x0095da80;
+
+// Region on odd track.
+
+const TColor HZ37_OddTrack = 0x00cba091;
+
+// Deselected region on even track.
+
+const TColor HZ37_DeselectedEvenTrack = 0x0095da80;
+
+// Deselected region on odd track.
+
+const TColor HZ37_DeselectedOddTrack = 0x00cba091;
+
+// * * * * * * * END COLOR CONSTANTS * * * * * * * *
+
+//---------------------------------------------------------------------------
+
+TMiniUniverse::TMiniUniverse
+(
+	TCanvas* DestinationCanvas,
+	const int Width,
+	const int Height
+) :
+FDestinationCanvas(DestinationCanvas),
+FWidth(Width),
+FHeight(Height)
+{
+	assert(FDestinationCanvas);
+
+	FDestinationCanvas->Font->Color = clNavy;
+	FDestinationCanvas->TextOutA
+	(
+		10,
+		10,
+		"Drop a Protools text export file here."
+	);
+
+	// Set copymode for once and for all.
+
+	FDestinationCanvas->CopyMode = cmSrcCopy;
+
+	TImage* I = new TImage(0);
+	TImage* J = new TImage(0);
+
+	// Transfer ownership to auto_ptrs.
+
+	FRenderBuffer.reset(I);
+	FDeselectedRenderBuffer.reset(J);
+
+	FRenderBuffer->Width = Width;
+	FRenderBuffer->Height = Height;
+	FDeselectedRenderBuffer->Width = Width;
+	FDeselectedRenderBuffer->Height = Height;
+
+	// Fill out the copy/paint rect that stays the same
+	// during the program run.
+
+	FRect.Left = 0;
+	FRect.Top = 0;
+	FRect.Right = Width;
+	FRect.Bottom = Height;
+}
+
+//---------------------------------------------------------------------------
+
+void TMiniUniverse::Display()
+{
+    // Compute width in frames. All our session and selection variables are in frames (as in frames per second)
+    // and these need to be converted to pixels.
+    
+	int FrameWidth = FSessionStopFrame - FSessionStartFrame;
+
+	if (FrameWidth == 0)
+	{
+		// Avoid div 0.
+
+		return;
+	}
+
+	int SelectionStartPixel = (FWidth * (FSelectionStart - FSessionStartFrame)) / FrameWidth;
+	int SelectionEndPixel = (FWidth * (FSelectionStop - FSessionStartFrame)) / FrameWidth;
+
+	// Left portion (deselected).
+
+	TRect R0 = TRect(0, 0, SelectionStartPixel, FHeight);
+	FDestinationCanvas->CopyRect(R0, FDeselectedRenderBuffer->Canvas, R0);
+
+	// Middle portion (selected).
+
+	TRect R1 = TRect(SelectionStartPixel, 0, SelectionEndPixel, FHeight);
+	FDestinationCanvas->CopyRect(R1, FRenderBuffer->Canvas, R1);
+
+	// Right portion (deselected).
+
+	TRect R2 = TRect(SelectionEndPixel, 0, FWidth, FHeight);
+	FDestinationCanvas->CopyRect(R2, FDeselectedRenderBuffer->Canvas, R2);
+}
+
+//---------------------------------------------------------------------------
+
+// When a new file is loaded, this function is called to draw the new session to the View.
+
+void TMiniUniverse::RedrawUniverse
+(
+	std::vector <TRegion> Regions,
+	std::vector <TTrack> Tracks,
+	const int SessionStart,
+	const int SessionStop
+)
+{
+    // Avoid div by zero.
+    
+	if (SessionStop == SessionStart)
+	{
+		return;
+	}
+
+    // Start with no selection.
+    
+	FSelectionStart = SessionStart;
+	FSelectionStop = SessionStop;
+
+    // Remember for later.
+    
+	FSessionStartFrame = SessionStart;
+	FSessionStopFrame = SessionStop;
+
+    // Clear the selected and deselected buffers to their respective background colors.
+
+	FRenderBuffer->Canvas->Brush->Color = HZ37_SelectedBackground;
+	FRenderBuffer->Canvas->Brush->Style = bsSolid;
+	FRenderBuffer->Canvas->Rectangle(FRect);
+
+	FDeselectedRenderBuffer->Canvas->Brush->Color = HZ37_DeselectedBackground;
+	FDeselectedRenderBuffer->Canvas->Brush->Style = bsSolid;
+	FDeselectedRenderBuffer->Canvas->Rectangle(FRect);
+
+    // Compute coordinates for the regions we're about to draw.
+        
+    int FramesPerPixel = (SessionStop - SessionStart) / FWidth;
+    
+    int TrackCount = static_cast <int> (Tracks.size());
+    
+    int H = FHeight / TrackCount;
+
+	// Tracks x and width will be computed on a per region basis, but the y coordinate of every region
+	// is a function of the track it belongs to. We'll build a lookup table for this from the track array.
+
+	std::map <AnsiString, int> YCoordLookupTable;
+
+	// We also create a lookup table to recall if a region lives on an odd or even track (for coloring).
+
+	std::map <AnsiString, int> OddEvenLookupTable;
+
+	for(int Idx = 0; Idx < static_cast <int> (Tracks.size()); ++Idx)
+	{
+		YCoordLookupTable[Tracks[Idx].TrackName] = FHeight - (TrackCount - Idx - 1) * H;
+		OddEvenLookupTable[Tracks[Idx].TrackName] = (Idx % 2) ? 1 : 0;
+	}
+
+    // Now we'll draw each and every region, both on the selected and the deselected buffers.
+
+	for(std::vector <TRegion>::iterator Region = Regions.begin(); Region != Regions.end(); ++Region)
+	{
+        // X coordinate and width.
+        
+		int X = (Region->StartFrame - SessionStart) / FramesPerPixel;
+		int W = (Region->StopFrame - Region->StartFrame) / FramesPerPixel;
+		int Y = YCoordLookupTable[Region->TrackName];
+		bool Odd = OddEvenLookupTable[Region->TrackName];
+
+		TRect RegionRect = TRect(X, Y, X + W, Y + H);
+
+		// Now we have all the information we need to draw the region.
+
+		FRenderBuffer->Canvas->Pen->Color = HZ37_SelectedBackground;
+		FRenderBuffer->Canvas->Brush->Color = (Odd ? HZ37_OddTrack : HZ37_EvenTrack);
+		FRenderBuffer->Canvas->Rectangle(RegionRect);
+
+		// Also add it to the deselected buffer.
+
+		FDeselectedRenderBuffer->Canvas->Pen->Color = HZ37_DeselectedBackground;
+		FDeselectedRenderBuffer->Canvas->Brush->Color = (Odd ? HZ37_DeselectedOddTrack : HZ37_DeselectedEvenTrack);
+		FDeselectedRenderBuffer->Canvas->Rectangle(RegionRect);
+    }
+
+	// Make it visible.
+
+	Display();
+}
+
+//---------------------------------------------------------------------------
+
+// User has changed selection.
+
+void TMiniUniverse::SetSelectionStart(const int Frame)
+{
+	FSelectionStart = Frame;
+
+    // Redraw immediately.
+
+	Display();
+}
+
+//---------------------------------------------------------------------------
+
+// User has changed selection.
+
+void TMiniUniverse::SetSelectionStop(const int Frame)
+{
+	FSelectionStop = Frame;
+
+    // Redraw immediately.
+
+	Display();
+}
+
+//---------------------------------------------------------------------------
+

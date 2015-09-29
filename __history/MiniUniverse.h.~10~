@@ -1,0 +1,36 @@
+//---------------------------------------------------------------------------
+
+#ifndef MiniUniverseH
+#define MiniUniverseH
+
+//---------------------------------------------------------------------------
+
+#include <Vcl.h>
+
+//---------------------------------------------------------------------------
+
+class TMiniUniverse
+{
+private:
+	std::auto_ptr <TImage> FRenderBuffer;
+	std::auto_ptr <TImage> FDeselectedRenderBuffer;
+
+	// Remember Canvas to which we will copy.
+
+	TCanvas* FDestinationCanvas;
+
+	// Remember width and height of Canvas.
+
+	int FWidth, FHeight;
+
+
+public:
+	TMiniUniverse(TCanvas* DestinationCanvas, const int Width, const int Height);
+
+};
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------

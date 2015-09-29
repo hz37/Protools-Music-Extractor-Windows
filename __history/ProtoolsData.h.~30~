@@ -1,0 +1,113 @@
+//---------------------------------------------------------------------------
+
+#ifndef ProtoolsDataH
+#define ProtoolsDataH
+
+//---------------------------------------------------------------------------
+
+#include <Vcl.h>
+
+#include <vector>
+
+#include "Region.h"
+#include "RegionUsage.h"
+#include "Storage.h"
+#include "Track.h"
+
+//---------------------------------------------------------------------------
+
+class TProtoolsData
+{
+private:
+    // Collection of all regions from a Protools session.
+    // This array is updated when a new file is read from disk.
+
+	std::vector <TRegion> FRegions;
+
+    // Collection of filtered region usage (names with times) based on
+    // user choices. This is the extraction from the regions collection
+    // and is changed all the time when a user works with the interface.
+    
+    std::vector <TRegionUsage> FRegionUsages;
+
+	// Collection of tracks, read from a Protools session text file.
+	// This array is also used to store user selections in terms of
+	// which track to use in the output and which not.
+
+	std::vector <TTrack> FTracks;
+	
+    // Framerate in frames per second (25 in almost all cases for PAL sessions).
+
+	int FFrameRate;
+
+	// Current session's samplerate in Hz.
+
+	double FSampleRate;
+
+	// While scanning the Protools text export, we try to find the earliest
+	// and latest frame used by the session so the interface can scale itself.
+
+	int FStartFrame;
+	int FStopFrame;
+
+	// We remember the filename because it can be queried for.
+
+	AnsiString FSessionFileName;
+
+	// User preferences that tell us what should be filtered in the output.
+
+	bool FIgnoreFade;
+	bool FIgnoreShorter;
+	int FIgnoreShorterThan;
+	bool FIgnoreStringDataAfterExtension;
+	bool FIgnoreStringDataAfterNew;
+	bool FCombineSimilar;
+	int FSelectionStart;
+	int FSelectionStop;
+
+	// Output data can be sorted either on name or time.
+
+	bool FSortOnName;
+
+	// Connection to persistent storage.
+
+	TStorage* FStorage;
+
+	bool ExtractHMSF(const AnsiString InputString, int& Hours, int& Mins, int& Secs, int& Frames);
+	void Reset();
+
+protected:
+	TProtoolsData();
+	TProtoolsData(const TProtoolsData& Rhs);
+	TProtoolsData& operator = (const TProtoolsData&);
+
+public:
+	static TProtoolsData* Instance();
+	~TProtoolsData();
+
+	void GenerateListing();
+	int GetFrameRate();
+	std::vector <TRegion> GetRegions();
+	void GetSessionBoundaries(int& SessionStart, int& SessionEnd);
+	std::vector <TTrack> GetTracks();
+	void LoadFileWithName(const AnsiString Filename);
+	int RegionUsageCount();
+	AnsiString RegionUsageNameAtIndex(const int Index);
+	int RegionUsageTimeAtIndex(const int Index);
+	void SetSelectionStart(const int SelectionStart);
+	void SetSelectionStop(const int SelectionStop);
+
+	void SetTrackState(bool Value, int Index);
+	int TrackCount();
+	AnsiString TrackNameAtIndex(const int Index);
+	bool TrackStateAtIndex(const int Index);
+
+	__property bool SortOnName = {write = FSortOnName};
+};
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------
+

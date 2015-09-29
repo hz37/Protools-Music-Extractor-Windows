@@ -1,0 +1,44 @@
+//---------------------------------------------------------------------------
+
+// A RegionUsage object represents the output of the program. which will be saved
+// to a file or represented in a table (or both). A RegionUsage object has a name
+// and a length. RegionObjects will be collected in an array to represent the
+// output of the program, based on user choices.
+
+//---------------------------------------------------------------------------
+
+#ifndef RegionUsageH
+#define RegionUsageH
+
+//---------------------------------------------------------------------------
+
+#include <Vcl.h>
+
+//---------------------------------------------------------------------------
+
+class TRegionUsage
+{
+private:
+	AnsiString FName;
+	int FLength;
+    // In order to let the user combine similar regions manually,
+    // we must have a way to refer back to the original names.
+    
+    NSMutableArray* originalNames;
+
+public:
+	TRegionUsage(const AnsiString Name, const int Length);
+	TRegionUsage(const TRegionUsage& Rhs);
+	TRegionUsage& operator = (const TRegionUsage& Rhs);
+	bool operator != (const TRegionUsage& Rhs);
+
+	__property AnsiString Name = {read = FName};
+	__property int Length = {read = FLength};
+};
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------
+

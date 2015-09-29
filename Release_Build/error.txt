@@ -1,0 +1,1421 @@
+SESSION NAME:	Klokhuis test 17-06
+SAMPLE RATE:	48000,000000
+BIT DEPTH:	24-bit
+SESSION START TIMECODE:	23:50:00:00
+TIMECODE FORMAT:	25 Frame
+# OF AUDIO TRACKS:	22
+# OF AUDIO CLIPS:	718
+# OF AUDIO FILES:	49
+
+
+F I L E S  I N  S E S S I O N
+Filename                                                 	Location
+ppnthi_06a017f952ac4.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer02\
+ppnthi_065a0114f3c3d.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer03\
+ppnthi_06a01b0a6bb39.mxf                                 	y:\avid mediafiles\mxf\win-6ab1sg76hkd\
+ppnthi_06a027f952ac5.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer02\
+ppnthi_065a0214f3c3e.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer03\
+ppnthi_06a02b0a6bb3a.mxf                                 	y:\avid mediafiles\mxf\win-6ab1sg76hkd\
+ppnthi_06a037f952ac6.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer02\
+ppnthi_06a047f952ac7.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer02\
+07 pizzi-cat.m4a.a15177f21d.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+05 fancy goods.m4a.5177f217.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+04 pluck.m4a.a1517787d2.mxf                              	y:\avid mediafiles\mxf\nle-b41.1\
+12 an odd welco51778829.1.mxf                            	y:\avid mediafiles\mxf\nle-b41.1\
+40 happy feelin51778891.1.mxf                            	y:\avid mediafiles\mxf\nle-b41.1\
+01 juggler.m4a.a151778797.mxf                            	y:\avid mediafiles\mxf\nle-b41.1\
+07 pizzi-cat.m4a.a25177f21d.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+05 fancy goods.m4a.5177f218.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+04 pluck.m4a.a2517787d2.mxf                              	y:\avid mediafiles\mxf\nle-b41.1\
+12 an odd welcome.m51778829.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+40 happy feeling.m451778891.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+01 juggler.m4a.a251778797.mxf                            	y:\avid mediafiles\mxf\nle-b41.1\
+64 silly da01.5177f5177f251.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+01 wallpaper (feat.517787a5.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+20 gambler.m4a.a15177886f.mxf                            	y:\avid mediafiles\mxf\nle-b41.1\
+02 the bat swing.m4517787b8.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+09 happy feelin51778819.1.mxf                            	y:\avid mediafiles\mxf\nle-b41.1\
+64 silly da02.5177f5177f251.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+01 wallpaper (feat.517787a6.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+20 gambler.m4a.a251778870.mxf                            	y:\avid mediafiles\mxf\nle-b41.1\
+02 the bat swing.m4517787b9.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+09 happy feeling.m451778819.mxf                          	y:\avid mediafiles\mxf\nle-b41.1\
+ppnthi_069a0178455c9.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer03\
+ppnthi_06a011ab6451d.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer02\
+ppnthi_069a0278455ca.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer03\
+ppnthi_06a021ab6451e.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer02\
+ppnthi_069a0378455cb.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer03\
+ppnthi_069a0478455cc.mxf                                 	y:\avid mediafiles\mxf\cpq-transfer03\
+mat_234_24a01.5195e5195e0de.mxf                          	y:\avid mediafiles\mxf\nps-barchief.1\
+kol_12_2_ba01.5195e5195e0d9.mxf                          	y:\avid mediafiles\mxf\nps-barchief.1\
+gal_2_3_sma01.5195e5195e0ab.mxf                          	y:\avid mediafiles\mxf\nps-barchief.1\
+mat_234_24a02.5195e5195e0de.mxf                          	y:\avid mediafiles\mxf\nps-barchief.1\
+kol_12_2_ba02.5195e5195e0d9.mxf                          	y:\avid mediafiles\mxf\nps-barchief.1\
+gal_2_3_sma02.5195e5195e0ab.mxf                          	y:\avid mediafiles\mxf\nps-barchief.1\
+tr34-astral_drift-c5195f138.mxf                          	y:\avid mediafiles\mxf\nps-barchief.1\
+tr34-astral_drift-c5195f139.mxf                          	y:\avid mediafiles\mxf\nps-barchief.1\
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-02.A1-moAS_01.wav	d:\TEST\Klokhuis test 17-06\Audio Files\
+D3_01.wav                                                	d:\TEST\Klokhuis test 17-06\Audio Files\
+D3-moAS_01.wav                                           	d:\TEST\Klokhuis test 17-06\Audio Files\
+D4_01.wav                                                	d:\TEST\Klokhuis test 17-06\Audio Files\
+D4-moAS_01.wav                                           	d:\TEST\Klokhuis test 17-06\Audio Files\
+
+
+C L I P S  I N  S E S S I O N
+CLIP NAME                                                                               	Source File
+01 Juggler.m4a-01.A1                                                                    	01 juggler.m4a.a151778797.mxf
+01 Juggler.m4a-01.A2                                                                    	01 juggler.m4a.a251778797.mxf
+01 Juggler.m4a.A1                                                                       	01 juggler.m4a.a151778797.mxf
+01 Juggler.m4a.A2                                                                       	01 juggler.m4a.a251778797.mxf
+01 Wallpaper (feat. Style of Eye & P.m4a.A1                                             	01 wallpaper (feat.517787a5.mxf
+01 Wallpaper (feat. Style of Eye & P.m4a.A2                                             	01 wallpaper (feat.517787a6.mxf
+01 Wallpaper (feat. Style of Eye & P.m4a_01-01.A1                                       	01 wallpaper (feat.517787a5.mxf
+01 Wallpaper (feat. Style of Eye & P.m4a_01-01.A2                                       	01 wallpaper (feat.517787a6.mxf
+01 Wallpaper (feat. Style of Eye & P.m4a_01-02.A1                                       	01 wallpaper (feat.517787a5.mxf
+01 Wallpaper (feat. Style of Eye & P.m4a_01-02.A2                                       	01 wallpaper (feat.517787a6.mxf
+01 Wallpaper (feat. Style of Eye & P.m4a_01-03.A1                                       	01 wallpaper (feat.517787a5.mxf
+01 Wallpaper (feat. Style of Eye & P.m4a_01-03.A2                                       	01 wallpaper (feat.517787a6.mxf
+02 The Bat Swing.m4a-01.A1                                                              	02 the bat swing.m4517787b8.mxf
+02 The Bat Swing.m4a-01.A2                                                              	02 the bat swing.m4517787b9.mxf
+02 The Bat Swing.m4a-02.A1                                                              	02 the bat swing.m4517787b8.mxf
+02 The Bat Swing.m4a-02.A2                                                              	02 the bat swing.m4517787b9.mxf
+02 The Bat Swing.m4a.A1                                                                 	02 the bat swing.m4517787b8.mxf
+02 The Bat Swing.m4a.A2                                                                 	02 the bat swing.m4517787b9.mxf
+04 Pluck.m4a.A1                                                                         	04 pluck.m4a.a1517787d2.mxf
+04 Pluck.m4a.A2                                                                         	04 pluck.m4a.a2517787d2.mxf
+04 Pluck.m4a_01-01.A1                                                                   	04 pluck.m4a.a1517787d2.mxf
+04 Pluck.m4a_01-01.A2                                                                   	04 pluck.m4a.a2517787d2.mxf
+04 Pluck.m4a_01-02.A1                                                                   	04 pluck.m4a.a1517787d2.mxf
+04 Pluck.m4a_01-02.A2                                                                   	04 pluck.m4a.a2517787d2.mxf
+04 Pluck.m4a_01-03.A1                                                                   	04 pluck.m4a.a1517787d2.mxf
+04 Pluck.m4a_01-03.A2                                                                   	04 pluck.m4a.a2517787d2.mxf
+05 Fancy Goods.m4a-01.A1                                                                	05 fancy goods.m4a.5177f217.mxf
+05 Fancy Goods.m4a-01.A2                                                                	05 fancy goods.m4a.5177f218.mxf
+05 Fancy Goods.m4a-02.A1                                                                	05 fancy goods.m4a.5177f217.mxf
+05 Fancy Goods.m4a-02.A2                                                                	05 fancy goods.m4a.5177f218.mxf
+05 Fancy Goods.m4a-03.A1                                                                	05 fancy goods.m4a.5177f217.mxf
+05 Fancy Goods.m4a-03.A2                                                                	05 fancy goods.m4a.5177f218.mxf
+05 Fancy Goods.m4a-04.A1                                                                	05 fancy goods.m4a.5177f217.mxf
+05 Fancy Goods.m4a-04.A2                                                                	05 fancy goods.m4a.5177f218.mxf
+05 Fancy Goods.m4a.A1                                                                   	05 fancy goods.m4a.5177f217.mxf
+05 Fancy Goods.m4a.A2                                                                   	05 fancy goods.m4a.5177f218.mxf
+07 Pizzi-Cat.m4a-01.A1                                                                  	07 pizzi-cat.m4a.a15177f21d.mxf
+07 Pizzi-Cat.m4a-01.A2                                                                  	07 pizzi-cat.m4a.a25177f21d.mxf
+07 Pizzi-Cat.m4a-02.A1                                                                  	07 pizzi-cat.m4a.a15177f21d.mxf
+07 Pizzi-Cat.m4a-02.A2                                                                  	07 pizzi-cat.m4a.a25177f21d.mxf
+07 Pizzi-Cat.m4a-03.A1                                                                  	07 pizzi-cat.m4a.a15177f21d.mxf
+07 Pizzi-Cat.m4a-03.A2                                                                  	07 pizzi-cat.m4a.a25177f21d.mxf
+07 Pizzi-Cat.m4a-04.A1                                                                  	07 pizzi-cat.m4a.a15177f21d.mxf
+07 Pizzi-Cat.m4a-04.A2                                                                  	07 pizzi-cat.m4a.a25177f21d.mxf
+07 Pizzi-Cat.m4a.A1                                                                     	07 pizzi-cat.m4a.a15177f21d.mxf
+07 Pizzi-Cat.m4a.A2                                                                     	07 pizzi-cat.m4a.a25177f21d.mxf
+09 Happy Feeling.m4a-01.A1                                                              	09 happy feelin51778819.1.mxf
+09 Happy Feeling.m4a-01.A2                                                              	09 happy feeling.m451778819.mxf
+09 Happy Feeling.m4a.A1                                                                 	09 happy feelin51778819.1.mxf
+09 Happy Feeling.m4a.A2                                                                 	09 happy feeling.m451778819.mxf
+1 D P -01.A1                                                                            	ppnthi_065a0114f3c3d.mxf
+1 D P -01.A2                                                                            	ppnthi_065a0214f3c3e.mxf
+1 D P -02.A1                                                                            	ppnthi_065a0114f3c3d.mxf
+1 D P -02.A2                                                                            	ppnthi_065a0214f3c3e.mxf
+1 D P -03.A1                                                                            	ppnthi_065a0114f3c3d.mxf
+1 D P -03.A2                                                                            	ppnthi_065a0214f3c3e.mxf
+1 P -01.A1                                                                              	ppnthi_06a017f952ac4.mxf
+1 P -01.A2                                                                              	ppnthi_06a027f952ac5.mxf
+1 P -02.A1                                                                              	ppnthi_06a017f952ac4.mxf
+1 P -02.A2                                                                              	ppnthi_06a027f952ac5.mxf
+1 P -03.A1                                                                              	ppnthi_06a017f952ac4.mxf
+1 P -03.A2                                                                              	ppnthi_06a027f952ac5.mxf
+1 P -04.A1                                                                              	ppnthi_06a017f952ac4.mxf
+1 P -04.A2                                                                              	ppnthi_06a027f952ac5.mxf
+1 P -05.A1                                                                              	ppnthi_06a017f952ac4.mxf
+1 P -05.A2                                                                              	ppnthi_06a027f952ac5.mxf
+1 P -05.A3                                                                              	ppnthi_06a037f952ac6.mxf
+1 P -05.A4                                                                              	ppnthi_06a047f952ac7.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-01.A1                         	ppnthi_06a017f952ac4.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-01.A2                         	ppnthi_06a027f952ac5.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-02.A1                         	ppnthi_06a017f952ac4.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-02.A2                         	ppnthi_06a027f952ac5.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-03.A1                         	ppnthi_06a017f952ac4.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-03.A2                         	ppnthi_06a027f952ac5.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-04.A1                         	ppnthi_06a017f952ac4.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-04.A2                         	ppnthi_06a027f952ac5.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-05.A1                         	ppnthi_06a017f952ac4.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-05.A2                         	ppnthi_06a027f952ac5.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-05.A3                         	ppnthi_06a037f952ac6.mxf
+10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-05.A4                         	ppnthi_06a047f952ac7.mxf
+10 A P 3 NIENEK GAAT VOUWEN-01.A1                                                       	ppnthi_06a017f952ac4.mxf
+10 A P 3 NIENEK GAAT VOUWEN-01.A2                                                       	ppnthi_06a027f952ac5.mxf
+10 A P 3 NIENEK GAAT VOUWEN-02.A1                                                       	ppnthi_06a017f952ac4.mxf
+10 A P 3 NIENEK GAAT VOUWEN-02.A2                                                       	ppnthi_06a027f952ac5.mxf
+10 A P 3 NIENEK GAAT VOUWEN-03.A1                                                       	ppnthi_06a017f952ac4.mxf
+10 A P 3 NIENEK GAAT VOUWEN-03.A2                                                       	ppnthi_06a027f952ac5.mxf
+10 A P 3 NIENEK GAAT VOUWEN-04.A1                                                       	ppnthi_06a017f952ac4.mxf
+10 A P 3 NIENEK GAAT VOUWEN-04.A2                                                       	ppnthi_06a027f952ac5.mxf
+10 A P 3 NIENEK GAAT VOUWEN-05.A1                                                       	ppnthi_06a017f952ac4.mxf
+10 A P 3 NIENEK GAAT VOUWEN-05.A2                                                       	ppnthi_06a027f952ac5.mxf
+10 A P 3 NIENEK GAAT VOUWEN-06.A1                                                       	ppnthi_06a017f952ac4.mxf
+10 A P 3 NIENEK GAAT VOUWEN-06.A2                                                       	ppnthi_06a027f952ac5.mxf
+10 A P 3 NIENEK GAAT VOUWEN-06.A3                                                       	ppnthi_06a037f952ac6.mxf
+10 A P 3 NIENEK GAAT VOUWEN-06.A4                                                       	ppnthi_06a047f952ac7.mxf
+10 A P TOM LEGT UIT WAT VOUWMACHINE DOET-01.A1                                          	ppnthi_06a017f952ac4.mxf
+10 A P TOM LEGT UIT WAT VOUWMACHINE DOET-01.A2                                          	ppnthi_06a027f952ac5.mxf
+10 A P TOM LEGT UIT WAT VOUWMACHINE DOET-02.A1                                          	ppnthi_06a017f952ac4.mxf
+10 A P TOM LEGT UIT WAT VOUWMACHINE DOET-02.A2                                          	ppnthi_06a027f952ac5.mxf
+10 A P TOM LEGT UIT WAT VOUWMACHINE DOET-02.A3                                          	ppnthi_06a037f952ac6.mxf
+10 A P TOM LEGT UIT WAT VOUWMACHINE DOET-02.A4                                          	ppnthi_06a047f952ac7.mxf
+10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-01.A1                               	ppnthi_06a017f952ac4.mxf
+10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-01.A2                               	ppnthi_06a027f952ac5.mxf
+10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-02.A1                               	ppnthi_06a017f952ac4.mxf
+10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-02.A2                               	ppnthi_06a027f952ac5.mxf
+10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-03.A1                               	ppnthi_06a017f952ac4.mxf
+10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-03.A2                               	ppnthi_06a027f952ac5.mxf
+10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-03.A3                               	ppnthi_06a037f952ac6.mxf
+10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-03.A4                               	ppnthi_06a047f952ac7.mxf
+10 B P 'STAP 6' -01.A1                                                                  	ppnthi_06a017f952ac4.mxf
+10 B P 'STAP 6' -01.A2                                                                  	ppnthi_06a027f952ac5.mxf
+10 B P 'STAP 6' -02.A1                                                                  	ppnthi_06a017f952ac4.mxf
+10 B P 'STAP 6' -02.A2                                                                  	ppnthi_06a027f952ac5.mxf
+10 B P 'STAP 6' -02.A3                                                                  	ppnthi_06a037f952ac6.mxf
+10 B P 'STAP 6' -02.A4                                                                  	ppnthi_06a047f952ac7.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-01.A1                                       	ppnthi_06a017f952ac4.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-01.A2                                       	ppnthi_06a027f952ac5.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-02.A1                                       	ppnthi_06a017f952ac4.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-02.A2                                       	ppnthi_06a027f952ac5.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-03.A1                                       	ppnthi_06a017f952ac4.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-03.A2                                       	ppnthi_06a027f952ac5.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-04.A1                                       	ppnthi_06a017f952ac4.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-04.A2                                       	ppnthi_06a027f952ac5.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-04.A3                                       	ppnthi_06a037f952ac6.mxf
+10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-04.A4                                       	ppnthi_06a047f952ac7.mxf
+10 BEELD INPALLEN EN WEGWEZEN-01.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-01.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD INPALLEN EN WEGWEZEN-02.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-02.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD INPALLEN EN WEGWEZEN-03.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-03.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD INPALLEN EN WEGWEZEN-04.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-04.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD INPALLEN EN WEGWEZEN-05.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-05.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD INPALLEN EN WEGWEZEN-06.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-06.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD INPALLEN EN WEGWEZEN-07.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-07.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD INPALLEN EN WEGWEZEN-08.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-08.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD INPALLEN EN WEGWEZEN-09.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-09.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD INPALLEN EN WEGWEZEN-10.A1                                                     	ppnthi_069a0178455c9.mxf
+10 BEELD INPALLEN EN WEGWEZEN-10.A2                                                     	ppnthi_069a0278455ca.mxf
+10 BEELD INPALLEN EN WEGWEZEN-10.A3                                                     	ppnthi_069a0378455cb.mxf
+10 BEELD INPALLEN EN WEGWEZEN-10.A4                                                     	ppnthi_069a0478455cc.mxf
+10 BEELD SHOTS DEEG VOUW MACHINE-01.A1                                                  	ppnthi_06a017f952ac4.mxf
+10 BEELD SHOTS DEEG VOUW MACHINE-01.A2                                                  	ppnthi_06a027f952ac5.mxf
+10 BEELD SHOTS DEEG VOUW MACHINE-02.A1                                                  	ppnthi_06a017f952ac4.mxf
+10 BEELD SHOTS DEEG VOUW MACHINE-02.A2                                                  	ppnthi_06a027f952ac5.mxf
+10 BEELD SHOTS DEEG VOUW MACHINE-03.A1                                                  	ppnthi_06a017f952ac4.mxf
+10 BEELD SHOTS DEEG VOUW MACHINE-03.A2                                                  	ppnthi_06a027f952ac5.mxf
+10 BEELD SHOTS DEEG VOUW MACHINE-03.A3                                                  	ppnthi_06a037f952ac6.mxf
+10 BEELD SHOTS DEEG VOUW MACHINE-03.A4                                                  	ppnthi_06a047f952ac7.mxf
+10 P ' STAP 5 , DE OPMAAKMACHINE;-01.A1                                                 	ppnthi_065a0114f3c3d.mxf
+10 P ' STAP 5 , DE OPMAAKMACHINE;-01.A2                                                 	ppnthi_065a0214f3c3e.mxf
+10 P ' STAP 5 , DE OPMAAKMACHINE;-02.A1                                                 	ppnthi_065a0114f3c3d.mxf
+10 P ' STAP 5 , DE OPMAAKMACHINE;-02.A2                                                 	ppnthi_065a0214f3c3e.mxf
+11  BEELD KAR UIT RIJSKAST HALEN _ KLAAR ZETTEN VOOR OVEN-01.A1                         	ppnthi_06a017f952ac4.mxf
+11  BEELD KAR UIT RIJSKAST HALEN _ KLAAR ZETTEN VOOR OVEN-01.A2                         	ppnthi_06a027f952ac5.mxf
+11  BEELD KAR UIT RIJSKAST HALEN _ KLAAR ZETTEN VOOR OVEN-02.A1                         	ppnthi_06a017f952ac4.mxf
+11  BEELD KAR UIT RIJSKAST HALEN _ KLAAR ZETTEN VOOR OVEN-02.A2                         	ppnthi_06a027f952ac5.mxf
+11  BEELD KAR UIT RIJSKAST HALEN _ KLAAR ZETTEN VOOR OVEN-02.A3                         	ppnthi_06a037f952ac6.mxf
+11  BEELD KAR UIT RIJSKAST HALEN _ KLAAR ZETTEN VOOR OVEN-02.A4                         	ppnthi_06a047f952ac7.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-01.A1	ppnthi_06a017f952ac4.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-01.A2	ppnthi_06a027f952ac5.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-02.A1	ppnthi_06a017f952ac4.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-02.A2	ppnthi_06a027f952ac5.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-03.A1	ppnthi_06a017f952ac4.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-03.A2	ppnthi_06a027f952ac5.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-04.A1	ppnthi_06a017f952ac4.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-04.A2	ppnthi_06a027f952ac5.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-05.A1	ppnthi_06a017f952ac4.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-05.A2	ppnthi_06a027f952ac5.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-05.A3	ppnthi_06a037f952ac6.mxf
+11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-05.A4	ppnthi_06a047f952ac7.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-01.A1                               	ppnthi_065a0114f3c3d.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-01.A2                               	ppnthi_065a0214f3c3e.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-02.A1                               	ppnthi_065a0114f3c3d.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-02.A2                               	ppnthi_065a0214f3c3e.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-03.A1                               	ppnthi_065a0114f3c3d.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-03.A2                               	ppnthi_065a0214f3c3e.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-04.A1                               	ppnthi_065a0114f3c3d.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-04.A2                               	ppnthi_065a0214f3c3e.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-05.A1                               	ppnthi_065a0114f3c3d.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-05.A2                               	ppnthi_065a0214f3c3e.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-06.A1                               	ppnthi_065a0114f3c3d.mxf
+11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-06.A2                               	ppnthi_065a0214f3c3e.mxf
+11 A BEELD TOM CONTROLEERT VOLLE OVEN-01.A1                                             	ppnthi_065a0114f3c3d.mxf
+11 A BEELD TOM CONTROLEERT VOLLE OVEN-01.A2                                             	ppnthi_065a0214f3c3e.mxf
+11 A BEELD TOM CONTROLEERT VOLLE OVEN-02.A1                                             	ppnthi_065a0114f3c3d.mxf
+11 A BEELD TOM CONTROLEERT VOLLE OVEN-02.A2                                             	ppnthi_065a0214f3c3e.mxf
+11 A BEELD TOM CONTROLEERT VOLLE OVEN-03.A1                                             	ppnthi_065a0114f3c3d.mxf
+11 A BEELD TOM CONTROLEERT VOLLE OVEN-03.A2                                             	ppnthi_065a0214f3c3e.mxf
+11 A BEELD TOM KNIPT KNIPBROOD!-01.A1                                                   	ppnthi_06a017f952ac4.mxf
+11 A BEELD TOM KNIPT KNIPBROOD!-01.A2                                                   	ppnthi_06a027f952ac5.mxf
+11 A BEELD TOM KNIPT KNIPBROOD!-02.A1                                                   	ppnthi_06a017f952ac4.mxf
+11 A BEELD TOM KNIPT KNIPBROOD!-02.A2                                                   	ppnthi_06a027f952ac5.mxf
+11 A BEELD TOM KNIPT KNIPBROOD!-02.A3                                                   	ppnthi_06a037f952ac6.mxf
+11 A BEELD TOM KNIPT KNIPBROOD!-02.A4                                                   	ppnthi_06a047f952ac7.mxf
+11 A P ALLEN TEKST OVER VLOERBROOD _-01.A1                                              	ppnthi_06a017f952ac4.mxf
+11 A P ALLEN TEKST OVER VLOERBROOD _-01.A2                                              	ppnthi_06a027f952ac5.mxf
+11 A P ALLEN TEKST OVER VLOERBROOD _-02.A1                                              	ppnthi_06a017f952ac4.mxf
+11 A P ALLEN TEKST OVER VLOERBROOD _-02.A2                                              	ppnthi_06a027f952ac5.mxf
+11 A P ALLEN TEKST OVER VLOERBROOD _-02.A3                                              	ppnthi_06a037f952ac6.mxf
+11 A P ALLEN TEKST OVER VLOERBROOD _-02.A4                                              	ppnthi_06a047f952ac7.mxf
+11 A P-01.A1                                                                            	ppnthi_06a017f952ac4.mxf
+11 A P-01.A2                                                                            	ppnthi_06a027f952ac5.mxf
+11 A P-02.A1                                                                            	ppnthi_06a017f952ac4.mxf
+11 A P-02.A2                                                                            	ppnthi_06a027f952ac5.mxf
+11 A P-03.A1                                                                            	ppnthi_06a017f952ac4.mxf
+11 A P-03.A2                                                                            	ppnthi_06a027f952ac5.mxf
+11 A P-03.A3                                                                            	ppnthi_06a037f952ac6.mxf
+11 A P-03.A4                                                                            	ppnthi_06a047f952ac7.mxf
+11 B P + BEELD BROOD INKRATTEN EN MAND LADEN ' OP NAAR DE WINKEL;!'-01.A1               	ppnthi_065a0114f3c3d.mxf
+11 B P + BEELD BROOD INKRATTEN EN MAND LADEN ' OP NAAR DE WINKEL;!'-01.A2               	ppnthi_065a0214f3c3e.mxf
+11 B P + BEELD BROOD INKRATTEN EN MAND LADEN ' OP NAAR DE WINKEL;!'-02.A1               	ppnthi_065a0114f3c3d.mxf
+11 B P + BEELD BROOD INKRATTEN EN MAND LADEN ' OP NAAR DE WINKEL;!'-02.A2               	ppnthi_065a0214f3c3e.mxf
+11 B P 1-01.A1                                                                          	ppnthi_065a0114f3c3d.mxf
+11 B P 1-01.A2                                                                          	ppnthi_065a0214f3c3e.mxf
+11 B P 1-02.A1                                                                          	ppnthi_065a0114f3c3d.mxf
+11 B P 1-02.A2                                                                          	ppnthi_065a0214f3c3e.mxf
+11 B P 1-03.A1                                                                          	ppnthi_065a0114f3c3d.mxf
+11 B P 1-03.A2                                                                          	ppnthi_065a0214f3c3e.mxf
+11 P EINDTEKST TOTAAL EN CLOSE-01.A1                                                    	ppnthi_069a0178455c9.mxf
+11 P EINDTEKST TOTAAL EN CLOSE-01.A2                                                    	ppnthi_069a0278455ca.mxf
+11 P EINDTEKST TOTAAL EN CLOSE-02.A1                                                    	ppnthi_069a0178455c9.mxf
+11 P EINDTEKST TOTAAL EN CLOSE-02.A2                                                    	ppnthi_069a0278455ca.mxf
+11 P EINDTEKST TOTAAL EN CLOSE-03.A1                                                    	ppnthi_069a0178455c9.mxf
+11 P EINDTEKST TOTAAL EN CLOSE-03.A2                                                    	ppnthi_069a0278455ca.mxf
+11 P EINDTEKST TOTAAL EN CLOSE-03.A3                                                    	ppnthi_069a0378455cb.mxf
+11 P EINDTEKST TOTAAL EN CLOSE-03.A4                                                    	ppnthi_069a0478455cc.mxf
+12 An odd welcome.m4a-01.A1                                                             	12 an odd welco51778829.1.mxf
+12 An odd welcome.m4a-01.A2                                                             	12 an odd welcome.m51778829.mxf
+12 An odd welcome.m4a.A1                                                                	12 an odd welco51778829.1.mxf
+12 An odd welcome.m4a.A2                                                                	12 an odd welcome.m51778829.mxf
+12 P 1-01.A1                                                                            	ppnthi_06a01b0a6bb39.mxf
+12 P 1-01.A2                                                                            	ppnthi_06a02b0a6bb3a.mxf
+12 P 1-02.A1                                                                            	ppnthi_06a01b0a6bb39.mxf
+12 P 1-02.A2                                                                            	ppnthi_06a02b0a6bb3a.mxf
+12 P VOOR EINDE ITEM _ LAATSTE ZIN-01.A1                                                	ppnthi_06a01b0a6bb39.mxf
+12 P VOOR EINDE ITEM _ LAATSTE ZIN-01.A2                                                	ppnthi_06a02b0a6bb3a.mxf
+12 P VOOR EINDE ITEM _ LAATSTE ZIN-02.A1                                                	ppnthi_06a01b0a6bb39.mxf
+12 P VOOR EINDE ITEM _ LAATSTE ZIN-02.A2                                                	ppnthi_06a02b0a6bb3a.mxf
+2 BEELD CLOSE STAAFMIXER IN SUIKER ZETTEN-01.A1                                         	ppnthi_069a0178455c9.mxf
+2 BEELD CLOSE STAAFMIXER IN SUIKER ZETTEN-01.A2                                         	ppnthi_069a0278455ca.mxf
+2 BEELD CLOSE STAAFMIXER IN SUIKER ZETTEN-02.A1                                         	ppnthi_069a0178455c9.mxf
+2 BEELD CLOSE STAAFMIXER IN SUIKER ZETTEN-02.A2                                         	ppnthi_069a0278455ca.mxf
+2 BEELD CLOSE STAAFMIXER IN SUIKER ZETTEN-02.A3                                         	ppnthi_069a0378455cb.mxf
+2 BEELD CLOSE STAAFMIXER IN SUIKER ZETTEN-02.A4                                         	ppnthi_069a0478455cc.mxf
+2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -01.A1                             	ppnthi_069a0178455c9.mxf
+2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -01.A2                             	ppnthi_069a0278455ca.mxf
+2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -02.A1                             	ppnthi_069a0178455c9.mxf
+2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -02.A2                             	ppnthi_069a0278455ca.mxf
+2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -03.A1                             	ppnthi_069a0178455c9.mxf
+2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -03.A2                             	ppnthi_069a0278455ca.mxf
+2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -03.A3                             	ppnthi_069a0378455cb.mxf
+2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -03.A4                             	ppnthi_069a0478455cc.mxf
+2 INTERVIEW TAKE 1 _  2 SHOT-01.A1                                                      	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 1 _  2 SHOT-01.A2                                                      	ppnthi_065a0214f3c3e.mxf
+2 INTERVIEW TAKE 1 _  2 SHOT-02.A1                                                      	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 1 _  2 SHOT-02.A2                                                      	ppnthi_065a0214f3c3e.mxf
+2 INTERVIEW TAKE 1 _  2 SHOT-03.A1                                                      	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 1 _  2 SHOT-03.A2                                                      	ppnthi_065a0214f3c3e.mxf
+2 INTERVIEW TAKE 1 _  2 SHOT-04.A1                                                      	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 1 _  2 SHOT-04.A2                                                      	ppnthi_065a0214f3c3e.mxf
+2 INTERVIEW TAKE 2 OP TOM-01.A1                                                         	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 2 OP TOM-01.A2                                                         	ppnthi_065a0214f3c3e.mxf
+2 INTERVIEW TAKE 2 OP TOM-02.A1                                                         	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 2 OP TOM-02.A2                                                         	ppnthi_065a0214f3c3e.mxf
+2 INTERVIEW TAKE 2 OP TOM-03.A1                                                         	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 2 OP TOM-03.A2                                                         	ppnthi_065a0214f3c3e.mxf
+2 INTERVIEW TAKE 2 OP TOM-04.A1                                                         	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 2 OP TOM-04.A2                                                         	ppnthi_065a0214f3c3e.mxf
+2 INTERVIEW TAKE 2 OP TOM-05.A1                                                         	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 2 OP TOM-05.A2                                                         	ppnthi_065a0214f3c3e.mxf
+2 INTERVIEW TAKE 2 OP TOM-06.A1                                                         	ppnthi_065a0114f3c3d.mxf
+2 INTERVIEW TAKE 2 OP TOM-06.A2                                                         	ppnthi_065a0214f3c3e.mxf
+2 P TAKE 3 (BASIS)-01.A1                                                                	ppnthi_069a0178455c9.mxf
+2 P TAKE 3 (BASIS)-01.A2                                                                	ppnthi_069a0278455ca.mxf
+2 P TAKE 3 (BASIS)-02.A1                                                                	ppnthi_069a0178455c9.mxf
+2 P TAKE 3 (BASIS)-02.A2                                                                	ppnthi_069a0278455ca.mxf
+2 P TAKE 3 (BASIS)-02.A3                                                                	ppnthi_069a0378455cb.mxf
+2 P TAKE 3 (BASIS)-02.A4                                                                	ppnthi_069a0478455cc.mxf
+20 Gambler.m4a-01.A1                                                                    	20 gambler.m4a.a15177886f.mxf
+20 Gambler.m4a-01.A2                                                                    	20 gambler.m4a.a251778870.mxf
+20 Gambler.m4a.A1                                                                       	20 gambler.m4a.a15177886f.mxf
+20 Gambler.m4a.A2                                                                       	20 gambler.m4a.a251778870.mxf
+3 B OPSOMMING CLOSE OP BROOD-01.A1                                                      	ppnthi_06a01b0a6bb39.mxf
+3 B OPSOMMING CLOSE OP BROOD-01.A2                                                      	ppnthi_06a02b0a6bb3a.mxf
+3 B OPSOMMING CLOSE OP BROOD-02.A1                                                      	ppnthi_06a01b0a6bb39.mxf
+3 B OPSOMMING CLOSE OP BROOD-02.A2                                                      	ppnthi_06a02b0a6bb3a.mxf
+3 B OPSOMMING TAKE 2-01.A1                                                              	ppnthi_06a01b0a6bb39.mxf
+3 B OPSOMMING TAKE 2-01.A2                                                              	ppnthi_06a02b0a6bb3a.mxf
+3 B OPSOMMING TAKE 2-02.A1                                                              	ppnthi_06a01b0a6bb39.mxf
+3 B OPSOMMING TAKE 2-02.A2                                                              	ppnthi_06a02b0a6bb3a.mxf
+3 B OPSOMMING TAKE 2-03.A1                                                              	ppnthi_06a01b0a6bb39.mxf
+3 B OPSOMMING TAKE 2-03.A2                                                              	ppnthi_06a02b0a6bb3a.mxf
+3 B OPSOMMING TAKE 2-04.A1                                                              	ppnthi_06a01b0a6bb39.mxf
+3 B OPSOMMING TAKE 2-04.A2                                                              	ppnthi_06a02b0a6bb3a.mxf
+3 B P-01.A1                                                                             	ppnthi_06a01b0a6bb39.mxf
+3 B P-01.A2                                                                             	ppnthi_06a02b0a6bb3a.mxf
+3 B P-02.A1                                                                             	ppnthi_06a01b0a6bb39.mxf
+3 B P-02.A2                                                                             	ppnthi_06a02b0a6bb3a.mxf
+3 D P EINDE OP NIENKE-01.A1                                                             	ppnthi_06a01b0a6bb39.mxf
+3 D P EINDE OP NIENKE-01.A2                                                             	ppnthi_06a02b0a6bb3a.mxf
+3 D P EINDE OP NIENKE-02.A1                                                             	ppnthi_06a01b0a6bb39.mxf
+3 D P EINDE OP NIENKE-02.A2                                                             	ppnthi_06a02b0a6bb3a.mxf
+3 D P EINDE OP NIENKE-03.A1                                                             	ppnthi_06a01b0a6bb39.mxf
+3 D P EINDE OP NIENKE-03.A2                                                             	ppnthi_06a02b0a6bb3a.mxf
+3 D P EINDE OP NIENKE-04.A1                                                             	ppnthi_06a01b0a6bb39.mxf
+3 D P EINDE OP NIENKE-04.A2                                                             	ppnthi_06a02b0a6bb3a.mxf
+3 D P TAKE 2-01.A1                                                                      	ppnthi_06a01b0a6bb39.mxf
+3 D P TAKE 2-01.A2                                                                      	ppnthi_06a02b0a6bb3a.mxf
+3 D P TAKE 2-02.A1                                                                      	ppnthi_06a01b0a6bb39.mxf
+3 D P TAKE 2-02.A2                                                                      	ppnthi_06a02b0a6bb3a.mxf
+3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-01.A1                                             	ppnthi_06a01b0a6bb39.mxf
+3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-01.A2                                             	ppnthi_06a02b0a6bb3a.mxf
+3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-02.A1                                             	ppnthi_06a01b0a6bb39.mxf
+3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-02.A2                                             	ppnthi_06a02b0a6bb3a.mxf
+3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-03.A1                                             	ppnthi_06a01b0a6bb39.mxf
+3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-03.A2                                             	ppnthi_06a02b0a6bb3a.mxf
+3 P TAKE 1-01.A1                                                                        	ppnthi_069a0178455c9.mxf
+3 P TAKE 1-01.A2                                                                        	ppnthi_069a0278455ca.mxf
+3 P TAKE 1-02.A1                                                                        	ppnthi_069a0178455c9.mxf
+3 P TAKE 1-02.A2                                                                        	ppnthi_069a0278455ca.mxf
+3 P TAKE 1-03.A1                                                                        	ppnthi_069a0178455c9.mxf
+3 P TAKE 1-03.A2                                                                        	ppnthi_069a0278455ca.mxf
+3 P TAKE 1-03.A3                                                                        	ppnthi_069a0378455cb.mxf
+3 P TAKE 1-03.A4                                                                        	ppnthi_069a0478455cc.mxf
+3A P CLOSE-01.A1                                                                        	ppnthi_06a01b0a6bb39.mxf
+3A P CLOSE-01.A2                                                                        	ppnthi_06a02b0a6bb3a.mxf
+3A P CLOSE-02.A1                                                                        	ppnthi_06a01b0a6bb39.mxf
+3A P CLOSE-02.A2                                                                        	ppnthi_06a02b0a6bb3a.mxf
+3A P CLOSE-03.A1                                                                        	ppnthi_06a01b0a6bb39.mxf
+3A P CLOSE-03.A2                                                                        	ppnthi_06a02b0a6bb3a.mxf
+3A P CLOSE-04.A1                                                                        	ppnthi_06a01b0a6bb39.mxf
+3A P CLOSE-04.A2                                                                        	ppnthi_06a02b0a6bb3a.mxf
+3A P TOTAAL-01.A1                                                                       	ppnthi_06a01b0a6bb39.mxf
+3A P TOTAAL-01.A2                                                                       	ppnthi_06a02b0a6bb3a.mxf
+3A P TOTAAL-02.A1                                                                       	ppnthi_06a01b0a6bb39.mxf
+3A P TOTAAL-02.A2                                                                       	ppnthi_06a02b0a6bb3a.mxf
+3A P TOTAAL-03.A1                                                                       	ppnthi_06a01b0a6bb39.mxf
+3A P TOTAAL-03.A2                                                                       	ppnthi_06a02b0a6bb3a.mxf
+3A P TOTAAL-04.A1                                                                       	ppnthi_06a01b0a6bb39.mxf
+3A P TOTAAL-04.A2                                                                       	ppnthi_06a02b0a6bb3a.mxf
+4 BEELD CLOSE HAND DRUKKEN-01.A1                                                        	ppnthi_065a0114f3c3d.mxf
+4 BEELD CLOSE HAND DRUKKEN-01.A2                                                        	ppnthi_065a0214f3c3e.mxf
+4 BEELD CLOSE HAND DRUKKEN-02.A1                                                        	ppnthi_065a0114f3c3d.mxf
+4 BEELD CLOSE HAND DRUKKEN-02.A2                                                        	ppnthi_065a0214f3c3e.mxf
+4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-01.A1                                               	ppnthi_065a0114f3c3d.mxf
+4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-01.A2                                               	ppnthi_065a0214f3c3e.mxf
+4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-02.A1                                               	ppnthi_065a0114f3c3d.mxf
+4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-02.A2                                               	ppnthi_065a0214f3c3e.mxf
+4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-03.A1                                               	ppnthi_065a0114f3c3d.mxf
+4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-03.A2                                               	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW OP TOM CLOSE-01.A1                                                          	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW OP TOM CLOSE-01.A2                                                          	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW OP TOM CLOSE-02.A1                                                          	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW OP TOM CLOSE-02.A2                                                          	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW OP TOM CLOSE-03.A1                                                          	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW OP TOM CLOSE-03.A2                                                          	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW OP TOM CLOSE-04.A1                                                          	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW OP TOM CLOSE-04.A2                                                          	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW OP TOM CLOSE-05.A1                                                          	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW OP TOM CLOSE-05.A2                                                          	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW TAKE 1-01.A1                                                                	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW TAKE 1-01.A2                                                                	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW TAKE 1-02.A1                                                                	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW TAKE 1-02.A2                                                                	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW TAKE 1-03.A1                                                                	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW TAKE 1-03.A2                                                                	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW TAKE 1-04.A1                                                                	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW TAKE 1-04.A2                                                                	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW TAKE 1-05.A1                                                                	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW TAKE 1-05.A2                                                                	ppnthi_065a0214f3c3e.mxf
+4 INTERVIEW TAKE 1-06.A1                                                                	ppnthi_065a0114f3c3d.mxf
+4 INTERVIEW TAKE 1-06.A2                                                                	ppnthi_065a0214f3c3e.mxf
+4 P-01.A1                                                                               	ppnthi_069a0178455c9.mxf
+4 P-01.A2                                                                               	ppnthi_069a0278455ca.mxf
+4 P-02.A1                                                                               	ppnthi_069a0178455c9.mxf
+4 P-02.A2                                                                               	ppnthi_069a0278455ca.mxf
+4 P-02.A3                                                                               	ppnthi_069a0378455cb.mxf
+4 P-02.A4                                                                               	ppnthi_069a0478455cc.mxf
+4 VRAGEN NIENKE-01.A1                                                                   	ppnthi_065a0114f3c3d.mxf
+4 VRAGEN NIENKE-01.A2                                                                   	ppnthi_065a0214f3c3e.mxf
+4 VRAGEN NIENKE-02.A1                                                                   	ppnthi_065a0114f3c3d.mxf
+4 VRAGEN NIENKE-02.A2                                                                   	ppnthi_065a0214f3c3e.mxf
+4 VRAGEN NIENKE-03.A1                                                                   	ppnthi_065a0114f3c3d.mxf
+4 VRAGEN NIENKE-03.A2                                                                   	ppnthi_065a0214f3c3e.mxf
+4 VRAGEN NIENKE-04.A1                                                                   	ppnthi_065a0114f3c3d.mxf
+4 VRAGEN NIENKE-04.A2                                                                   	ppnthi_065a0214f3c3e.mxf
+40 Happy Feeling.m4a-01.A1                                                              	40 happy feelin51778891.1.mxf
+40 Happy Feeling.m4a-01.A2                                                              	40 happy feeling.m451778891.mxf
+40 Happy Feeling.m4a-02.A1                                                              	40 happy feelin51778891.1.mxf
+40 Happy Feeling.m4a-02.A2                                                              	40 happy feeling.m451778891.mxf
+40 Happy Feeling.m4a-03.A1                                                              	40 happy feelin51778891.1.mxf
+40 Happy Feeling.m4a-03.A2                                                              	40 happy feeling.m451778891.mxf
+40 Happy Feeling.m4a-04.A1                                                              	40 happy feelin51778891.1.mxf
+40 Happy Feeling.m4a-04.A2                                                              	40 happy feeling.m451778891.mxf
+40 Happy Feeling.m4a.A1                                                                 	40 happy feelin51778891.1.mxf
+40 Happy Feeling.m4a.A2                                                                 	40 happy feeling.m451778891.mxf
+5B BEELD CLOSE BOVENKANT MINIZEEF (MET EN ZONDER SPIEGELING NIENKE)-01.A1               	ppnthi_069a0178455c9.mxf
+5B BEELD CLOSE BOVENKANT MINIZEEF (MET EN ZONDER SPIEGELING NIENKE)-01.A2               	ppnthi_069a0278455ca.mxf
+5B BEELD CLOSE BOVENKANT MINIZEEF (MET EN ZONDER SPIEGELING NIENKE)-02.A1               	ppnthi_069a0178455c9.mxf
+5B BEELD CLOSE BOVENKANT MINIZEEF (MET EN ZONDER SPIEGELING NIENKE)-02.A2               	ppnthi_069a0278455ca.mxf
+5B BEELD CLOSE BOVENKANT MINIZEEF (MET EN ZONDER SPIEGELING NIENKE)-02.A3               	ppnthi_069a0378455cb.mxf
+5B BEELD CLOSE BOVENKANT MINIZEEF (MET EN ZONDER SPIEGELING NIENKE)-02.A4               	ppnthi_069a0478455cc.mxf
+5B P TOTAAL-01.A1                                                                       	ppnthi_069a0178455c9.mxf
+5B P TOTAAL-01.A2                                                                       	ppnthi_069a0278455ca.mxf
+5B P TOTAAL-02.A1                                                                       	ppnthi_069a0178455c9.mxf
+5B P TOTAAL-02.A2                                                                       	ppnthi_069a0278455ca.mxf
+5B P TOTAAL-03.A1                                                                       	ppnthi_069a0178455c9.mxf
+5B P TOTAAL-03.A2                                                                       	ppnthi_069a0278455ca.mxf
+5B P TOTAAL-03.A3                                                                       	ppnthi_069a0378455cb.mxf
+5B P TOTAAL-03.A4                                                                       	ppnthi_069a0478455cc.mxf
+5C P OPEN MAKEN MINIZEEF TAKE 1-01.A1                                                   	ppnthi_069a0178455c9.mxf
+5C P OPEN MAKEN MINIZEEF TAKE 1-01.A2                                                   	ppnthi_069a0278455ca.mxf
+5C P OPEN MAKEN MINIZEEF TAKE 1-02.A1                                                   	ppnthi_069a0178455c9.mxf
+5C P OPEN MAKEN MINIZEEF TAKE 1-02.A2                                                   	ppnthi_069a0278455ca.mxf
+5C P OPEN MAKEN MINIZEEF TAKE 1-02.A3                                                   	ppnthi_069a0378455cb.mxf
+5C P OPEN MAKEN MINIZEEF TAKE 1-02.A4                                                   	ppnthi_069a0478455cc.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-01.A1                                              	ppnthi_069a0178455c9.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-01.A2                                              	ppnthi_069a0278455ca.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-02.A1                                              	ppnthi_069a0178455c9.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-02.A2                                              	ppnthi_069a0278455ca.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-03.A1                                              	ppnthi_069a0178455c9.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-03.A2                                              	ppnthi_069a0278455ca.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-04.A1                                              	ppnthi_069a0178455c9.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-04.A2                                              	ppnthi_069a0278455ca.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-05.A1                                              	ppnthi_069a0178455c9.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-05.A2                                              	ppnthi_069a0278455ca.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-05.A3                                              	ppnthi_069a0378455cb.mxf
+5C P TOTAAL NINEK BESPREEKT PER ZEEF-05.A4                                              	ppnthi_069a0478455cc.mxf
+6 B P2-01.A1                                                                            	ppnthi_06a01b0a6bb39.mxf
+6 B P2-01.A2                                                                            	ppnthi_06a02b0a6bb3a.mxf
+6 B P2-02.A1                                                                            	ppnthi_06a01b0a6bb39.mxf
+6 B P2-02.A2                                                                            	ppnthi_06a02b0a6bb3a.mxf
+6 D _ E   P1-01.A1                                                                      	ppnthi_06a017f952ac4.mxf
+6 D _ E   P1-01.A2                                                                      	ppnthi_06a027f952ac5.mxf
+6 D _ E   P1-02.A1                                                                      	ppnthi_06a017f952ac4.mxf
+6 D _ E   P1-02.A2                                                                      	ppnthi_06a027f952ac5.mxf
+6 D _ E   P1-02.A3                                                                      	ppnthi_06a037f952ac6.mxf
+6 D _ E   P1-02.A4                                                                      	ppnthi_06a047f952ac7.mxf
+64 silly ditty (30).wav-01.A1                                                           	64 silly da01.5177f5177f251.mxf
+64 silly ditty (30).wav-01.A2                                                           	64 silly da02.5177f5177f251.mxf
+64 silly ditty (30).wav-02.A1                                                           	64 silly da01.5177f5177f251.mxf
+64 silly ditty (30).wav-02.A2                                                           	64 silly da02.5177f5177f251.mxf
+64 silly ditty (30).wav.A1                                                              	64 silly da01.5177f5177f251.mxf
+64 silly ditty (30).wav.A2                                                              	64 silly da02.5177f5177f251.mxf
+6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-01.A1                                     	ppnthi_069a0178455c9.mxf
+6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-01.A2                                     	ppnthi_069a0278455ca.mxf
+6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-02.A1                                     	ppnthi_069a0178455c9.mxf
+6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-02.A2                                     	ppnthi_069a0278455ca.mxf
+6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-03.A1                                     	ppnthi_069a0178455c9.mxf
+6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-03.A2                                     	ppnthi_069a0278455ca.mxf
+6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-03.A3                                     	ppnthi_069a0378455cb.mxf
+6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-03.A4                                     	ppnthi_069a0478455cc.mxf
+6A P NIENKE OVER SILO'S BUITEN-01.A1                                                    	ppnthi_06a011ab6451d.mxf
+6A P NIENKE OVER SILO'S BUITEN-01.A2                                                    	ppnthi_06a021ab6451e.mxf
+6A P NIENKE OVER SILO'S BUITEN-02.A1                                                    	ppnthi_06a011ab6451d.mxf
+6A P NIENKE OVER SILO'S BUITEN-02.A2                                                    	ppnthi_06a021ab6451e.mxf
+6C P1 ZEEFMACHINE-01.A1                                                                 	ppnthi_069a0178455c9.mxf
+6C P1 ZEEFMACHINE-01.A2                                                                 	ppnthi_069a0278455ca.mxf
+6C P1 ZEEFMACHINE-02.A1                                                                 	ppnthi_069a0178455c9.mxf
+6C P1 ZEEFMACHINE-02.A2                                                                 	ppnthi_069a0278455ca.mxf
+6C P1 ZEEFMACHINE-03.A1                                                                 	ppnthi_069a0178455c9.mxf
+6C P1 ZEEFMACHINE-03.A2                                                                 	ppnthi_069a0278455ca.mxf
+6C P1 ZEEFMACHINE-03.A3                                                                 	ppnthi_069a0378455cb.mxf
+6C P1 ZEEFMACHINE-03.A4                                                                 	ppnthi_069a0478455cc.mxf
+6C P2 OVER KLEINE GAATJES _ GROTE ZEEF-01.A1                                            	ppnthi_069a0178455c9.mxf
+6C P2 OVER KLEINE GAATJES _ GROTE ZEEF-01.A2                                            	ppnthi_069a0278455ca.mxf
+6C P2 OVER KLEINE GAATJES _ GROTE ZEEF-02.A1                                            	ppnthi_069a0178455c9.mxf
+6C P2 OVER KLEINE GAATJES _ GROTE ZEEF-02.A2                                            	ppnthi_069a0278455ca.mxf
+6C P2 OVER KLEINE GAATJES _ GROTE ZEEF-02.A3                                            	ppnthi_069a0378455cb.mxf
+6C P2 OVER KLEINE GAATJES _ GROTE ZEEF-02.A4                                            	ppnthi_069a0478455cc.mxf
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-01.A1                                           	ppnthi_069a0178455c9.mxf
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-01.A2                                           	ppnthi_069a0278455ca.mxf
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-02.A1                                           	ppnthi_069a0178455c9.mxf
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-02.A1-moAS_01                                   	6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-02.A1-moAS_01.wav
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-02.A1-moAS_01-01                                	6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-02.A1-moAS_01.wav
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-02.A2                                           	ppnthi_069a0278455ca.mxf
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-03.A1                                           	ppnthi_069a0178455c9.mxf
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-03.A2                                           	ppnthi_069a0278455ca.mxf
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-03.A3                                           	ppnthi_069a0378455cb.mxf
+6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-03.A4                                           	ppnthi_069a0478455cc.mxf
+7 BEELD KNEEDEN DEEG TOM-01.A1                                                          	ppnthi_06a01b0a6bb39.mxf
+7 BEELD KNEEDEN DEEG TOM-01.A2                                                          	ppnthi_06a02b0a6bb3a.mxf
+7 BEELD KNEEDEN DEEG TOM-02.A1                                                          	ppnthi_06a01b0a6bb39.mxf
+7 BEELD KNEEDEN DEEG TOM-02.A2                                                          	ppnthi_06a02b0a6bb3a.mxf
+7 BEELD KNEEDEN DEEG TOM-03.A1                                                          	ppnthi_06a01b0a6bb39.mxf
+7 BEELD KNEEDEN DEEG TOM-03.A2                                                          	ppnthi_06a02b0a6bb3a.mxf
+7 BEELD KNEEDEN DEEG TOM-04.A1                                                          	ppnthi_06a01b0a6bb39.mxf
+7 BEELD KNEEDEN DEEG TOM-04.A2                                                          	ppnthi_06a02b0a6bb3a.mxf
+7 BEELD KNEEDEN DEEG TOM-05.A1                                                          	ppnthi_06a01b0a6bb39.mxf
+7 BEELD KNEEDEN DEEG TOM-05.A2                                                          	ppnthi_06a02b0a6bb3a.mxf
+7 P 1-01.A1                                                                             	ppnthi_06a01b0a6bb39.mxf
+7 P 1-01.A2                                                                             	ppnthi_06a02b0a6bb3a.mxf
+7 P 1-02.A1                                                                             	ppnthi_06a01b0a6bb39.mxf
+7 P 1-02.A2                                                                             	ppnthi_06a02b0a6bb3a.mxf
+7 P 1-03.A1                                                                             	ppnthi_06a01b0a6bb39.mxf
+7 P 1-03.A2                                                                             	ppnthi_06a02b0a6bb3a.mxf
+7 P 1-04.A1                                                                             	ppnthi_06a01b0a6bb39.mxf
+7 P 1-04.A2                                                                             	ppnthi_06a02b0a6bb3a.mxf
+7 P 2 (GOED)-01.A1                                                                      	ppnthi_06a01b0a6bb39.mxf
+7 P 2 (GOED)-01.A2                                                                      	ppnthi_06a02b0a6bb3a.mxf
+7 P 2 (GOED)-02.A1                                                                      	ppnthi_06a01b0a6bb39.mxf
+7 P 2 (GOED)-02.A2                                                                      	ppnthi_06a02b0a6bb3a.mxf
+7 P CLOSE NINEKE _ TOM-01.A1                                                            	ppnthi_06a01b0a6bb39.mxf
+7 P CLOSE NINEKE _ TOM-01.A2                                                            	ppnthi_06a02b0a6bb3a.mxf
+7 P CLOSE NINEKE _ TOM-02.A1                                                            	ppnthi_06a01b0a6bb39.mxf
+7 P CLOSE NINEKE _ TOM-02.A2                                                            	ppnthi_06a02b0a6bb3a.mxf
+7 P1 TOTAAL + IETS MINDER TOTAAL-01.A1                                                  	ppnthi_069a0178455c9.mxf
+7 P1 TOTAAL + IETS MINDER TOTAAL-01.A2                                                  	ppnthi_069a0278455ca.mxf
+7 P1 TOTAAL + IETS MINDER TOTAAL-02.A1                                                  	ppnthi_069a0178455c9.mxf
+7 P1 TOTAAL + IETS MINDER TOTAAL-02.A2                                                  	ppnthi_069a0278455ca.mxf
+7 P1 TOTAAL + IETS MINDER TOTAAL-02.A3                                                  	ppnthi_069a0378455cb.mxf
+7 P1 TOTAAL + IETS MINDER TOTAAL-02.A4                                                  	ppnthi_069a0478455cc.mxf
+7 P2 TAAL MET LOOPJE ERVOOR-01.A1                                                       	ppnthi_069a0178455c9.mxf
+7 P2 TAAL MET LOOPJE ERVOOR-01.A2                                                       	ppnthi_069a0278455ca.mxf
+7 P2 TAAL MET LOOPJE ERVOOR-02.A1                                                       	ppnthi_069a0178455c9.mxf
+7 P2 TAAL MET LOOPJE ERVOOR-02.A2                                                       	ppnthi_069a0278455ca.mxf
+7 P2 TAAL MET LOOPJE ERVOOR-02.A3                                                       	ppnthi_069a0378455cb.mxf
+7 P2 TAAL MET LOOPJE ERVOOR-02.A4                                                       	ppnthi_069a0478455cc.mxf
+8 BEELD CLOSE KNOPJE   -01.A1                                                           	ppnthi_06a017f952ac4.mxf
+8 BEELD CLOSE KNOPJE   -01.A2                                                           	ppnthi_06a027f952ac5.mxf
+8 BEELD CLOSE KNOPJE   -02.A1                                                           	ppnthi_06a017f952ac4.mxf
+8 BEELD CLOSE KNOPJE   -02.A2                                                           	ppnthi_06a027f952ac5.mxf
+8 BEELD CLOSE KNOPJE   -02.A3                                                           	ppnthi_06a037f952ac6.mxf
+8 BEELD CLOSE KNOPJE   -02.A4                                                           	ppnthi_06a047f952ac7.mxf
+8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-01.A1                                          	ppnthi_06a017f952ac4.mxf
+8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-01.A2                                          	ppnthi_06a027f952ac5.mxf
+8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-02.A1                                          	ppnthi_06a017f952ac4.mxf
+8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-02.A2                                          	ppnthi_06a027f952ac5.mxf
+8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-03.A1                                          	ppnthi_06a017f952ac4.mxf
+8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-03.A2                                          	ppnthi_06a027f952ac5.mxf
+8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-03.A3                                          	ppnthi_06a037f952ac6.mxf
+8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-03.A4                                          	ppnthi_06a047f952ac7.mxf
+8 BEELD KNEEDMACHINE-01.A3                                                              	ppnthi_06a037f952ac6.mxf
+8 BEELD KNEEDMACHINE-01.A4                                                              	ppnthi_06a047f952ac7.mxf
+8 BEELD KNEEDMACHINE-02.A1                                                              	ppnthi_06a017f952ac4.mxf
+8 BEELD KNEEDMACHINE-02.A2                                                              	ppnthi_06a027f952ac5.mxf
+8 BEELD KNEEDMACHINE-02.A3                                                              	ppnthi_06a037f952ac6.mxf
+8 BEELD KNEEDMACHINE-02.A4                                                              	ppnthi_06a047f952ac7.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-01.A1                          	ppnthi_06a017f952ac4.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-01.A2                          	ppnthi_06a027f952ac5.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-02.A1                          	ppnthi_06a017f952ac4.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-02.A2                          	ppnthi_06a027f952ac5.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-03.A1                          	ppnthi_06a017f952ac4.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-03.A2                          	ppnthi_06a027f952ac5.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-04.A1                          	ppnthi_06a017f952ac4.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-04.A2                          	ppnthi_06a027f952ac5.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-05.A1                          	ppnthi_06a017f952ac4.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-05.A2                          	ppnthi_06a027f952ac5.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-06.A1                          	ppnthi_06a017f952ac4.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-06.A2                          	ppnthi_06a027f952ac5.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-07.A1                          	ppnthi_06a017f952ac4.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-07.A2                          	ppnthi_06a027f952ac5.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-08.A1                          	ppnthi_06a017f952ac4.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-08.A2                          	ppnthi_06a027f952ac5.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-08.A3                          	ppnthi_06a037f952ac6.mxf
+8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-08.A4                          	ppnthi_06a047f952ac7.mxf
+8 P OPMAAT NAAR KNEEDMACHINE 2-SHOT  -01.A1                                             	ppnthi_06a017f952ac4.mxf
+8 P OPMAAT NAAR KNEEDMACHINE 2-SHOT  -01.A2                                             	ppnthi_06a027f952ac5.mxf
+8 P OPMAAT NAAR KNEEDMACHINE 2-SHOT  -02.A1                                             	ppnthi_06a017f952ac4.mxf
+8 P OPMAAT NAAR KNEEDMACHINE 2-SHOT  -02.A2                                             	ppnthi_06a027f952ac5.mxf
+8 P OPMAAT NAAR KNEEDMACHINE 2-SHOT  -02.A3                                             	ppnthi_06a037f952ac6.mxf
+8 P OPMAAT NAAR KNEEDMACHINE 2-SHOT  -02.A4                                             	ppnthi_06a047f952ac7.mxf
+8 P OPMAAT NAAR KNEEDMACHINE-01.A1                                                      	ppnthi_06a017f952ac4.mxf
+8 P OPMAAT NAAR KNEEDMACHINE-01.A2                                                      	ppnthi_06a027f952ac5.mxf
+8 P OPMAAT NAAR KNEEDMACHINE-02.A1                                                      	ppnthi_06a017f952ac4.mxf
+8 P OPMAAT NAAR KNEEDMACHINE-02.A2                                                      	ppnthi_06a027f952ac5.mxf
+8 P OPMAAT NAAR KNEEDMACHINE-02.A3                                                      	ppnthi_06a037f952ac6.mxf
+8 P OPMAAT NAAR KNEEDMACHINE-02.A4                                                      	ppnthi_06a047f952ac7.mxf
+8 P OVER GLUTEN EN LIJM-01.A1                                                           	ppnthi_06a017f952ac4.mxf
+8 P OVER GLUTEN EN LIJM-01.A2                                                           	ppnthi_06a027f952ac5.mxf
+8 P OVER GLUTEN EN LIJM-02.A1                                                           	ppnthi_06a017f952ac4.mxf
+8 P OVER GLUTEN EN LIJM-02.A2                                                           	ppnthi_06a027f952ac5.mxf
+8 P OVER GLUTEN EN LIJM-02.A3                                                           	ppnthi_06a037f952ac6.mxf
+8 P OVER GLUTEN EN LIJM-02.A4                                                           	ppnthi_06a047f952ac7.mxf
+8 P VOOR EINDE DEEL 2!!-01.A1                                                           	ppnthi_06a017f952ac4.mxf
+8 P VOOR EINDE DEEL 2!!-01.A2                                                           	ppnthi_06a027f952ac5.mxf
+8 P VOOR EINDE DEEL 2!!-02.A1                                                           	ppnthi_06a017f952ac4.mxf
+8 P VOOR EINDE DEEL 2!!-02.A2                                                           	ppnthi_06a027f952ac5.mxf
+8 P VOOR EINDE DEEL 2!!-03.A1                                                           	ppnthi_06a017f952ac4.mxf
+8 P VOOR EINDE DEEL 2!!-03.A2                                                           	ppnthi_06a027f952ac5.mxf
+8 P VOOR EINDE DEEL 2!!-04.A1                                                           	ppnthi_06a017f952ac4.mxf
+8 P VOOR EINDE DEEL 2!!-04.A2                                                           	ppnthi_06a027f952ac5.mxf
+8 P VOOR EINDE DEEL 2!!-04.A3                                                           	ppnthi_06a037f952ac6.mxf
+8 P VOOR EINDE DEEL 2!!-04.A4                                                           	ppnthi_06a047f952ac7.mxf
+8 P1-01.A1                                                                              	ppnthi_069a0178455c9.mxf
+8 P1-01.A2                                                                              	ppnthi_069a0278455ca.mxf
+8 P1-02.A1                                                                              	ppnthi_069a0178455c9.mxf
+8 P1-02.A2                                                                              	ppnthi_069a0278455ca.mxf
+8 P1-02.A3                                                                              	ppnthi_069a0378455cb.mxf
+8 P1-02.A4                                                                              	ppnthi_069a0478455cc.mxf
+9 A P -01.A1                                                                            	ppnthi_06a017f952ac4.mxf
+9 A P -01.A2                                                                            	ppnthi_06a027f952ac5.mxf
+9 A P -02.A1                                                                            	ppnthi_06a017f952ac4.mxf
+9 A P -02.A2                                                                            	ppnthi_06a027f952ac5.mxf
+9 A P -02.A3                                                                            	ppnthi_06a037f952ac6.mxf
+9 A P -02.A4                                                                            	ppnthi_06a047f952ac7.mxf
+9 B P-01.A1                                                                             	ppnthi_06a017f952ac4.mxf
+9 B P-01.A2                                                                             	ppnthi_06a027f952ac5.mxf
+9 B P-02.A1                                                                             	ppnthi_06a017f952ac4.mxf
+9 B P-02.A2                                                                             	ppnthi_06a027f952ac5.mxf
+9 B P-02.A3                                                                             	ppnthi_06a037f952ac6.mxf
+9 B P-02.A4                                                                             	ppnthi_06a047f952ac7.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-01.A1                            	ppnthi_069a0178455c9.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-01.A2                            	ppnthi_069a0278455ca.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-02.A1                            	ppnthi_069a0178455c9.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-02.A2                            	ppnthi_069a0278455ca.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-03.A1                            	ppnthi_069a0178455c9.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-03.A2                            	ppnthi_069a0278455ca.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-04.A1                            	ppnthi_069a0178455c9.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-04.A2                            	ppnthi_069a0278455ca.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-05.A1                            	ppnthi_069a0178455c9.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-05.A2                            	ppnthi_069a0278455ca.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-05.A3                            	ppnthi_069a0378455cb.mxf
+9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-05.A4                            	ppnthi_069a0478455cc.mxf
+9 P-01.A1                                                                               	ppnthi_069a0178455c9.mxf
+9 P-01.A2                                                                               	ppnthi_069a0278455ca.mxf
+9 P-02.A1                                                                               	ppnthi_069a0178455c9.mxf
+9 P-02.A2                                                                               	ppnthi_069a0278455ca.mxf
+9 P-02.A3                                                                               	ppnthi_069a0378455cb.mxf
+9 P-02.A4                                                                               	ppnthi_069a0478455cc.mxf
+Bakker Disk 1.A1                                                                        	ppnthi_06a01b0a6bb39.mxf
+Bakker Disk 1.A2                                                                        	ppnthi_06a02b0a6bb3a.mxf
+Bakker Disk 2-01.A1                                                                     	ppnthi_06a017f952ac4.mxf
+Bakker Disk 2-01.A2                                                                     	ppnthi_06a027f952ac5.mxf
+Bakker Disk 2-02.A1                                                                     	ppnthi_06a017f952ac4.mxf
+Bakker Disk 2-02.A2                                                                     	ppnthi_06a027f952ac5.mxf
+Bakker Disk 2-03.A1                                                                     	ppnthi_06a017f952ac4.mxf
+Bakker Disk 2-03.A2                                                                     	ppnthi_06a027f952ac5.mxf
+Bakker Disk 2-04.A1                                                                     	ppnthi_06a017f952ac4.mxf
+Bakker Disk 2-04.A2                                                                     	ppnthi_06a027f952ac5.mxf
+Bakker Disk 2.A1                                                                        	ppnthi_06a017f952ac4.mxf
+Bakker Disk 2.A2                                                                        	ppnthi_06a027f952ac5.mxf
+Bakker Disk 2.A3                                                                        	ppnthi_06a037f952ac6.mxf
+Bakker Disk 2.A4                                                                        	ppnthi_06a047f952ac7.mxf
+Bakker Disk 3-01.A1                                                                     	ppnthi_065a0114f3c3d.mxf
+Bakker Disk 3-01.A2                                                                     	ppnthi_065a0214f3c3e.mxf
+Bakker Disk 3.A1                                                                        	ppnthi_065a0114f3c3d.mxf
+Bakker Disk 3.A2                                                                        	ppnthi_065a0214f3c3e.mxf
+D3-moAS_01                                                                              	D3-moAS_01.wav
+D3-moAS_01-01                                                                           	D3-moAS_01.wav
+D3_01                                                                                   	D3_01.wav
+D4-moAS_01                                                                              	D4-moAS_01.wav
+D4-moAS_01-01                                                                           	D4-moAS_01.wav
+D4_01                                                                                   	D4_01.wav
+GAL_2_3_Smell_The_Roses_Cosma_92065.wav-01.A1                                           	gal_2_3_sma01.5195e5195e0ab.mxf
+GAL_2_3_Smell_The_Roses_Cosma_92065.wav-01.A2                                           	gal_2_3_sma02.5195e5195e0ab.mxf
+GAL_2_3_Smell_The_Roses_Cosma_92065.wav-02.A1                                           	gal_2_3_sma01.5195e5195e0ab.mxf
+GAL_2_3_Smell_The_Roses_Cosma_92065.wav-02.A2                                           	gal_2_3_sma02.5195e5195e0ab.mxf
+GAL_2_3_Smell_The_Roses_Cosma_92065.wav.A1                                              	gal_2_3_sma01.5195e5195e0ab.mxf
+GAL_2_3_Smell_The_Roses_Cosma_92065.wav.A2                                              	gal_2_3_sma02.5195e5195e0ab.mxf
+KLANTEN BAKKERSWINKEL ARNHEM TAKE 3-01.A1                                               	ppnthi_06a01b0a6bb39.mxf
+KLANTEN BAKKERSWINKEL ARNHEM TAKE 3-01.A2                                               	ppnthi_06a02b0a6bb3a.mxf
+KLANTEN BAKKERSWINKEL ARNHEM TAKE 3-02.A1                                               	ppnthi_06a01b0a6bb39.mxf
+KLANTEN BAKKERSWINKEL ARNHEM TAKE 3-02.A2                                               	ppnthi_06a02b0a6bb3a.mxf
+KLANTEN BAKKERSWINKLE TAKE 4-01.A1                                                      	ppnthi_06a01b0a6bb39.mxf
+KLANTEN BAKKERSWINKLE TAKE 4-01.A2                                                      	ppnthi_06a02b0a6bb3a.mxf
+KLANTEN BAKKERSWINKLE TAKE 4-02.A1                                                      	ppnthi_06a01b0a6bb39.mxf
+KLANTEN BAKKERSWINKLE TAKE 4-02.A2                                                      	ppnthi_06a02b0a6bb3a.mxf
+KLANTEN BAKKERSWINKLE TAKE 4-03.A1                                                      	ppnthi_06a01b0a6bb39.mxf
+KLANTEN BAKKERSWINKLE TAKE 4-03.A2                                                      	ppnthi_06a02b0a6bb3a.mxf
+KOL_12_2_Brushes_Drums_2_Pagnini_696076.wav-01.A1                                       	kol_12_2_ba01.5195e5195e0d9.mxf
+KOL_12_2_Brushes_Drums_2_Pagnini_696076.wav-01.A2                                       	kol_12_2_ba02.5195e5195e0d9.mxf
+KOL_12_2_Brushes_Drums_2_Pagnini_696076.wav.A1                                          	kol_12_2_ba01.5195e5195e0d9.mxf
+KOL_12_2_Brushes_Drums_2_Pagnini_696076.wav.A2                                          	kol_12_2_ba02.5195e5195e0d9.mxf
+MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav-01.A1                                 	mat_234_24a01.5195e5195e0de.mxf
+MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav-01.A2                                 	mat_234_24a02.5195e5195e0de.mxf
+MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav-02.A1                                 	mat_234_24a01.5195e5195e0de.mxf
+MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav-02.A2                                 	mat_234_24a02.5195e5195e0de.mxf
+MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav.A1                                    	mat_234_24a01.5195e5195e0de.mxf
+MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav.A2                                    	mat_234_24a02.5195e5195e0de.mxf
+VVK Eierkoek Disc 1.A1                                                                  	ppnthi_06a011ab6451d.mxf
+VVK Eierkoek Disc 1.A2                                                                  	ppnthi_06a021ab6451e.mxf
+VVK Poedersuiker Disc 1.A1                                                              	ppnthi_069a0178455c9.mxf
+VVK Poedersuiker Disc 1.A2                                                              	ppnthi_069a0278455ca.mxf
+VVK Poedersuiker Disc 1.A3                                                              	ppnthi_069a0378455cb.mxf
+VVK Poedersuiker Disc 1.A4                                                              	ppnthi_069a0478455cc.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-01.A1                                         	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-01.A2                                         	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-02.A1                                         	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-02.A2                                         	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-03.A1                                         	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-03.A2                                         	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-04.A1                                         	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-04.A2                                         	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-05.A1                                         	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-05.A2                                         	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-06.A1                                         	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-06.A2                                         	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-07.A1                                         	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-07.A2                                         	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-08.A1                                         	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-08.A2                                         	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-09.A1                                         	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-09.A2                                         	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-01.A1                              	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-01.A2                              	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-02.A1                              	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-02.A2                              	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-03.A1                              	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-03.A2                              	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-04.A1                              	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-04.A2                              	ppnthi_065a0214f3c3e.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-05.A1                              	ppnthi_065a0114f3c3d.mxf
+WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-05.A2                              	ppnthi_065a0214f3c3e.mxf
+tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-01.A1                        	tr34-astral_drift-c5195f138.mxf
+tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-01.A2                        	tr34-astral_drift-c5195f139.mxf
+tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-02.A1                        	tr34-astral_drift-c5195f138.mxf
+tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-02.A2                        	tr34-astral_drift-c5195f139.mxf
+tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-03.A1                        	tr34-astral_drift-c5195f138.mxf
+tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-03.A2                        	tr34-astral_drift-c5195f139.mxf
+tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3.A1                           	tr34-astral_drift-c5195f138.mxf
+tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3.A2                           	tr34-astral_drift-c5195f139.mxf
+
+
+P L U G - I N S  L I S T I N G
+MANUFACTURER            	PLUG-IN NAME            	VERSION         	FORMAT          	STEMS                   	NUMBER OF INSTANCES
+Avid                    	Pitch                   	8.0.0x314       	TDM             	Mono / Mono             	1 inactive
+                        	D-Verb                  	10.2.0x140      	AAX DSP         	Stereo / Stereo         	3 active
+                        	Trim                    	10.2.0x140      	AAX DSP         	Mono / Mono             	2 active
+Sonnox                  	Oxford Dynamics Full    	1.0.2x11724     	AAX DSP         	Stereo / Stereo         	2 active
+                        	Oxford Comp/Limit       	1.0.2x11724     	AAX DSP         	Stereo / Stereo         	2 active
+                        	Oxford EQ+Filters       	0.0.0           	AAX DSP         	Stereo / Stereo         	2 active
+Unknown (not available) 	REQ 6                   	(unknown)       	TDM             	Mono / Mono             	4 inactive
+
+
+T R A C K  L I S T I N G
+TRACK NAME:	MIX.01 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE: Muted
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+
+
+TRACK NAME:	M&E (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE: Muted
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+
+
+TRACK NAME:	VO.02
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+TRACK NAME:	D1
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+1       	1       	2 P TAKE 3 (BASIS)-01.A1      	00:02:00:00   	00:02:13:07   	00:00:13:07   	Unmuted
+1       	2       	3 P TAKE 1-01.A1              	00:02:15:16   	00:02:19:04   	00:00:03:13   	Unmuted
+1       	3       	3 P TAKE 1-02.A1              	00:02:19:04   	00:02:22:22   	00:00:03:18   	Unmuted
+1       	4       	2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -02.A1	00:02:22:22   	00:02:29:18   	00:00:06:21   	Unmuted
+1       	5       	4 P-01.A1                     	00:02:29:18   	00:02:38:05   	00:00:08:12   	Unmuted
+1       	6       	5B P TOTAAL-01.A1             	00:02:38:05   	00:02:42:13   	00:00:04:08   	Unmuted
+1       	7       	5B P TOTAAL-02.A1             	00:02:42:13   	00:02:49:10   	00:00:06:22   	Unmuted
+1       	8       	5C P OPEN MAKEN MINIZEEF TAKE 1-01.A1	00:02:53:07   	00:02:56:02   	00:00:02:20   	Unmuted
+1       	9       	5C P TOTAAL NINEK BESPREEKT PER ZEEF-02.A1	00:02:56:02   	00:02:57:12   	00:00:01:10   	Unmuted
+1       	10      	5C P TOTAAL NINEK BESPREEKT PER ZEEF-01.A1	00:02:57:12   	00:02:58:19   	00:00:01:07   	Unmuted
+1       	11      	5C P TOTAAL NINEK BESPREEKT PER ZEEF-03.A1	00:02:58:19   	00:03:03:03   	00:00:04:09   	Unmuted
+1       	12      	5C P TOTAAL NINEK BESPREEKT PER ZEEF-04.A1	00:03:03:03   	00:03:08:11   	00:00:05:08   	Unmuted
+1       	13      	6A P NIENKE OVER SILO'S BUITEN-01.A1	00:03:08:11   	00:03:23:10   	00:00:14:24   	Unmuted
+1       	14      	6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-01.A1	00:03:23:10   	00:03:25:05   	00:00:01:20   	Unmuted
+1       	15      	6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-02.A1	00:03:25:05   	00:03:33:13   	00:00:08:08   	Unmuted
+1       	16      	6C P1 ZEEFMACHINE-02.A1       	00:03:33:13   	00:03:41:08   	00:00:07:20   	Unmuted
+1       	17      	6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-01.A1	00:03:41:08   	00:03:46:04   	00:00:04:21   	Unmuted
+1       	18      	6C P1 ZEEFMACHINE-01.A1       	00:03:46:04   	00:03:50:21   	00:00:04:17   	Unmuted
+1       	19      	(cross fade)                  	00:03:50:21   	00:03:52:02   	00:00:01:06   	Unmuted
+1       	20      	6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-02.A1-moAS_01-01	00:03:52:02   	00:03:57:02   	00:00:04:24   	Unmuted
+1       	21      	6C P2 OVER KLEINE GAATJES _ GROTE ZEEF-01.A1	00:03:57:02   	00:04:00:06   	00:00:03:04   	Unmuted
+1       	22      	7 P1 TOTAAL + IETS MINDER TOTAAL-01.A1	00:04:01:17   	00:04:03:24   	00:00:02:07   	Unmuted
+1       	23      	7 P2 TAAL MET LOOPJE ERVOOR-01.A1	00:04:03:24   	00:04:06:00   	00:00:02:01   	Unmuted
+1       	24      	8 P1-01.A1                    	00:04:06:00   	00:04:26:02   	00:00:20:02   	Unmuted
+1       	25      	9 P-01.A1                     	00:04:31:21   	00:04:39:24   	00:00:08:03   	Unmuted
+1       	26      	11 P EINDTEKST TOTAAL EN CLOSE-01.A1	00:04:53:09   	00:04:59:06   	00:00:05:22   	Unmuted
+1       	27      	11 P EINDTEKST TOTAAL EN CLOSE-02.A1	00:04:59:06   	00:05:12:04   	00:00:12:23   	Unmuted
+1       	28      	D3-moAS_01-01                 	00:06:16:04   	00:06:21:19   	00:00:05:15   	Unmuted
+1       	29      	D4-moAS_01-01                 	00:06:23:11   	00:06:26:04   	00:00:02:18   	Unmuted
+1       	30      	1 P -03.A1                    	01:00:00:00   	01:00:02:22   	00:00:02:22   	Unmuted
+1       	31      	1 P -01.A1                    	01:00:02:22   	01:00:03:23   	00:00:01:01   	Unmuted
+1       	32      	1 P -02.A1                    	01:00:03:23   	01:00:06:12   	00:00:02:14   	Unmuted
+1       	33      	1 P -04.A1                    	01:00:06:12   	01:00:12:19   	00:00:06:07   	Unmuted
+1       	34      	1 D P -01.A1                  	01:00:18:10   	01:00:19:14   	00:00:01:04   	Unmuted
+1       	35      	1 D P -02.A1                  	01:00:19:14   	01:00:36:13   	00:00:16:24   	Unmuted
+1       	36      	2 INTERVIEW TAKE 1 _  2 SHOT-01.A1	01:00:36:13   	01:00:38:14   	00:00:02:01   	Unmuted
+1       	37      	2 INTERVIEW TAKE 2 OP TOM-05.A1	01:00:38:14   	01:00:45:01   	00:00:06:12   	Unmuted
+1       	38      	2 INTERVIEW TAKE 1 _  2 SHOT-03.A1	01:00:45:01   	01:00:52:02   	00:00:07:01   	Unmuted
+1       	39      	2 INTERVIEW TAKE 2 OP TOM-04.A1	01:00:52:02   	01:00:56:23   	00:00:04:21   	Unmuted
+1       	40      	2 INTERVIEW TAKE 2 OP TOM-02.A1	01:00:59:09   	01:01:02:13   	00:00:03:04   	Unmuted
+1       	41      	2 INTERVIEW TAKE 2 OP TOM-01.A1	01:01:02:20   	01:01:04:17   	00:00:01:22   	Unmuted
+1       	42      	2 INTERVIEW TAKE 1 _  2 SHOT-02.A1	01:01:05:04   	01:01:10:21   	00:00:05:17   	Unmuted
+1       	43      	2 INTERVIEW TAKE 2 OP TOM-03.A1	01:01:17:06   	01:01:21:08   	00:00:04:02   	Unmuted
+1       	44      	3A P TOTAAL-03.A1             	01:01:22:02   	01:01:27:11   	00:00:05:09   	Unmuted
+1       	45      	3A P CLOSE-02.A1              	01:01:27:11   	01:01:28:11   	00:00:01:00   	Unmuted
+1       	46      	3A P TOTAAL-02.A1             	01:01:28:11   	01:01:29:09   	00:00:00:23   	Unmuted
+1       	47      	3A P CLOSE-01.A1              	01:01:29:09   	01:01:30:03   	00:00:00:19   	Unmuted
+1       	48      	3A P TOTAAL-01.A1             	01:01:30:03   	01:01:30:21   	00:00:00:18   	Unmuted
+1       	49      	3A P CLOSE-03.A1              	01:01:30:21   	01:01:33:07   	00:00:02:11   	Unmuted
+1       	50      	3 B P-01.A1                   	01:01:33:07   	01:01:40:17   	00:00:07:10   	Unmuted
+1       	51      	3 B OPSOMMING TAKE 2-02.A1    	01:01:40:17   	01:01:47:12   	00:00:06:20   	Unmuted
+1       	52      	3 B OPSOMMING TAKE 2-01.A1    	01:01:47:12   	01:01:51:22   	00:00:04:10   	Unmuted
+1       	53      	3 B OPSOMMING CLOSE OP BROOD-01.A1	01:01:51:22   	01:01:55:02   	00:00:03:05   	Unmuted
+1       	54      	3 B OPSOMMING TAKE 2-03.A1    	01:01:55:02   	01:02:05:16   	00:00:10:14   	Unmuted
+1       	55      	3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-02.A1	01:02:05:16   	01:02:17:23   	00:00:12:07   	Unmuted
+1       	56      	3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-01.A1	01:02:19:05   	01:02:19:23   	00:00:00:18   	Unmuted
+1       	57      	3 D P EINDE OP NIENKE-02.A1   	01:02:19:23   	01:02:21:15   	00:00:01:17   	Unmuted
+1       	58      	3 D P TAKE 2-01.A1            	01:02:21:15   	01:02:22:11   	00:00:00:21   	Unmuted
+1       	59      	3 D P EINDE OP NIENKE-03.A1   	01:02:22:11   	01:02:24:17   	00:00:02:06   	Unmuted
+1       	60      	4 BEELD CLOSE HAND DRUKKEN-01.A1	01:02:29:22   	01:02:31:24   	00:00:02:02   	Unmuted
+1       	61      	4 INTERVIEW TAKE 1-01.A1      	01:02:31:24   	01:02:32:20   	00:00:00:21   	Unmuted
+1       	62      	4 VRAGEN NIENKE-03.A1         	01:02:32:20   	01:02:36:11   	00:00:03:16   	Unmuted
+1       	63      	4 INTERVIEW TAKE 1-02.A1      	01:02:36:11   	01:02:37:20   	00:00:01:09   	Unmuted
+1       	64      	4 INTERVIEW OP TOM CLOSE-02.A1	01:02:37:20   	01:02:40:07   	00:00:02:12   	Unmuted
+1       	65      	4 INTERVIEW TAKE 1-04.A1      	01:02:40:07   	01:02:43:17   	00:00:03:10   	Unmuted
+1       	66      	4 INTERVIEW OP TOM CLOSE-04.A1	01:02:45:17   	01:02:51:01   	00:00:05:09   	Unmuted
+1       	67      	4 INTERVIEW TAKE 1-05.A1      	01:02:51:01   	01:02:56:07   	00:00:05:06   	Unmuted
+1       	68      	4 VRAGEN NIENKE-02.A1         	01:02:56:14   	01:02:58:21   	00:00:02:07   	Unmuted
+1       	69      	4 INTERVIEW OP TOM CLOSE-03.A1	01:02:58:21   	01:03:01:24   	00:00:03:03   	Unmuted
+1       	70      	4 INTERVIEW TAKE 1-03.A1      	01:03:01:24   	01:03:04:23   	00:00:02:24   	Unmuted
+1       	71      	4 VRAGEN NIENKE-01.A1         	01:03:04:23   	01:03:06:22   	00:00:01:24   	Unmuted
+1       	72      	4 INTERVIEW OP TOM CLOSE-01.A1	01:03:06:22   	01:03:08:11   	00:00:01:14   	Unmuted
+1       	73      	6 B P2-01.A1                  	01:03:08:11   	01:03:41:13   	00:00:33:02   	Unmuted
+1       	74      	6 D _ E   P1-01.A1            	01:03:41:13   	01:04:14:20   	00:00:33:07   	Unmuted
+1       	75      	7 P 2 (GOED)-01.A1            	01:04:14:20   	01:04:26:01   	00:00:11:06   	Unmuted
+1       	76      	7 P CLOSE NINEKE _ TOM-01.A1  	01:04:26:01   	01:04:31:08   	00:00:05:07   	Unmuted
+1       	77      	7 P 1-02.A1                   	01:04:31:08   	01:04:33:01   	00:00:01:18   	Unmuted
+1       	78      	7 P 1-01.A1                   	01:04:34:19   	01:04:36:05   	00:00:01:11   	Unmuted
+1       	79      	7 P 1-03.A1                   	01:04:38:08   	01:04:42:21   	00:00:04:13   	Unmuted
+1       	80      	8 P OPMAAT NAAR KNEEDMACHINE-01.A1	01:04:42:21   	01:04:47:01   	00:00:04:05   	Unmuted
+1       	81      	8 P OPMAAT NAAR KNEEDMACHINE 2-SHOT  -01.A1	01:04:47:01   	01:04:53:17   	00:00:06:16   	Unmuted
+1       	82      	8 P OVER GLUTEN EN LIJM-01.A1 	01:04:56:00   	01:05:24:10   	00:00:28:10   	Unmuted
+1       	83      	8 P VOOR EINDE DEEL 2!!-01.A1 	01:05:24:10   	01:05:25:09   	00:00:00:24   	Unmuted
+1       	84      	8 P VOOR EINDE DEEL 2!!-03.A1 	01:05:25:09   	01:05:32:13   	00:00:07:04   	Unmuted
+1       	85      	8 P VOOR EINDE DEEL 2!!-02.A1 	01:05:32:13   	01:05:36:06   	00:00:03:18   	Unmuted
+1       	86      	9 A P -01.A1                  	01:05:42:17   	01:06:04:20   	00:00:22:03   	Unmuted
+1       	87      	9 B P-01.A1                   	01:06:04:20   	01:06:23:06   	00:00:18:11   	Unmuted
+1       	88      	10 P ' STAP 5 , DE OPMAAKMACHINE;-01.A1	01:06:23:23   	01:06:27:18   	00:00:03:20   	Unmuted
+1       	89      	10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-02.A1	01:06:36:08   	01:06:40:15   	00:00:04:07   	Unmuted
+1       	90      	10 A P TOM LEGT UIT WAT VOUWMACHINE DOET-01.A1	01:06:40:15   	01:06:47:03   	00:00:06:13   	Unmuted
+1       	91      	10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-03.A1	01:06:47:03   	01:06:51:16   	00:00:04:13   	Unmuted
+1       	92      	10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-01.A1	01:06:51:16   	01:06:55:02   	00:00:03:11   	Unmuted
+1       	93      	10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-04.A1	01:06:55:02   	01:07:05:23   	00:00:10:21   	Unmuted
+1       	94      	10 A P 3 NIENEK GAAT VOUWEN-05.A1	01:07:05:23   	01:07:08:18   	00:00:02:20   	Unmuted
+1       	95      	10 A P 3 NIENEK GAAT VOUWEN-04.A1	01:07:08:18   	01:07:11:03   	00:00:02:10   	Unmuted
+1       	96      	Bakker Disk 2-01.A1           	01:07:11:03   	01:07:12:22   	00:00:01:19   	Unmuted
+1       	97      	10 A P 3 NIENEK GAAT VOUWEN-02.A1	01:07:12:22   	01:07:13:20   	00:00:00:23   	Unmuted
+1       	98      	Bakker Disk 2-04.A1           	01:07:13:20   	01:07:17:09   	00:00:03:14   	Unmuted
+1       	99      	10 A P 3 NIENEK GAAT VOUWEN-03.A1	01:07:17:09   	01:07:18:23   	00:00:01:14   	Unmuted
+1       	100     	10 A P 3 NIENEK GAAT VOUWEN-01.A1	01:07:18:23   	01:07:19:16   	00:00:00:18   	Unmuted
+1       	101     	10 B P 'STAP 6' -01.A1        	01:07:29:03   	01:07:35:00   	00:00:05:22   	Unmuted
+1       	102     	11  BEELD KAR UIT RIJSKAST HALEN _ KLAAR ZETTEN VOOR OVEN-01.A1	01:07:35:00   	01:07:37:21   	00:00:02:21   	Unmuted
+1       	103     	11 A P-02.A1                  	01:07:37:21   	01:07:51:18   	00:00:13:22   	Unmuted
+1       	104     	11 A P ALLEN TEKST OVER VLOERBROOD _-01.A1	01:07:51:18   	01:07:54:20   	00:00:03:02   	Unmuted
+1       	105     	11 A P-01.A1                  	01:07:54:20   	01:08:01:03   	00:00:06:08   	Unmuted
+1       	106     	11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-03.A1	01:08:02:04   	01:08:04:14   	00:00:02:10   	Unmuted
+1       	107     	11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-04.A1	01:08:04:14   	01:08:07:00   	00:00:02:11   	Unmuted
+1       	108     	11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-02.A1	01:08:07:00   	01:08:08:09   	00:00:01:09   	Unmuted
+1       	109     	11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-01.A1	01:08:08:09   	01:08:09:05   	00:00:00:21   	Unmuted
+1       	110     	11 B P 1-01.A1                	01:08:09:05   	01:08:12:03   	00:00:02:23   	Unmuted
+1       	111     	11 B P 1-02.A1                	01:08:12:03   	01:08:16:18   	00:00:04:15   	Unmuted
+1       	112     	Bakker Disk 3-01.A1           	01:08:16:18   	01:08:19:24   	00:00:03:06   	Unmuted
+1       	113     	11 B P + BEELD BROOD INKRATTEN EN MAND LADEN ' OP NAAR DE WINKEL;!'-01.A1	01:08:19:24   	01:08:24:19   	00:00:04:20   	Unmuted
+1       	114     	12 P 1-01.A1                  	01:08:28:23   	01:08:36:09   	00:00:07:11   	Unmuted
+1       	115     	12 P VOOR EINDE ITEM _ LAATSTE ZIN-01.A1	01:08:36:09   	01:08:41:16   	00:00:05:07   	Unmuted
+
+
+TRACK NAME:	VO2
+COMMENTS:
+USER DELAY:	0 Samples
+STATE: Hidden
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+TRACK NAME:	VV
+COMMENTS:
+USER DELAY:	0 Samples
+STATE: Hidden
+PLUG-INS: 	Pitch (mono)
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+TRACK NAME:	D2
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+1       	1       	2 P TAKE 3 (BASIS)-01.A2      	00:02:00:00   	00:02:13:07   	00:00:13:07   	Unmuted
+1       	2       	3 P TAKE 1-01.A2              	00:02:15:16   	00:02:19:04   	00:00:03:13   	Unmuted
+1       	3       	3 P TAKE 1-02.A2              	00:02:19:04   	00:02:22:22   	00:00:03:18   	Unmuted
+1       	4       	2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -02.A2	00:02:22:22   	00:02:29:18   	00:00:06:21   	Unmuted
+1       	5       	4 P-01.A2                     	00:02:29:18   	00:02:38:05   	00:00:08:12   	Unmuted
+1       	6       	5B P TOTAAL-01.A2             	00:02:38:05   	00:02:42:13   	00:00:04:08   	Unmuted
+1       	7       	5B P TOTAAL-02.A2             	00:02:42:13   	00:02:49:10   	00:00:06:22   	Unmuted
+1       	8       	5C P OPEN MAKEN MINIZEEF TAKE 1-01.A2	00:02:53:07   	00:02:56:02   	00:00:02:20   	Unmuted
+1       	9       	5C P TOTAAL NINEK BESPREEKT PER ZEEF-02.A2	00:02:56:02   	00:02:57:12   	00:00:01:10   	Unmuted
+1       	10      	5C P TOTAAL NINEK BESPREEKT PER ZEEF-01.A2	00:02:57:12   	00:02:58:19   	00:00:01:07   	Unmuted
+1       	11      	5C P TOTAAL NINEK BESPREEKT PER ZEEF-03.A2	00:02:58:19   	00:03:03:03   	00:00:04:09   	Unmuted
+1       	12      	5C P TOTAAL NINEK BESPREEKT PER ZEEF-04.A2	00:03:03:03   	00:03:08:11   	00:00:05:08   	Unmuted
+1       	13      	6A P NIENKE OVER SILO'S BUITEN-01.A2	00:03:08:11   	00:03:23:10   	00:00:14:24   	Unmuted
+1       	14      	6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-01.A2	00:03:23:10   	00:03:25:05   	00:00:01:20   	Unmuted
+1       	15      	6A P NIENKE LOOPT BIJ TRANSPORTBAND IN TUNNEL-02.A2	00:03:25:05   	00:03:33:13   	00:00:08:08   	Unmuted
+1       	16      	6C P1 ZEEFMACHINE-02.A2       	00:03:33:13   	00:03:41:08   	00:00:07:20   	Unmuted
+1       	17      	6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-01.A2	00:03:41:08   	00:03:46:04   	00:00:04:21   	Unmuted
+1       	18      	6C P1 ZEEFMACHINE-01.A2       	00:03:46:04   	00:03:52:00   	00:00:05:21   	Unmuted
+1       	19      	6C P3 ZEEFMACHINE _ ANDERE HOE GEDRAAID-02.A2	00:03:52:00   	00:03:57:02   	00:00:05:02   	Unmuted
+1       	20      	6C P2 OVER KLEINE GAATJES _ GROTE ZEEF-01.A2	00:03:57:02   	00:04:00:06   	00:00:03:04   	Unmuted
+1       	21      	7 P1 TOTAAL + IETS MINDER TOTAAL-01.A2	00:04:01:17   	00:04:03:24   	00:00:02:07   	Unmuted
+1       	22      	7 P2 TAAL MET LOOPJE ERVOOR-01.A2	00:04:03:24   	00:04:06:00   	00:00:02:01   	Unmuted
+1       	23      	8 P1-01.A2                    	00:04:06:00   	00:04:26:02   	00:00:20:02   	Unmuted
+1       	24      	9 P-01.A2                     	00:04:31:21   	00:04:39:24   	00:00:08:03   	Unmuted
+1       	25      	11 P EINDTEKST TOTAAL EN CLOSE-01.A2	00:04:53:09   	00:04:59:06   	00:00:05:22   	Unmuted
+1       	26      	11 P EINDTEKST TOTAAL EN CLOSE-02.A2	00:04:59:06   	00:05:12:04   	00:00:12:23   	Unmuted
+1       	27      	1 P -03.A2                    	01:00:00:00   	01:00:02:22   	00:00:02:22   	Unmuted
+1       	28      	1 P -01.A2                    	01:00:02:22   	01:00:03:23   	00:00:01:01   	Unmuted
+1       	29      	1 P -02.A2                    	01:00:03:23   	01:00:06:12   	00:00:02:14   	Unmuted
+1       	30      	1 P -04.A2                    	01:00:06:12   	01:00:12:19   	00:00:06:07   	Unmuted
+1       	31      	1 D P -01.A2                  	01:00:18:10   	01:00:19:14   	00:00:01:04   	Unmuted
+1       	32      	1 D P -02.A2                  	01:00:19:14   	01:00:36:13   	00:00:16:24   	Unmuted
+1       	33      	2 INTERVIEW TAKE 1 _  2 SHOT-01.A2	01:00:36:13   	01:00:38:14   	00:00:02:01   	Unmuted
+1       	34      	2 INTERVIEW TAKE 2 OP TOM-05.A2	01:00:38:14   	01:00:45:01   	00:00:06:12   	Unmuted
+1       	35      	2 INTERVIEW TAKE 1 _  2 SHOT-03.A2	01:00:45:01   	01:00:52:02   	00:00:07:01   	Unmuted
+1       	36      	2 INTERVIEW TAKE 2 OP TOM-04.A2	01:00:52:02   	01:00:56:23   	00:00:04:21   	Unmuted
+1       	37      	2 INTERVIEW TAKE 2 OP TOM-02.A2	01:00:59:09   	01:01:02:13   	00:00:03:04   	Unmuted
+1       	38      	2 INTERVIEW TAKE 2 OP TOM-01.A2	01:01:02:20   	01:01:04:17   	00:00:01:22   	Unmuted
+1       	39      	2 INTERVIEW TAKE 1 _  2 SHOT-02.A2	01:01:05:04   	01:01:10:21   	00:00:05:17   	Unmuted
+1       	40      	2 INTERVIEW TAKE 2 OP TOM-03.A2	01:01:17:06   	01:01:21:08   	00:00:04:02   	Unmuted
+1       	41      	3A P TOTAAL-03.A2             	01:01:22:02   	01:01:27:11   	00:00:05:09   	Unmuted
+1       	42      	3A P CLOSE-02.A2              	01:01:27:11   	01:01:28:11   	00:00:01:00   	Unmuted
+1       	43      	3A P TOTAAL-02.A2             	01:01:28:11   	01:01:29:09   	00:00:00:23   	Unmuted
+1       	44      	3A P CLOSE-01.A2              	01:01:29:09   	01:01:30:03   	00:00:00:19   	Unmuted
+1       	45      	3A P TOTAAL-01.A2             	01:01:30:03   	01:01:30:21   	00:00:00:18   	Unmuted
+1       	46      	3A P CLOSE-03.A2              	01:01:30:21   	01:01:33:07   	00:00:02:11   	Unmuted
+1       	47      	3 B P-01.A2                   	01:01:33:07   	01:01:40:17   	00:00:07:10   	Unmuted
+1       	48      	3 B OPSOMMING TAKE 2-02.A2    	01:01:40:17   	01:01:47:12   	00:00:06:20   	Unmuted
+1       	49      	3 B OPSOMMING TAKE 2-01.A2    	01:01:47:12   	01:01:51:22   	00:00:04:10   	Unmuted
+1       	50      	3 B OPSOMMING CLOSE OP BROOD-01.A2	01:01:51:22   	01:01:55:02   	00:00:03:05   	Unmuted
+1       	51      	3 B OPSOMMING TAKE 2-03.A2    	01:01:55:02   	01:02:05:16   	00:00:10:14   	Unmuted
+1       	52      	3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-02.A2	01:02:05:16   	01:02:17:23   	00:00:12:07   	Unmuted
+1       	53      	3 D TAKE 1 (...IS DAT DEZE _ FOUTJE_)-01.A2	01:02:19:05   	01:02:19:23   	00:00:00:18   	Unmuted
+1       	54      	3 D P EINDE OP NIENKE-02.A2   	01:02:19:23   	01:02:21:15   	00:00:01:17   	Unmuted
+1       	55      	3 D P TAKE 2-01.A2            	01:02:21:15   	01:02:22:11   	00:00:00:21   	Unmuted
+1       	56      	3 D P EINDE OP NIENKE-03.A2   	01:02:22:11   	01:02:24:17   	00:00:02:06   	Unmuted
+1       	57      	4 BEELD CLOSE HAND DRUKKEN-01.A2	01:02:29:22   	01:02:31:24   	00:00:02:02   	Unmuted
+1       	58      	4 INTERVIEW TAKE 1-01.A2      	01:02:31:24   	01:02:32:20   	00:00:00:21   	Unmuted
+1       	59      	4 VRAGEN NIENKE-03.A2         	01:02:32:20   	01:02:36:11   	00:00:03:16   	Unmuted
+1       	60      	4 INTERVIEW TAKE 1-02.A2      	01:02:36:11   	01:02:37:20   	00:00:01:09   	Unmuted
+1       	61      	4 INTERVIEW OP TOM CLOSE-02.A2	01:02:37:20   	01:02:40:07   	00:00:02:12   	Unmuted
+1       	62      	4 INTERVIEW TAKE 1-04.A2      	01:02:40:07   	01:02:43:17   	00:00:03:10   	Unmuted
+1       	63      	4 INTERVIEW OP TOM CLOSE-04.A2	01:02:45:17   	01:02:51:01   	00:00:05:09   	Unmuted
+1       	64      	4 INTERVIEW TAKE 1-05.A2      	01:02:51:01   	01:02:56:07   	00:00:05:06   	Unmuted
+1       	65      	4 VRAGEN NIENKE-02.A2         	01:02:56:14   	01:02:58:21   	00:00:02:07   	Unmuted
+1       	66      	4 INTERVIEW OP TOM CLOSE-03.A2	01:02:58:21   	01:03:01:24   	00:00:03:03   	Unmuted
+1       	67      	4 INTERVIEW TAKE 1-03.A2      	01:03:01:24   	01:03:04:23   	00:00:02:24   	Unmuted
+1       	68      	4 VRAGEN NIENKE-01.A2         	01:03:04:23   	01:03:06:22   	00:00:01:24   	Unmuted
+1       	69      	4 INTERVIEW OP TOM CLOSE-01.A2	01:03:06:22   	01:03:08:11   	00:00:01:14   	Unmuted
+1       	70      	6 B P2-01.A2                  	01:03:08:11   	01:03:41:13   	00:00:33:02   	Unmuted
+1       	71      	6 D _ E   P1-01.A2            	01:03:41:13   	01:04:14:20   	00:00:33:07   	Unmuted
+1       	72      	7 P 2 (GOED)-01.A2            	01:04:14:20   	01:04:26:01   	00:00:11:06   	Unmuted
+1       	73      	7 P CLOSE NINEKE _ TOM-01.A2  	01:04:26:01   	01:04:31:08   	00:00:05:07   	Unmuted
+1       	74      	7 P 1-02.A2                   	01:04:31:08   	01:04:33:01   	00:00:01:18   	Unmuted
+1       	75      	7 P 1-01.A2                   	01:04:34:19   	01:04:36:05   	00:00:01:11   	Unmuted
+1       	76      	7 P 1-03.A2                   	01:04:38:08   	01:04:42:21   	00:00:04:13   	Unmuted
+1       	77      	8 P OPMAAT NAAR KNEEDMACHINE-01.A2	01:04:42:21   	01:04:47:01   	00:00:04:05   	Unmuted
+1       	78      	8 P OPMAAT NAAR KNEEDMACHINE 2-SHOT  -01.A2	01:04:47:01   	01:04:53:17   	00:00:06:16   	Unmuted
+1       	79      	8 P OVER GLUTEN EN LIJM-01.A2 	01:04:56:00   	01:05:24:10   	00:00:28:10   	Unmuted
+1       	80      	8 P VOOR EINDE DEEL 2!!-01.A2 	01:05:24:10   	01:05:25:09   	00:00:00:24   	Unmuted
+1       	81      	8 P VOOR EINDE DEEL 2!!-03.A2 	01:05:25:09   	01:05:32:13   	00:00:07:04   	Unmuted
+1       	82      	8 P VOOR EINDE DEEL 2!!-02.A2 	01:05:32:13   	01:05:36:06   	00:00:03:18   	Unmuted
+1       	83      	9 A P -01.A2                  	01:05:42:17   	01:06:04:20   	00:00:22:03   	Unmuted
+1       	84      	9 B P-01.A2                   	01:06:04:20   	01:06:23:06   	00:00:18:11   	Unmuted
+1       	85      	10 P ' STAP 5 , DE OPMAAKMACHINE;-01.A2	01:06:23:23   	01:06:27:18   	00:00:03:20   	Unmuted
+1       	86      	10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-02.A2	01:06:36:08   	01:06:40:15   	00:00:04:07   	Unmuted
+1       	87      	10 A P TOM LEGT UIT WAT VOUWMACHINE DOET-01.A2	01:06:40:15   	01:06:47:03   	00:00:06:13   	Unmuted
+1       	88      	10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-03.A2	01:06:47:03   	01:06:51:16   	00:00:04:13   	Unmuted
+1       	89      	10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-01.A2	01:06:51:16   	01:06:55:02   	00:00:03:11   	Unmuted
+1       	90      	10 A P 2 UITLEG TOM VOUW MACHINE + GOED OVER LUCHT IN_UIT-04.A2	01:06:55:02   	01:07:05:23   	00:00:10:21   	Unmuted
+1       	91      	10 A P 3 NIENEK GAAT VOUWEN-05.A2	01:07:05:23   	01:07:08:18   	00:00:02:20   	Unmuted
+1       	92      	10 A P 3 NIENEK GAAT VOUWEN-04.A2	01:07:08:18   	01:07:11:03   	00:00:02:10   	Unmuted
+1       	93      	Bakker Disk 2-01.A2           	01:07:11:03   	01:07:12:22   	00:00:01:19   	Unmuted
+1       	94      	10 A P 3 NIENEK GAAT VOUWEN-02.A2	01:07:12:22   	01:07:13:20   	00:00:00:23   	Unmuted
+1       	95      	Bakker Disk 2-04.A2           	01:07:13:20   	01:07:17:09   	00:00:03:14   	Unmuted
+1       	96      	10 A P 3 NIENEK GAAT VOUWEN-03.A2	01:07:17:09   	01:07:18:23   	00:00:01:14   	Unmuted
+1       	97      	10 A P 3 NIENEK GAAT VOUWEN-01.A2	01:07:18:23   	01:07:19:16   	00:00:00:18   	Unmuted
+1       	98      	10 B P 'STAP 6' -01.A2        	01:07:29:03   	01:07:35:00   	00:00:05:22   	Unmuted
+1       	99      	11  BEELD KAR UIT RIJSKAST HALEN _ KLAAR ZETTEN VOOR OVEN-01.A2	01:07:35:00   	01:07:37:21   	00:00:02:21   	Unmuted
+1       	100     	11 A P-02.A2                  	01:07:37:21   	01:07:51:18   	00:00:13:22   	Unmuted
+1       	101     	11 A P ALLEN TEKST OVER VLOERBROOD _-01.A2	01:07:51:18   	01:07:54:20   	00:00:03:02   	Unmuted
+1       	102     	11 A P-01.A2                  	01:07:54:20   	01:08:01:03   	00:00:06:08   	Unmuted
+1       	103     	11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-03.A2	01:08:02:04   	01:08:04:14   	00:00:02:10   	Unmuted
+1       	104     	11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-04.A2	01:08:04:14   	01:08:07:00   	00:00:02:11   	Unmuted
+1       	105     	11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-02.A2	01:08:07:00   	01:08:08:09   	00:00:01:09   	Unmuted
+1       	106     	11 A BEELD NIENKE _ TOM BROOD IN OVEN RIJDEN _ CLOSE TEMPMETER _ INSERT VOLLE OVEN-01.A2	01:08:08:09   	01:08:09:05   	00:00:00:21   	Unmuted
+1       	107     	11 B P 1-01.A2                	01:08:09:05   	01:08:12:03   	00:00:02:23   	Unmuted
+1       	108     	11 B P 1-02.A2                	01:08:12:03   	01:08:16:18   	00:00:04:15   	Unmuted
+1       	109     	Bakker Disk 3-01.A2           	01:08:16:18   	01:08:19:24   	00:00:03:06   	Unmuted
+1       	110     	11 B P + BEELD BROOD INKRATTEN EN MAND LADEN ' OP NAAR DE WINKEL;!'-01.A2	01:08:19:24   	01:08:24:19   	00:00:04:20   	Unmuted
+1       	111     	12 P 1-01.A2                  	01:08:28:23   	01:08:36:09   	00:00:07:11   	Unmuted
+1       	112     	12 P VOOR EINDE ITEM _ LAATSTE ZIN-01.A2	01:08:36:09   	01:08:41:16   	00:00:05:07   	Unmuted
+
+
+TRACK NAME:	D3
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+1       	1       	2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -01.A1	00:02:04:02   	00:02:06:01   	00:00:01:24   	Unmuted
+1       	2       	2 BEELD CLOSE STAAFMIXER IN SUIKER ZETTEN-01.A1	00:02:13:15   	00:02:19:04   	00:00:05:14   	Unmuted
+1       	3       	5B BEELD CLOSE BOVENKANT MINIZEEF (MET EN ZONDER SPIEGELING NIENKE)-01.A1	00:02:48:21   	00:02:53:07   	00:00:04:11   	Unmuted
+1       	4       	9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-01.A1	00:04:26:02   	00:04:27:10   	00:00:01:08   	Unmuted
+1       	5       	9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-03.A1	00:04:27:10   	00:04:28:22   	00:00:01:12   	Unmuted
+1       	6       	9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-02.A1	00:04:28:22   	00:04:30:06   	00:00:01:09   	Unmuted
+1       	7       	9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-04.A1	00:04:30:06   	00:04:31:21   	00:00:01:15   	Unmuted
+1       	8       	10 BEELD INPALLEN EN WEGWEZEN-03.A3	00:04:36:23   	00:04:38:05   	00:00:01:07   	Unmuted
+1       	9       	10 BEELD INPALLEN EN WEGWEZEN-04.A3	00:04:38:05   	00:04:39:19   	00:00:01:14   	Unmuted
+1       	10      	10 BEELD INPALLEN EN WEGWEZEN-01.A3	00:04:39:19   	00:04:40:23   	00:00:01:04   	Unmuted
+1       	11      	10 BEELD INPALLEN EN WEGWEZEN-06.A3	00:04:40:23   	00:04:42:23   	00:00:02:00   	Unmuted
+1       	12      	10 BEELD INPALLEN EN WEGWEZEN-07.A3	00:04:42:23   	00:04:45:08   	00:00:02:10   	Unmuted
+1       	13      	10 BEELD INPALLEN EN WEGWEZEN-02.A3	00:04:45:08   	00:04:46:13   	00:00:01:05   	Unmuted
+1       	14      	10 BEELD INPALLEN EN WEGWEZEN-05.A3	00:04:46:13   	00:04:48:09   	00:00:01:21   	Unmuted
+1       	15      	10 BEELD INPALLEN EN WEGWEZEN-09.A3	00:04:48:09   	00:04:50:23   	00:00:02:14   	Unmuted
+1       	16      	10 BEELD INPALLEN EN WEGWEZEN-08.A3	00:04:50:23   	00:04:53:09   	00:00:02:11   	Unmuted
+1       	17      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-05.A1	01:00:12:19   	01:00:14:18   	00:00:01:24   	Unmuted
+1       	18      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-04.A1	01:00:14:18   	01:00:16:11   	00:00:01:18   	Unmuted
+1       	19      	WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-02.A1	01:00:16:11   	01:00:17:19   	00:00:01:08   	Unmuted
+1       	20      	WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-04.A1	01:00:17:19   	01:00:22:05   	00:00:04:11   	Unmuted
+1       	21      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-06.A1	01:00:54:06   	01:00:56:10   	00:00:02:04   	Unmuted
+1       	22      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-03.A1	01:00:56:10   	01:00:58:00   	00:00:01:15   	Unmuted
+1       	23      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-01.A1	01:00:58:00   	01:00:59:01   	00:00:01:01   	Unmuted
+1       	24      	4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-02.A1	01:00:59:01   	01:01:00:11   	00:00:01:10   	Unmuted
+1       	25      	4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-01.A1	01:01:00:11   	01:01:01:13   	00:00:01:02   	Unmuted
+1       	26      	WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-03.A1	01:01:01:13   	01:01:03:22   	00:00:02:09   	Unmuted
+1       	27      	WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-01.A1	01:01:03:22   	01:01:05:04   	00:00:01:07   	Unmuted
+1       	28      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-02.A1	01:01:08:23   	01:01:11:07   	00:00:02:09   	Unmuted
+1       	29      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-01.A1	01:01:11:07   	01:01:13:09   	00:00:02:02   	Unmuted
+1       	30      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-03.A1	01:01:13:09   	01:01:15:22   	00:00:02:13   	Unmuted
+1       	31      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-04.A1	01:01:15:22   	01:01:18:13   	00:00:02:16   	Unmuted
+1       	32      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-05.A1	01:01:18:13   	01:01:22:02   	00:00:03:14   	Unmuted
+1       	33      	3 D P EINDE OP NIENKE-01.A1   	01:02:17:23   	01:02:19:05   	00:00:01:07   	Unmuted
+1       	34      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-07.A1	01:02:40:04   	01:02:42:15   	00:00:02:11   	Unmuted
+1       	35      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-08.A1	01:02:42:15   	01:02:45:09   	00:00:02:19   	Unmuted
+1       	36      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-02.A1	01:02:45:09   	01:02:46:21   	00:00:01:12   	Unmuted
+1       	37      	11 A BEELD TOM CONTROLEERT VOLLE OVEN-02.A1	01:02:51:01   	01:02:55:00   	00:00:03:24   	Unmuted
+1       	38      	11 A BEELD TOM CONTROLEERT VOLLE OVEN-01.A1	01:02:55:00   	01:02:57:13   	00:00:02:13   	Unmuted
+1       	39      	7 BEELD KNEEDEN DEEG TOM-01.A1	01:04:33:01   	01:04:34:08   	00:00:01:07   	Unmuted
+1       	40      	7 BEELD KNEEDEN DEEG TOM-04.A1	01:04:34:08   	01:04:36:09   	00:00:02:01   	Unmuted
+1       	41      	7 BEELD KNEEDEN DEEG TOM-02.A1	01:04:36:09   	01:04:37:23   	00:00:01:14   	Unmuted
+1       	42      	7 BEELD KNEEDEN DEEG TOM-03.A1	01:04:37:23   	01:04:39:22   	00:00:01:24   	Unmuted
+1       	43      	8 BEELD KNEEDMACHINE-01.A3    	01:04:53:07   	01:04:56:00   	00:00:02:18   	Unmuted
+1       	44      	8 BEELD CLOSE KNOPJE   -01.A1 	01:04:56:01   	01:04:56:14   	00:00:00:13   	Unmuted
+1       	45      	8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-02.A1	01:05:36:06   	01:05:37:17   	00:00:01:11   	Unmuted
+1       	46      	8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-01.A1	01:05:49:16   	01:05:50:17   	00:00:01:01   	Unmuted
+1       	47      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-04.A1	01:05:50:17   	01:05:52:17   	00:00:02:00   	Unmuted
+1       	48      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-02.A1	01:05:52:17   	01:05:54:08   	00:00:01:16   	Unmuted
+1       	49      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-01.A1	01:05:54:08   	01:05:55:14   	00:00:01:06   	Unmuted
+1       	50      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-07.A1	01:05:55:14   	01:05:58:06   	00:00:02:17   	Unmuted
+1       	51      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-03.A1	01:05:58:06   	01:06:00:01   	00:00:01:20   	Unmuted
+1       	52      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-05.A1	01:06:00:01   	01:06:02:05   	00:00:02:04   	Unmuted
+1       	53      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-06.A1	01:06:02:05   	01:06:04:20   	00:00:02:15   	Unmuted
+1       	54      	Bakker Disk 2-02.A1           	01:06:20:24   	01:06:23:23   	00:00:02:24   	Unmuted
+1       	55      	Bakker Disk 2-03.A1           	01:06:26:03   	01:06:29:17   	00:00:03:14   	Unmuted
+1       	56      	10 BEELD SHOTS DEEG VOUW MACHINE-02.A1	01:06:29:17   	01:06:34:14   	00:00:04:22   	Unmuted
+1       	57      	10 BEELD SHOTS DEEG VOUW MACHINE-01.A1	01:06:34:14   	01:06:36:08   	00:00:01:19   	Unmuted
+1       	58      	10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-02.A1	01:07:19:16   	01:07:22:11   	00:00:02:20   	Unmuted
+1       	59      	10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-01.A1	01:07:22:11   	01:07:23:11   	00:00:01:00   	Unmuted
+1       	60      	10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-02.A1	01:07:23:11   	01:07:25:19   	00:00:02:08   	Unmuted
+1       	61      	10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-03.A1	01:07:25:19   	01:07:28:05   	00:00:02:11   	Unmuted
+1       	62      	10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-01.A1	01:07:28:05   	01:07:29:03   	00:00:00:23   	Unmuted
+1       	63      	11 A BEELD TOM KNIPT KNIPBROOD!-01.A1	01:07:57:09   	01:08:02:04   	00:00:04:20   	Unmuted
+1       	64      	KLANTEN BAKKERSWINKEL ARNHEM TAKE 3-01.A1	01:08:23:14   	01:08:24:24   	00:00:01:10   	Unmuted
+1       	65      	KLANTEN BAKKERSWINKLE TAKE 4-01.A1	01:08:24:24   	01:08:26:11   	00:00:01:12   	Unmuted
+1       	66      	KLANTEN BAKKERSWINKLE TAKE 4-02.A1	01:08:26:11   	01:08:28:23   	00:00:02:12   	Unmuted
+
+
+TRACK NAME:	D4
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+1       	1       	2 BEELD MIXEN (VANAF BEGIN_ SUIKER IN MAATBEKER ETC. -01.A2	00:02:04:02   	00:02:06:01   	00:00:01:24   	Unmuted
+1       	2       	2 BEELD CLOSE STAAFMIXER IN SUIKER ZETTEN-01.A2	00:02:13:15   	00:02:19:04   	00:00:05:14   	Unmuted
+1       	3       	5B BEELD CLOSE BOVENKANT MINIZEEF (MET EN ZONDER SPIEGELING NIENKE)-01.A2	00:02:48:21   	00:02:53:07   	00:00:04:11   	Unmuted
+1       	4       	9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-01.A2	00:04:26:02   	00:04:27:10   	00:00:01:08   	Unmuted
+1       	5       	9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-03.A2	00:04:27:10   	00:04:28:22   	00:00:01:12   	Unmuted
+1       	6       	9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-02.A2	00:04:28:22   	00:04:30:06   	00:00:01:09   	Unmuted
+1       	7       	9 BEELD MAN PLAATST ENORME ZAK PEODERSUIKER VOOR AFVUL-04.A2	00:04:30:06   	00:04:31:21   	00:00:01:15   	Unmuted
+1       	8       	10 BEELD INPALLEN EN WEGWEZEN-03.A4	00:04:36:23   	00:04:38:05   	00:00:01:07   	Unmuted
+1       	9       	10 BEELD INPALLEN EN WEGWEZEN-04.A4	00:04:38:05   	00:04:39:19   	00:00:01:14   	Unmuted
+1       	10      	10 BEELD INPALLEN EN WEGWEZEN-01.A4	00:04:39:19   	00:04:40:23   	00:00:01:04   	Unmuted
+1       	11      	10 BEELD INPALLEN EN WEGWEZEN-06.A4	00:04:40:23   	00:04:42:23   	00:00:02:00   	Unmuted
+1       	12      	10 BEELD INPALLEN EN WEGWEZEN-07.A4	00:04:42:23   	00:04:45:08   	00:00:02:10   	Unmuted
+1       	13      	10 BEELD INPALLEN EN WEGWEZEN-02.A4	00:04:45:08   	00:04:46:13   	00:00:01:05   	Unmuted
+1       	14      	10 BEELD INPALLEN EN WEGWEZEN-05.A4	00:04:46:13   	00:04:48:09   	00:00:01:21   	Unmuted
+1       	15      	10 BEELD INPALLEN EN WEGWEZEN-09.A4	00:04:48:09   	00:04:50:23   	00:00:02:14   	Unmuted
+1       	16      	10 BEELD INPALLEN EN WEGWEZEN-08.A4	00:04:50:23   	00:04:53:09   	00:00:02:11   	Unmuted
+1       	17      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-05.A2	01:00:12:19   	01:00:14:18   	00:00:01:24   	Unmuted
+1       	18      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-04.A2	01:00:14:18   	01:00:16:11   	00:00:01:18   	Unmuted
+1       	19      	WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-02.A2	01:00:16:11   	01:00:17:19   	00:00:01:08   	Unmuted
+1       	20      	WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-04.A2	01:00:17:19   	01:00:22:05   	00:00:04:11   	Unmuted
+1       	21      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-06.A2	01:00:54:06   	01:00:56:10   	00:00:02:04   	Unmuted
+1       	22      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-03.A2	01:00:56:10   	01:00:58:00   	00:00:01:15   	Unmuted
+1       	23      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-01.A2	01:00:58:00   	01:00:59:01   	00:00:01:01   	Unmuted
+1       	24      	4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-02.A2	01:00:59:01   	01:01:00:11   	00:00:01:10   	Unmuted
+1       	25      	4 BEELD TOTM DRUKT OP KNOPOPEN OVEN-01.A2	01:01:00:11   	01:01:01:13   	00:00:01:02   	Unmuted
+1       	26      	WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-03.A2	01:01:01:13   	01:01:03:22   	00:00:02:09   	Unmuted
+1       	27      	WERKSHOTS TOM _ MAAKT BOLLETJES! _ LEUKE TRILMACHINE-01.A2	01:01:03:22   	01:01:05:04   	00:00:01:07   	Unmuted
+1       	28      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-02.A2	01:01:08:23   	01:01:11:07   	00:00:02:09   	Unmuted
+1       	29      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-01.A2	01:01:11:07   	01:01:13:09   	00:00:02:02   	Unmuted
+1       	30      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-03.A2	01:01:13:09   	01:01:15:22   	00:00:02:13   	Unmuted
+1       	31      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-04.A2	01:01:15:22   	01:01:18:13   	00:00:02:16   	Unmuted
+1       	32      	11 A BEELD TOM CONTROLEERT BROOD MET DE SCHIETER!!!-05.A2	01:01:18:13   	01:01:22:02   	00:00:03:14   	Unmuted
+1       	33      	3 D P EINDE OP NIENKE-01.A2   	01:02:17:23   	01:02:19:05   	00:00:01:07   	Unmuted
+1       	34      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-07.A2	01:02:40:04   	01:02:42:15   	00:00:02:11   	Unmuted
+1       	35      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-08.A2	01:02:42:15   	01:02:45:09   	00:00:02:19   	Unmuted
+1       	36      	WERKSHOTS TOM _ DEEG MAKEN VOOR BOLLETJES-02.A2	01:02:45:09   	01:02:46:21   	00:00:01:12   	Unmuted
+1       	37      	11 A BEELD TOM CONTROLEERT VOLLE OVEN-02.A2	01:02:51:01   	01:02:55:00   	00:00:03:24   	Unmuted
+1       	38      	11 A BEELD TOM CONTROLEERT VOLLE OVEN-01.A2	01:02:55:00   	01:02:57:13   	00:00:02:13   	Unmuted
+1       	39      	7 BEELD KNEEDEN DEEG TOM-01.A2	01:04:33:01   	01:04:34:08   	00:00:01:07   	Unmuted
+1       	40      	7 BEELD KNEEDEN DEEG TOM-04.A2	01:04:34:08   	01:04:36:09   	00:00:02:01   	Unmuted
+1       	41      	7 BEELD KNEEDEN DEEG TOM-02.A2	01:04:36:09   	01:04:37:23   	00:00:01:14   	Unmuted
+1       	42      	7 BEELD KNEEDEN DEEG TOM-03.A2	01:04:37:23   	01:04:39:22   	00:00:01:24   	Unmuted
+1       	43      	8 BEELD KNEEDMACHINE-01.A4    	01:04:53:07   	01:04:56:00   	00:00:02:18   	Unmuted
+1       	44      	8 BEELD CLOSE KNOPJE   -01.A2 	01:04:56:01   	01:04:56:14   	00:00:00:13   	Unmuted
+1       	45      	8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-02.A2	01:05:36:06   	01:05:37:17   	00:00:01:11   	Unmuted
+1       	46      	8 BEELD INSERT DEEG IN KOKER WEEGMACHINE-01.A2	01:05:49:16   	01:05:50:17   	00:00:01:01   	Unmuted
+1       	47      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-04.A2	01:05:50:17   	01:05:52:17   	00:00:02:00   	Unmuted
+1       	48      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-02.A2	01:05:52:17   	01:05:54:08   	00:00:01:16   	Unmuted
+1       	49      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-01.A2	01:05:54:08   	01:05:55:14   	00:00:01:06   	Unmuted
+1       	50      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-07.A2	01:05:55:14   	01:05:58:06   	00:00:02:17   	Unmuted
+1       	51      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-03.A2	01:05:58:06   	01:06:00:01   	00:00:01:20   	Unmuted
+1       	52      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-05.A2	01:06:00:01   	01:06:02:05   	00:00:02:04   	Unmuted
+1       	53      	8 BEELD SHOTS VAN DEEG IN WEEG MACHINE _ HANGMATJES ETC,-06.A2	01:06:02:05   	01:06:04:20   	00:00:02:15   	Unmuted
+1       	54      	Bakker Disk 2-02.A2           	01:06:20:24   	01:06:23:23   	00:00:02:24   	Unmuted
+1       	55      	Bakker Disk 2-03.A2           	01:06:26:03   	01:06:29:17   	00:00:03:14   	Unmuted
+1       	56      	10 BEELD SHOTS DEEG VOUW MACHINE-02.A2	01:06:29:17   	01:06:34:14   	00:00:04:22   	Unmuted
+1       	57      	10 BEELD SHOTS DEEG VOUW MACHINE-01.A2	01:06:34:14   	01:06:36:08   	00:00:01:19   	Unmuted
+1       	58      	10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-02.A2	01:07:19:16   	01:07:22:11   	00:00:02:20   	Unmuted
+1       	59      	10 B BEELD DEEG IN 'BUSSEN'  DOEN VAN DE NARIJSKAST-01.A2	01:07:22:11   	01:07:23:11   	00:00:01:00   	Unmuted
+1       	60      	10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-02.A2	01:07:23:11   	01:07:25:19   	00:00:02:08   	Unmuted
+1       	61      	10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-03.A2	01:07:25:19   	01:07:28:05   	00:00:02:11   	Unmuted
+1       	62      	10 B P + BEELD 'IN DE NARIJSKAST' DIV TAKES-01.A2	01:07:28:05   	01:07:29:03   	00:00:00:23   	Unmuted
+1       	63      	11 A BEELD TOM KNIPT KNIPBROOD!-01.A2	01:07:57:09   	01:08:02:04   	00:00:04:20   	Unmuted
+1       	64      	KLANTEN BAKKERSWINKEL ARNHEM TAKE 3-01.A2	01:08:23:14   	01:08:24:24   	00:00:01:10   	Unmuted
+1       	65      	KLANTEN BAKKERSWINKLE TAKE 4-01.A2	01:08:24:24   	01:08:26:11   	00:00:01:12   	Unmuted
+1       	66      	KLANTEN BAKKERSWINKLE TAKE 4-02.A2	01:08:26:11   	01:08:28:23   	00:00:02:12   	Unmuted
+
+
+TRACK NAME:	D5
+COMMENTS:
+USER DELAY:	0 Samples
+STATE: Hidden
+PLUG-INS: 	REQ 6 (mono)
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+TRACK NAME:	D6
+COMMENTS:
+USER DELAY:	0 Samples
+STATE: Hidden
+PLUG-INS: 	REQ 6 (mono)
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+TRACK NAME:	D7
+COMMENTS:
+USER DELAY:	0 Samples
+STATE: Hidden
+PLUG-INS: 	REQ 6 (mono)
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+TRACK NAME:	D8
+COMMENTS:
+USER DELAY:	0 Samples
+STATE: Hidden
+PLUG-INS: 	REQ 6 (mono)
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+TRACK NAME:	M1 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+1       	1       	MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav-02.A1	00:02:00:00   	00:02:40:05   	00:00:40:05   	Unmuted
+1       	2       	MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav-01.A1	00:02:40:05   	00:03:14:06   	00:00:34:01   	Unmuted
+1       	3       	KOL_12_2_Brushes_Drums_2_Pagnini_696076.wav-01.A1	00:03:35:20   	00:03:52:08   	00:00:16:13   	Unmuted
+1       	4       	GAL_2_3_Smell_The_Roses_Cosma_92065.wav-02.A1	00:04:36:23   	00:04:55:24   	00:00:19:01   	Unmuted
+1       	5       	GAL_2_3_Smell_The_Roses_Cosma_92065.wav-01.A1	00:04:55:24   	00:05:12:04   	00:00:16:05   	Unmuted
+1       	6       	07 Pizzi-Cat.m4a-04.A1        	01:00:00:00   	01:00:29:19   	00:00:29:19   	Unmuted
+1       	7       	07 Pizzi-Cat.m4a-02.A1        	01:00:29:19   	01:00:38:03   	00:00:08:09   	Unmuted
+1       	8       	05 Fancy Goods.m4a-04.A1      	01:00:39:13   	01:01:19:07   	00:00:39:19   	Unmuted
+1       	9       	05 Fancy Goods.m4a-01.A1      	01:01:19:07   	01:01:27:09   	00:00:08:02   	Unmuted
+1       	10      	05 Fancy Goods.m4a-02.A1      	01:02:08:04   	01:02:24:17   	00:00:16:13   	Unmuted
+1       	11      	04 Pluck.m4a_01-02.A1         	01:03:08:11   	01:03:59:18   	00:00:51:07   	Unmuted
+1       	12      	04 Pluck.m4a_01-01.A1         	01:03:59:18   	01:04:16:14   	00:00:16:21   	Unmuted
+1       	13      	12 An odd welcome.m4a-01.A1   	01:04:56:14   	01:05:36:15   	00:00:40:01   	Unmuted
+1       	14      	40 Happy Feeling.m4a-01.A1    	01:06:11:02   	01:06:13:22   	00:00:02:20   	Unmuted
+1       	15      	40 Happy Feeling.m4a-04.A1    	01:06:13:22   	01:06:25:02   	00:00:11:05   	Unmuted
+1       	16      	40 Happy Feeling.m4a-02.A1    	01:06:25:02   	01:06:30:17   	00:00:05:15   	Unmuted
+1       	17      	40 Happy Feeling.m4a-03.A1    	01:06:30:17   	01:06:36:13   	00:00:05:21   	Unmuted
+1       	18      	01 Juggler.m4a-01.A1          	01:07:19:16   	01:08:21:19   	00:01:02:03   	Unmuted
+
+
+2       	1       	MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav-02.A2	00:02:00:00   	00:02:40:05   	00:00:40:05   	Unmuted
+2       	2       	MAT_234_24_Bond_Street_Martin_Wikstrom_438975.wav-01.A2	00:02:40:05   	00:03:14:06   	00:00:34:01   	Unmuted
+2       	3       	KOL_12_2_Brushes_Drums_2_Pagnini_696076.wav-01.A2	00:03:35:20   	00:03:52:08   	00:00:16:13   	Unmuted
+2       	4       	GAL_2_3_Smell_The_Roses_Cosma_92065.wav-02.A2	00:04:36:23   	00:04:55:24   	00:00:19:01   	Unmuted
+2       	5       	GAL_2_3_Smell_The_Roses_Cosma_92065.wav-01.A2	00:04:55:24   	00:05:12:04   	00:00:16:05   	Unmuted
+2       	6       	07 Pizzi-Cat.m4a-04.A2        	01:00:00:00   	01:00:29:19   	00:00:29:19   	Unmuted
+2       	7       	07 Pizzi-Cat.m4a-02.A2        	01:00:29:19   	01:00:38:03   	00:00:08:09   	Unmuted
+2       	8       	05 Fancy Goods.m4a-04.A2      	01:00:39:13   	01:01:19:07   	00:00:39:19   	Unmuted
+2       	9       	05 Fancy Goods.m4a-01.A2      	01:01:19:07   	01:01:27:09   	00:00:08:02   	Unmuted
+2       	10      	05 Fancy Goods.m4a-02.A2      	01:02:08:04   	01:02:24:17   	00:00:16:13   	Unmuted
+2       	11      	04 Pluck.m4a_01-02.A2         	01:03:08:11   	01:03:59:18   	00:00:51:07   	Unmuted
+2       	12      	04 Pluck.m4a_01-01.A2         	01:03:59:18   	01:04:16:14   	00:00:16:21   	Unmuted
+2       	13      	12 An odd welcome.m4a-01.A2   	01:04:56:14   	01:05:36:15   	00:00:40:01   	Unmuted
+2       	14      	40 Happy Feeling.m4a-01.A2    	01:06:11:02   	01:06:13:22   	00:00:02:20   	Unmuted
+2       	15      	40 Happy Feeling.m4a-04.A2    	01:06:13:22   	01:06:25:02   	00:00:11:05   	Unmuted
+2       	16      	40 Happy Feeling.m4a-02.A2    	01:06:25:02   	01:06:30:17   	00:00:05:15   	Unmuted
+2       	17      	40 Happy Feeling.m4a-03.A2    	01:06:30:17   	01:06:36:13   	00:00:05:21   	Unmuted
+2       	18      	01 Juggler.m4a-01.A2          	01:07:19:16   	01:08:21:19   	00:01:02:03   	Unmuted
+
+
+TRACK NAME:	M2 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+1       	1       	tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-02.A1	00:03:13:19   	00:03:37:07   	00:00:23:13   	Unmuted
+1       	2       	tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-01.A1	00:03:59:11   	00:04:17:03   	00:00:17:17   	Unmuted
+1       	3       	tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-03.A1	00:04:17:03   	00:04:40:22   	00:00:23:19   	Unmuted
+1       	4       	64 silly ditty (30).wav-01.A1 	01:01:25:06   	01:01:33:14   	00:00:08:08   	Unmuted
+1       	5       	01 Wallpaper (feat. Style of Eye & P.m4a_01-02.A1	01:01:33:14   	01:02:02:00   	00:00:28:11   	Unmuted
+1       	6       	01 Wallpaper (feat. Style of Eye & P.m4a_01-01.A1	01:02:02:00   	01:02:07:13   	00:00:05:13   	Unmuted
+1       	7       	20 Gambler.m4a-01.A1          	01:02:29:17   	01:03:08:19   	00:00:39:02   	Unmuted
+1       	8       	02 The Bat Swing.m4a-02.A1    	01:04:33:01   	01:04:52:20   	00:00:19:19   	Unmuted
+1       	9       	02 The Bat Swing.m4a-01.A1    	01:04:52:20   	01:04:58:15   	00:00:05:20   	Unmuted
+1       	10      	09 Happy Feeling.m4a-01.A1    	01:05:47:04   	01:06:11:06   	00:00:24:02   	Unmuted
+1       	11      	05 Fancy Goods.m4a-03.A1      	01:06:36:09   	01:07:00:15   	00:00:24:06   	Unmuted
+1       	12      	64 silly ditty (30).wav-02.A1 	01:07:06:02   	01:07:22:07   	00:00:16:05   	Unmuted
+1       	13      	07 Pizzi-Cat.m4a-03.A1        	01:08:21:19   	01:08:38:02   	00:00:16:08   	Unmuted
+1       	14      	07 Pizzi-Cat.m4a-01.A1        	01:08:38:02   	01:08:42:09   	00:00:04:07   	Unmuted
+
+
+2       	1       	tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-02.A2	00:03:13:19   	00:03:37:07   	00:00:23:13   	Unmuted
+2       	2       	tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-01.A2	00:03:59:11   	00:04:17:03   	00:00:17:17   	Unmuted
+2       	3       	tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3-03.A2	00:04:17:03   	00:04:40:22   	00:00:23:19   	Unmuted
+2       	4       	64 silly ditty (30).wav-01.A2 	01:01:25:06   	01:01:33:14   	00:00:08:08   	Unmuted
+2       	5       	01 Wallpaper (feat. Style of Eye & P.m4a_01-02.A2	01:01:33:14   	01:02:02:00   	00:00:28:11   	Unmuted
+2       	6       	01 Wallpaper (feat. Style of Eye & P.m4a_01-01.A2	01:02:02:00   	01:02:07:13   	00:00:05:13   	Unmuted
+2       	7       	20 Gambler.m4a-01.A2          	01:02:29:17   	01:03:08:19   	00:00:39:02   	Unmuted
+2       	8       	02 The Bat Swing.m4a-02.A2    	01:04:33:01   	01:04:52:20   	00:00:19:19   	Unmuted
+2       	9       	02 The Bat Swing.m4a-01.A2    	01:04:52:20   	01:04:58:15   	00:00:05:20   	Unmuted
+2       	10      	09 Happy Feeling.m4a-01.A2    	01:05:47:04   	01:06:11:06   	00:00:24:02   	Unmuted
+2       	11      	05 Fancy Goods.m4a-03.A2      	01:06:36:09   	01:07:00:15   	00:00:24:06   	Unmuted
+2       	12      	64 silly ditty (30).wav-02.A2 	01:07:06:02   	01:07:22:07   	00:00:16:05   	Unmuted
+2       	13      	07 Pizzi-Cat.m4a-03.A2        	01:08:21:19   	01:08:38:02   	00:00:16:08   	Unmuted
+2       	14      	07 Pizzi-Cat.m4a-01.A2        	01:08:38:02   	01:08:42:09   	00:00:04:07   	Unmuted
+
+
+TRACK NAME:	M3 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+
+
+TRACK NAME:	FX1 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+
+
+TRACK NAME:	FX2 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+
+
+TRACK NAME:	FX3 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+
+
+TRACK NAME:	FX4 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+
+
+TRACK NAME:	FX5 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+
+
+TRACK NAME:	FX6 (Stereo)
+COMMENTS:
+USER DELAY:	0 Samples
+STATE:
+PLUG-INS:
+CHANNEL 	EVENT   	CLIP NAME                     	START TIME    	END TIME      	DURATION      	STATE
+
+
+
+
+M A R K E R S  L I S T I N G
+#   	LOCATION     	TIME REFERENCE    	UNITS    	NAME                             	COMMENTS
+1   	00:02:00:00  	5760000           	Samples  	2 rond

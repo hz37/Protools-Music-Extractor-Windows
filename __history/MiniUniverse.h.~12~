@@ -1,0 +1,48 @@
+//---------------------------------------------------------------------------
+
+#ifndef MiniUniverseH
+#define MiniUniverseH
+
+//---------------------------------------------------------------------------
+
+#include <Vcl.h>
+#include <vector>
+
+//---------------------------------------------------------------------------
+
+class TMiniUniverse
+{
+private:
+	std::auto_ptr <TImage> FRenderBuffer;
+	std::auto_ptr <TImage> FDeselectedRenderBuffer;
+
+	// Remember Canvas to which we will copy.
+
+	TCanvas* FDestinationCanvas;
+
+	// Remember width and height of Canvas.
+
+	int FWidth, FHeight;
+
+    // Remember session start and stop frames.
+    
+	int FSessionStartFrame, FSessionStopFrame;
+
+	// Remember selection start and end frames.
+
+	int FSelectionStart, FSelectionStop;
+
+public:
+	TMiniUniverse(TCanvas* DestinationCanvas, const int Width, const int Height);
+
+	void RedrawUniverseWith(NSArray*) regions Tracks: (NSArray*) tracks SessionStart: (NSInteger) sessionStart SessionStop: (NSInteger) sessionStop;
+- (void) setSelectionStart: (NSInteger) frame;
+- (void) setSelectionStop: (NSInteger) frame;
+
+};
+
+//---------------------------------------------------------------------------
+
+#endif
+
+//---------------------------------------------------------------------------

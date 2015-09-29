@@ -1,0 +1,98 @@
+//---------------------------------------------------------------------------
+
+#include "Generic.h"
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+TChallengeResponse::TChallengeResponse() :
+FValid(false)
+{
+	// Figure out the name of the challengeresponse file.
+
+	AnsiString RunPath = ExtractFilePath(ParamStr(0));
+	AnsiString CRFileName = IncludeTrailingBackslash(RunPath) + "cr";
+
+	// Get Volume serial of drive C.
+
+	union TVolumeSerialNumber
+	{
+		DWORD VolumeSerialNumberDWORD;
+		char VolumeSerialNumberChar[4];
+	} VolumeSerialNumber;
+
+	bool Result = GetVolumeInformation
+	(
+		"C:\\",
+		0,
+		0,
+		&(VolumeSerialNumber.VolumeSerialNumberDWORD),
+		0,
+		0,
+		0,
+		0
+	);
+
+    // If that failed, we don't have a C:-drive or something.
+
+	if(Result == false)
+	{
+		SysErrorMessage(GetLastError());
+		return;
+    }
+
+	// Generate a response based on simple xor crypto.
+
+	char Buffer[9];
+	char XOR[8] = {24, 12, 13, 14, 15, 14, 13, 12};
+	sprintf(Buffer, "%x%x", VolumeSerialNumber.VolumeSerialNumberDWORD, VolumeSerialNumber.VolumeSerialNumberDWORD);
+
+	AnsiString Challenge = AnsiString().sprintf("%x", VolumeSerialNumber.VolumeSerialNumberDWORD);
+	AnsiString Response = "";
+
+	for(int Idx = 0; Idx < 8; ++Idx)
+	{
+		Buffer[Idx] ^= XOR[Idx];
+		Response += AnsiString().sprintf("%.2x", Buffer[Idx]);
+	}
+
+	// Do we already have a CR file?
+
+	if(FileExists(CRFileName))
+	{
+		std::auto_ptr <TStringList> CRFile(new TStringList);
+
+		CRFile->LoadFromFile(CRFileName);
+
+		if(Trim(CRFile->Text) == Response)
+		{
+			// If it contains the response, we are all fine.
+
+			FValid = true;
+		}
+		else if(Trim(CRFile->Text) == "aabb$")
+		{
+			// If it contains a special phrase, generate the
+			// proper CR file. The next time we will run just fine.
+
+			CRFile->Text = Response;
+			CRFile->SaveToFile(CRFileName);
+
+			FValid = true;
+		}
+	}
+}
+
+//---------------------------------------------------------------------------
+
+bool TChallengeResponse::Valid()
+{
+	if(!FValid)
+	{
+    	ShowMessage("You are not allowed to run this program without license.");
+	}
+
+	return FValid;
+}
+
+//---------------------------------------------------------------------------
