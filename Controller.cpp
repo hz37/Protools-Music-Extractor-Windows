@@ -553,8 +553,17 @@ void __fastcall TControllerForm::SaveButtonClick(TObject *Sender)
 	bool SuppressFrames = FStorage->GetValue(CSuppressFramesKey, true);
 
 	std::auto_ptr <TStringList> TextData(new TStringList);
+	std::auto_ptr <TStringList> MusicDirectorData(new TStringList);
 
-	FProtoolsData->GetRegionUsages(TextData.get(), !SuppressFrames);
+	bool MusicDirectorFound = false;
+
+	FProtoolsData->GetRegionUsages
+	(
+		TextData.get(),
+		MusicDirectorData.get(),
+		!SuppressFrames,
+		MusicDirectorFound
+	);
 
 	AnsiString InitialDirectory = FProtoolsData->GetInitialDirectory();
 
@@ -565,7 +574,18 @@ void __fastcall TControllerForm::SaveButtonClick(TObject *Sender)
 
 	if(SaveDialog->Execute())
 	{
-		TextData->SaveToFile(SaveDialog->FileName);
+		AnsiString FileName = SaveDialog->FileName;
+		TextData->SaveToFile(FileName);
+
+		if(MusicDirectorFound)
+		{
+			AnsiString MusicDirectorFileName = ChangeFileExt
+			(
+				FileName,
+				"musicdirector.txt"
+			);
+			MusicDirectorData->SaveToFile(MusicDirectorFileName);
+		}
 	}
 }
 

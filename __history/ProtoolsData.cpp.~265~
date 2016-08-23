@@ -1,0 +1,1342 @@
+//---------------------------------------------------------------------------
+
+#include "Generic.h"
+#pragma hdrstop
+
+
+//---------------------------------------------------------------------------
+
+// Default values as consts.
+
+const int HZ37_defaultFrameRate = 0;
+const double HZ37_defaultSampleRate = 0.0;
+const int HZ37_defaultSessionStart = -1;
+const int HZ37_tooLargeSessionStartHour = 23;
+
+//---------------------------------------------------------------------------
+
+// Compare function to sort by region name.
+
+bool AlphaSort(const TRegionUsage& FR1, const TRegionUsage& FR2)
+{
+	return FR1.Name < FR2.Name;
+};
+
+//---------------------------------------------------------------------------
+
+// Compare function to sort by length.
+
+bool TimeSort(const TRegionUsage& FR1, const TRegionUsage& FR2)
+{
+	return FR1.Length < FR2.Length;
+};
+
+//---------------------------------------------------------------------------
+
+TProtoolsData::TProtoolsData() :
+	FSortOnName(true),
+	FInitialDirectory("")
+{
+	// Connect to persistent storage.
+
+	FStorage = TStorage::Instance();
+}
+
+//---------------------------------------------------------------------------
+
+// Copy constructor in terms of assignment operator.
+
+TProtoolsData::TProtoolsData(const TProtoolsData& Rhs)
+{
+	operator = (Rhs);
+}
+
+//---------------------------------------------------------------------------
+
+TProtoolsData& TProtoolsData::operator = (const TProtoolsData&)
+{
+	// Singleton class, there's only one instance, so:
+
+	return *this;
+}
+
+//---------------------------------------------------------------------------
+
+// Singleton's single point of access.
+
+TProtoolsData* TProtoolsData::Instance()
+{
+	static TProtoolsData ProtoolsData;
+
+	return &ProtoolsData;
+}
+
+//---------------------------------------------------------------------------
+
+TProtoolsData::~TProtoolsData()
+{
+
+}
+
+//---------------------------------------------------------------------------
+
+// User request to combine items with indices into an aggregate item.
+
+void TProtoolsData::CombineSelectedItems(std::vector <int>& Indices)
+{
+	// Ignore when empty vector is passed (should of course never happen).
+
+	if(Indices.size() == 0)
+	{
+    	return;
+    }
+
+	// Add all times together.
+
+	int AggregateTime = 0;
+
+	// Find common name (if at all possible).
+	// Initialize at first item.
+
+	AnsiString AggregateName = RegionUsageNameAtIndex(Indices[0]);
+
+	// If name results in 0 characters (user tried to combine regions
+	// with totally different names), fall back to the name of the
+	// last combination that yielded at least a string with a length.
+
+	AnsiString AggregateFallbackName = AggregateName;
+
+	// Loop through indices to combine everything.
+
+	for(std::vector <int>::iterator Idx = Indices.begin();
+		Idx != Indices.end(); ++Idx)
+	{
+		AggregateTime += RegionUsageTimeAtIndex(*Idx);
+		AggregateName = FindCommonName
+		(
+			AggregateName,
+			RegionUsageNameAtIndex(*Idx)
+		);
+
+		if(AggregateName.Length() > 0)
+		{
+        	AggregateFallbackName = AggregateName;
+        }
+	}
+
+	if(AggregateName.Length() == 0)
+	{
+		AggregateName = AggregateFallbackName;
+    }
+
+	// Delete items with indices in reverse order to avoid messing
+	// up the indices.
+
+	for(std::vector <int>::reverse_iterator Idx = Indices.rbegin();
+		Idx != Indices.rend(); ++Idx)
+	{
+		DeleteRegionUsage(*Idx);
+	}
+
+	// Now add the aggregate item. AT THE FIRST INSERT INDEX!!?!?!
+
+	// Since we are now combining several items under a new name,
+	// the original name is lost. This combined region escapes further
+	// filtering possibilities.
+
+	std::vector <AnsiString> Dummy;
+
+	FRegionUsages.insert
+	(
+		FRegionUsages.begin() + Indices[0],
+		TRegionUsage
+		(
+			AggregateName,
+			AggregateTime,
+			Dummy
+		)
+	);
+	
+}
+
+//---------------------------------------------------------------------------
+
+void TProtoolsData::DeleteRegionUsage(const int Index)
+{
+	if((Index >= 0) && (Index < (static_cast <int> (FRegionUsages.size()))))
+	{
+		FRegionUsages.erase(FRegionUsages.begin() + Index);
+	}
+}
+
+//---------------------------------------------------------------------------
+
+// Convert HH:MM:SS:FF to separate int values.
+
+bool TProtoolsData::ExtractHMSF
+(
+	const AnsiString InputString,
+	int& Hours,
+	int& Mins,
+	int& Secs,
+	int& Frames
+)
+{
+	std::auto_ptr <TStringList> SeparatedItems(new TStringList);
+
+	SeparatedItems->Delimiter = ':';
+	SeparatedItems->DelimitedText = InputString;
+
+	if(SeparatedItems->Count == 4)
+	{
+		Hours = StrToIntDef(SeparatedItems->Strings[0], 0);
+		Mins = StrToIntDef(SeparatedItems->Strings[1], 0);
+		Secs = StrToIntDef(SeparatedItems->Strings[2], 0);
+		Frames = StrToIntDef(SeparatedItems->Strings[3], 0);
+
+		return true;
+	}
+
+	return false;
+}
+
+//---------------------------------------------------------------------------
+
+// Private helper function: find common name between S1 and S2
+// as seen from the left. Return empty string if no similarity.
+
+AnsiString TProtoolsData::FindCommonName
+(
+	const AnsiString S1,
+	const AnsiString S2
+)
+{
+	AnsiString ReturnValue = "";
+
+	const int Count = std::min(S1.Length(), S2.Length());
+
+	// Pascalian strings start at index 1. :)
+
+	int Idx = 1;
+
+    // Lazy left to right evaluation guarantees no out of bounds.
+
+	while(Idx <= Count && S1[Idx] == S2[Idx])
+	{
+		ReturnValue += S1[Idx];
+		++Idx;
+	}
+
+	return ReturnValue;
+}
+
+//---------------------------------------------------------------------------
+
+// Here's where the actual work gets done. Based on user choices,
+// the loaded data from the Protools session will be filtered down
+// to a simple list of names with total running times.
+
+void TProtoolsData::GenerateListing()
+{
+	// Empty previous version of this list.
+
+	FRegionUsages.clear();
+
+	// Build a lookup table of the current tracks and their selection states.
+
+	std::map <AnsiString, bool> TracksLUT;
+
+	for(std::vector <TTrack>::iterator Idx = FTracks.begin();
+		Idx != FTracks.end(); ++Idx)
+	{
+		AnsiString TrackName = Idx->TrackName;
+		bool State = Idx->State;
+		TracksLUT[TrackName] = State;
+	}
+
+	// Get current state of persistent settings.
+
+	bool CombineSimilar = FStorage->GetValue(CCombineSimilarKey, 1);
+	bool IgnoreAfterExtension = FStorage->GetValue(CIgnoreAfterExtensionKey, 1);
+	bool IgnoreAfterNew = FStorage->GetValue(CIgnoreAfterNewKey, 1);
+	bool IgnoreFade = FStorage->GetValue(CIgnoreFadeKey, 1);
+	bool IgnoreShorterThan = FStorage->GetValue(CIgnoreShorterThanKey, 0);
+	int IgnoreShorterThanSeconds = FStorage->GetValue(CIgnoreShorterThanSecondsKey, 1);
+
+	// These are extensions after which we can ignore string data.
+
+	std::vector <AnsiString> ExtensionsToIgnore;
+	ExtensionsToIgnore.push_back(".aif");
+	ExtensionsToIgnore.push_back(".cda");
+	ExtensionsToIgnore.push_back(".mp3");
+	ExtensionsToIgnore.push_back(".m4a");
+	ExtensionsToIgnore.push_back(".wav");
+
+	//
+	// PASS ONE: REDUCE ON NAMES.
+	//
+
+	for(std::vector <TRegion>::iterator Region = FRegions.begin();
+		Region != FRegions.end(); ++Region)
+	{
+		// If track is not selected, skip it.
+
+		if(TracksLUT[Region->TrackName] == false)
+		{
+			continue;
+		}
+
+		// If region starts before user selection or ends after user selection,
+		// We need to skip or truncate it.
+
+		int RegionStartFrame = Region->StartFrame;
+		int RegionStopFrame = Region->StopFrame;
+
+		if (RegionStartFrame < FSelectionStart)
+		{
+			RegionStartFrame = FSelectionStart;
+		}
+
+		if (RegionStopFrame > FSelectionStop)
+		{
+			RegionStopFrame = FSelectionStop;
+		}
+
+		int RegionLength = RegionStopFrame - RegionStartFrame;
+
+		if (RegionLength <= 0)
+		{
+			continue;
+		}
+
+		// Get the name.
+
+		AnsiString RegionName = Region->Name;
+
+		// Store it in a container that might grow with more names in case we find similar regions.
+
+		std::vector <AnsiString> RegionNames;
+		RegionNames.push_back(RegionName);
+
+		// If so desired, regions that start with "Fade" can be skipped.
+		// Probably only semi-dangerous if a song is called "Fade to Grey" by Visage.
+
+		if (IgnoreFade && LowerCase(RegionName).Pos("fade") == 1)
+		{
+			continue;
+		}
+
+        // Chop off after extension if so desired.
+        
+		if (IgnoreAfterExtension)
+		{
+			for(std::vector <AnsiString>::iterator Idx = ExtensionsToIgnore.begin();
+				Idx != ExtensionsToIgnore.end(); ++Idx)
+			{
+				int Pos = LowerCase(RegionName).Pos(*Idx);
+
+				if(Pos > 0)
+				{
+					RegionName = RegionName.SubString(1, Pos + 3);
+				}
+			}
+		}
+
+		// Chop off before .new if so desired. This is something Protools does for files that
+		// somehow have created a new version of themselves.
+
+		if (IgnoreAfterNew)
+		{
+			int Pos = LowerCase(RegionName).Pos(".new");
+
+			if(Pos > 0)                                
+			{
+				RegionName = RegionName.SubString(1, Pos - 1);
+			}
+		}
+
+		// If a string ends with .L (after all, we are watching channel 1 of stereo tracks
+		// and Protools splits files into .L and .R), we chop this off. This isn't even a setting.
+
+		int Pos = LowerCase(RegionName).Pos(".l");       
+
+		if((Pos > 0) && (RegionName.Length() - Pos == 1))
+		{
+			RegionName = RegionName.SubString(1, Pos - 1);
+		}
+
+        // Add or combine it.
+
+		if (CombineSimilar)
+		{
+			// See if we already have this region. If so add times and names together.
+
+			for(std::vector <TRegionUsage>::iterator Idx = FRegionUsages.begin();
+				Idx != FRegionUsages.end(); ++Idx)
+			{
+				if(RegionName.AnsiCompareIC(Idx->Name) == 0)
+				{
+					// Add existing length to current length.
+
+					RegionLength += Idx->Length;
+
+					// Add its name(s) to our collection.
+
+					std::vector <AnsiString> OrgNamesFromSimilar;
+					Idx->GetOriginalNames(OrgNamesFromSimilar);
+
+					RegionNames.insert
+					(
+						RegionNames.end(),
+						OrgNamesFromSimilar.begin(),
+						OrgNamesFromSimilar.end()
+					);
+
+					// Delete the existing object.
+
+					FRegionUsages.erase(Idx);
+
+					// Get out of loop cause we're done.
+
+					break;
+				}
+			}
+		}
+
+		// Now we can add a new object for all three situations that may have occurred:
+		//
+		// 1) We don't combine similar regions.
+		// 2) We do combine similar regions but no existing object was found.
+		// 3) We do combine similar regions and the existing object was found, added and deleted.
+
+		FRegionUsages.push_back(TRegionUsage(RegionName, RegionLength, RegionNames));
+	}
+
+	//
+	// PASS TWO: REMOVE ITEMS THAT ARE TOO SHORT.
+	//
+
+	if (IgnoreShorterThan)
+	{
+		int Threshold = IgnoreShorterThanSeconds * FFrameRate;
+
+		// Remove those items in reverse order so our index values don't get messed up.
+
+		int Count = static_cast <int> (FRegionUsages.size());
+
+		for(int Idx = Count - 1; Idx >= 0; --Idx)
+		{
+			TRegionUsage Ru = FRegionUsages[Idx];
+
+			if(Ru.Length < Threshold)
+			{
+				FRegionUsages.erase(&(FRegionUsages[Idx]));
+			}
+		}
+	 }
+
+	// Sort the output.
+
+	std::sort
+	(
+		FRegionUsages.begin(),
+		FRegionUsages.end(),
+		(FSortOnName ? AlphaSort : TimeSort)
+	);
+}
+
+//---------------------------------------------------------------------------
+
+int TProtoolsData::GetFrameRate()
+{
+    return FFrameRate;
+}
+
+//---------------------------------------------------------------------------
+
+AnsiString TProtoolsData::GetInitialDirectory()
+{
+    return FInitialDirectory;
+}
+
+//---------------------------------------------------------------------------
+
+std::vector <TRegion> TProtoolsData::GetRegions()
+{
+    return FRegions;
+}
+
+//---------------------------------------------------------------------------
+
+void TProtoolsData::GetRegionUsages
+(
+		TStringList* TextData,
+		const bool IncludeFrames
+)
+{
+	bool Dummy;
+
+	GetRegionUsages
+	(
+		TextData,
+		0,
+		IncludeFrames,
+		Dummy,
+		false
+	);
+}
+//---------------------------------------------------------------------------
+
+void TProtoolsData::GetRegionUsages
+(
+	TStringList* TextData,
+	TStringList* MusicDirectorData,
+	const bool IncludeFrames,
+	bool& MusicDirectorFound
+)
+{
+	GetRegionUsages
+	(
+		TextData,
+		MusicDirectorData,
+		IncludeFrames,
+		MusicDirectorFound,
+		true
+	);
+}
+
+//---------------------------------------------------------------------------
+
+// Return current contents of regionUsages as a string.
+// IncludeFrames specifies if we want to see frames in our output.
+// If IncludeMusicDirectorScan then MusicDirectorData is filled too.
+// MusicDirectorFound reflects if we actually scanned any MD data.
+// This private method is called by the two above method.
+
+/* private */ void TProtoolsData::GetRegionUsages
+(
+	TStringList* TextData,
+	TStringList* MusicDirectorData,
+	const bool IncludeFrames,
+	bool& MusicDirectorFound,
+	const bool IncludeMusicDirectorScan
+)
+{
+	if(TextData == 0)
+	{
+		return;
+	}
+
+	// Begin pessimistic.
+
+	MusicDirectorFound = false;
+
+	if (FRegionUsages.size() == 0)
+	{
+		TextData->Text = "Empty list";
+	}
+
+	TextData->Text = FSessionFileName;
+	TextData->Add("");
+
+	for(std::vector <TRegionUsage>::iterator Idx = FRegionUsages.begin();
+		Idx != FRegionUsages.end(); ++Idx)
+	{
+		AnsiString TC = FramesToHMSF(Idx->Length, IncludeFrames, FFrameRate);
+		AnsiString RegionName = Idx->Name;
+		TextData->Add(TC + "\t" + RegionName);
+
+		if(IncludeMusicDirectorScan)
+		{
+			AnsiString MusicDirectorFields;
+
+			if(ParseMusicDirector(RegionName, MusicDirectorFields))
+			{
+            	MusicDirectorData->Add(MusicDirectorFields);
+            }
+        }
+	}
+
+	int Major, Minor, Release, Build;
+
+	GetExeVersion(Major, Minor, Release, Build);
+
+	TextData->Add("");
+	TextData->Add
+	(
+		AnsiString().sprintf
+		(
+			"Generated by Protools Music Extractor v%d.%d build %d release %d",
+			Major, Minor, Build, Release
+		)
+	);
+	TextData->Add("Software by Hens Zimmerman Audio");
+}
+
+//---------------------------------------------------------------------------
+
+// Pass session boundaries so they can be passed to miniUniverse.
+
+void TProtoolsData::GetSessionBoundaries(int& SessionStart, int& SessionEnd)
+{
+	SessionStart = FStartFrame;
+	SessionEnd = FStopFrame;
+}
+
+//---------------------------------------------------------------------------
+
+std::vector <TTrack> TProtoolsData::GetTracks()
+{
+	return FTracks;
+}
+
+//---------------------------------------------------------------------------
+
+// LoadFileWithName loads the Protools text export file and parses it into
+// separate elements. Returns TRUE if all went fine, else FALSE.
+
+bool TProtoolsData::LoadFileWithName(const AnsiString Filename)
+{
+    // Check if file exists.
+
+	if(!FileExists(Filename))
+	{
+		ShowMessage(Filename + " not found");
+
+		return false;
+	}
+
+	// Erase existing data.
+
+	Reset();
+
+	// Remember short name of this session.
+
+	FSessionFileName = ExtractFileName(Filename);
+
+	// Remember directory of file we got.
+
+	FInitialDirectory = ExtractFilePath(Filename);
+
+	// Read entire file into a TStringList.
+
+	std::auto_ptr <TStringList> Lines(new TStringList);
+
+	Lines->LoadFromFile(Filename);
+
+    // Going though the file sequentially we move from track to track.
+	// TrackName will remember the current track we are parsing.
+    
+	AnsiString TrackName;
+
+	// Tracks are either mono or stereo (we do not implement surround sound yet).
+
+	bool IsMono;
+
+	// Precompile regular expressions.
+
+	const char* SampleRateErrorPointer = 0;
+	int SampleRateErrorOffset = 0;
+	const unsigned char* SampleRateTablePointer = pcre_maketables();
+	const int SampleRateMatchVectorSize = 6; // n == 1, so (n + 1) * 3 == 6
+	int SampleRateMatchVector[SampleRateMatchVectorSize] = { 0 };
+
+	pcre* SampleRateCompiledPattern = pcre_compile
+	(
+		"^SAMPLE\\s*RATE:\\s+(\\d+)[\\.,]\\d+$",
+		PCRE_ANCHORED | PCRE_CASELESS | PCRE_DOLLAR_ENDONLY,
+		&SampleRateErrorPointer,
+		&SampleRateErrorOffset,
+		SampleRateTablePointer
+	);
+
+	const char* FrameRateErrorPointer = 0;
+	int FrameRateErrorOffset = 0;
+	const unsigned char* FrameRateTablePointer = pcre_maketables();
+	const int FrameRateMatchVectorSize = 6; // n == 1, so (n + 1) * 3 == 6
+	int FrameRateMatchVector[FrameRateMatchVectorSize] = { 0 };
+
+	pcre* FrameRateCompiledPattern = pcre_compile
+	(
+		"^TIME\\s*CODE\\s*FORMAT:\\s+(\\d+)\\s+.*$",
+		PCRE_ANCHORED | PCRE_CASELESS | PCRE_DOLLAR_ENDONLY,
+		&FrameRateErrorPointer,
+		&FrameRateErrorOffset,
+		FrameRateTablePointer
+	);
+
+	const char* StereoTrackNameErrorPointer = 0;
+	int StereoTrackNameErrorOffset = 0;
+	const unsigned char* StereoTrackNameTablePointer = pcre_maketables();
+	const int StereoTrackNameMatchVectorSize = 6; // n == 1, so (n + 1) * 3 == 6
+	int StereoTrackNameMatchVector[StereoTrackNameMatchVectorSize] = { 0 };
+
+	pcre* StereoTrackNameCompiledPattern = pcre_compile
+	(
+		"^TRACK\\s*NAME:\\s+(.*)\\b\\(Stereo\\)$",
+		PCRE_ANCHORED | PCRE_CASELESS | PCRE_DOLLAR_ENDONLY,
+		&StereoTrackNameErrorPointer,
+		&StereoTrackNameErrorOffset,
+		StereoTrackNameTablePointer
+	);
+
+	const char* MonoTrackNameErrorPointer = 0;
+	int MonoTrackNameErrorOffset = 0;
+	const unsigned char* MonoTrackNameTablePointer = pcre_maketables();
+	const int MonoTrackNameMatchVectorSize = 6; // n == 1, so (n + 1) * 3 == 6
+	int MonoTrackNameMatchVector[MonoTrackNameMatchVectorSize] = { 0 };
+
+	pcre* MonoTrackNameCompiledPattern = pcre_compile
+	(
+		"^TRACK\\s*NAME:\\s+(.*)$",
+		PCRE_ANCHORED | PCRE_CASELESS | PCRE_DOLLAR_ENDONLY,
+		&MonoTrackNameErrorPointer,
+		&MonoTrackNameErrorOffset,
+		MonoTrackNameTablePointer
+	);
+
+	// SESSION START TIMECODE:	00:00:00:00
+
+	const char* SessionStartTimecodeErrorPointer = 0;
+	int SessionStartTimecodeErrorOffset = 0;
+	const unsigned char* SessionStartTimecodeTablePointer = pcre_maketables();
+	const int SessionStartTimecodeMatchVectorSize = 6; // n == 1, so (n + 1) * 3 == 6
+	int SessionStartTimecodeMatchVector[SessionStartTimecodeMatchVectorSize] = { 0 };
+
+	pcre* SessionStartTimecodeCompiledPattern = pcre_compile
+	(
+		"^SESSION\\s*START\\s*TIMECODE:\\s+(\\d{2}):.*$",
+		PCRE_ANCHORED | PCRE_CASELESS | PCRE_DOLLAR_ENDONLY,
+		&SessionStartTimecodeErrorPointer,
+		&SessionStartTimecodeErrorOffset,
+		SessionStartTimecodeTablePointer
+	);
+
+	const char* RegEx6ErrorPointer = 0;
+	int RegEx6ErrorOffset = 0;
+	const unsigned char* RegEx6TablePointer = pcre_maketables();
+	const int RegEx6MatchVectorSize = 15; // n == 4, so (n + 1) * 3 == 15
+	int RegEx6MatchVector[RegEx6MatchVectorSize] = { 0 };
+
+	pcre* RegEx6CompiledPattern = pcre_compile
+	(
+		"^1\\s+\\d+\\s+(.*)\\b\\s+(\\d{2}:\\d{2}:\\d{2}:\\d{2})\\s+(\\d{2}:\\d{2}:\\d{2}:\\d{2})\\s+(\\d{2}:\\d{2}:\\d{2}:\\d{2})$",
+		PCRE_ANCHORED | PCRE_CASELESS | PCRE_DOLLAR_ENDONLY,
+		&RegEx6ErrorPointer,
+		&RegEx6ErrorOffset,
+		RegEx6TablePointer
+	);
+
+	const char* RegEx7ErrorPointer = 0;
+	int RegEx7ErrorOffset = 0;
+	const unsigned char* RegEx7TablePointer = pcre_maketables();
+	const int RegEx7MatchVectorSize = 15; // n == 4, so (n + 1) * 3 == 15
+	int RegEx7MatchVector[RegEx7MatchVectorSize] = { 0 };
+
+	pcre* RegEx7CompiledPattern = pcre_compile
+	(
+		"^1\\s+\\d+\\s+(.*)\\b\\s+(\\d{2}:\\d{2}:\\d{2}:\\d{2})\\s+(\\d{2}:\\d{2}:\\d{2}:\\d{2})\\s+(\\d{2}:\\d{2}:\\d{2}:\\d{2})\\s+Unmuted$",
+		PCRE_ANCHORED | PCRE_CASELESS | PCRE_DOLLAR_ENDONLY,
+		&RegEx7ErrorPointer,
+		&RegEx7ErrorOffset,
+		RegEx7TablePointer
+	);
+
+	// Loop through lines.
+
+	const int LineCount = Lines->Count;
+
+	for(int Idx = 0; Idx < LineCount; ++Idx)
+	{
+		AnsiString Line = Lines->Strings[Idx];
+
+		// Check if this line has the samplerate.
+		// E.g.
+		// SAMPLE RATE:	48000.000000
+
+		if (FSampleRate == /* still */ HZ37_defaultSampleRate)
+		{
+			int ExecResult = pcre_exec
+			(
+				SampleRateCompiledPattern,
+				0,
+				Line.c_str(),
+				Line.Length(),
+				0,
+				SampleRateMatchVector,
+				SampleRateMatchVectorSize
+			);
+
+			if(ExecResult >= 0)
+			{
+				int Offset1 = SampleRateMatchVector[2];
+				int Offset2 = SampleRateMatchVector[3];
+				AnsiString SampleRate = Line.SubString(Offset1 + 1, Offset2 - Offset1);
+				FSampleRate = SampleRate.ToIntDef(0);
+			}
+		}
+
+		// Check if this line has the framerate.
+		// E.g.
+		// TIMECODE FORMAT:	25 Frame
+
+		if (FFrameRate == /* still */ HZ37_defaultFrameRate)
+		{
+			int ExecResult = pcre_exec
+			(
+				FrameRateCompiledPattern,
+				0,
+				Line.c_str(),
+				Line.Length(),
+				0,
+				FrameRateMatchVector,
+				FrameRateMatchVectorSize
+			);
+
+			if(ExecResult >= 0)
+			{
+				int Offset1 = FrameRateMatchVector[2];
+				int Offset2 = FrameRateMatchVector[3];
+				AnsiString FrameRate = Line.SubString(Offset1 + 1, Offset2 - Offset1);
+				FFrameRate = FrameRate.ToIntDef(0);
+			}
+		}
+
+		// Check if this line has the session start timecode.
+		// E.g.
+		// SESSION START TIMECODE:	00:00:00:00
+
+		if(FSessionStartHour == /* still */ HZ37_defaultSessionStart)
+		{
+			int ExecResult = pcre_exec
+			(
+				SessionStartTimecodeCompiledPattern,
+				0,
+				Line.c_str(),
+				Line.Length(),
+				0,
+				SessionStartTimecodeMatchVector,
+				SessionStartTimecodeMatchVectorSize
+			);
+
+			if(ExecResult >= 0)
+			{
+				int Offset1 = SessionStartTimecodeMatchVector[2];
+				int Offset2 = SessionStartTimecodeMatchVector[3];
+				AnsiString SessionStartHour = Line.SubString(Offset1 + 1, Offset2 - Offset1);
+				FSessionStartHour = SessionStartHour.ToIntDef(0);
+			}
+		}
+
+		// ExecResult will be used more than once.
+
+		int ExecResult;
+
+		// Check for trackname.
+		// E.g.
+		// TRACK NAME:	Dst (Stereo)
+
+		ExecResult = pcre_exec
+		(
+			StereoTrackNameCompiledPattern,
+			0,
+			Line.c_str(),
+			Line.Length(),
+			0,
+			StereoTrackNameMatchVector,
+			StereoTrackNameMatchVectorSize
+		);
+
+		if(ExecResult >= 0)
+		{
+			int Offset1 = StereoTrackNameMatchVector[2];
+			int Offset2 = StereoTrackNameMatchVector[3];
+			TrackName = Line.SubString(Offset1 + 1, Offset2 - Offset1);
+			IsMono = false;
+
+			FTracks.push_back(TTrack(TrackName, IsMono));
+		}
+		else
+		{
+			// If that failed, it might be worth to check for a mono track.
+
+			ExecResult = pcre_exec
+			(
+				MonoTrackNameCompiledPattern,
+				0,
+				Line.c_str(),
+				Line.Length(),
+				0,
+				MonoTrackNameMatchVector,
+				MonoTrackNameMatchVectorSize
+			);
+
+			if(ExecResult >= 0)
+			{
+				int Offset1 = MonoTrackNameMatchVector[2];
+				int Offset2 = MonoTrackNameMatchVector[3];
+				TrackName = Line.SubString(Offset1 + 1, Offset2 - Offset1);
+				IsMono = true;
+
+				FTracks.push_back(TTrack(TrackName, IsMono));
+			}
+		}
+
+		// Check for the < Protools version 10.2.0 6 field format.
+
+		ExecResult = pcre_exec
+		(
+			RegEx6CompiledPattern,
+			0,
+			Line.c_str(),
+			Line.Length(),
+			0,
+			RegEx6MatchVector,
+			RegEx6MatchVectorSize
+		);
+
+		if(ExecResult >= 0)
+		{
+			int Offset1 = RegEx6MatchVector[2];
+			int Offset2 = RegEx6MatchVector[3];
+
+			AnsiString RegionName = Line.SubString(Offset1 + 1, Offset2 - Offset1);
+
+			int Hours, Minutes, Seconds, Frames;
+
+			int Offset3 = RegEx6MatchVector[4];
+			int Offset4 = RegEx6MatchVector[5];
+
+			ExtractHMSF
+			(
+				Line.SubString(Offset3 + 1, Offset4 - Offset3),
+				Hours,
+				Minutes,
+				Seconds,
+				Frames
+			);
+
+			int RegionStartFrame = (3600 * FFrameRate * Hours + 60 * FFrameRate
+				* Minutes + FFrameRate * Seconds + Frames);
+
+			int Offset5 = RegEx6MatchVector[6];
+			int Offset6 = RegEx6MatchVector[7];
+
+			ExtractHMSF
+			(
+				Line.SubString(Offset5 + 1, Offset6 - Offset5),
+				Hours,
+				Minutes,
+				Seconds,
+				Frames
+			);
+
+			int RegionStopFrame = (3600 * FFrameRate * Hours + 60 * FFrameRate
+				* Minutes + FFrameRate * Seconds + Frames);
+
+			int Offset7 = RegEx6MatchVector[8];
+			int Offset8 = RegEx6MatchVector[9];
+
+			ExtractHMSF
+			(
+				Line.SubString(Offset7 + 1, Offset8 - Offset7),
+				Hours,
+				Minutes,
+				Seconds,
+				Frames
+			);
+
+			int RegionLength = (3600 * FFrameRate * Hours + 60 * FFrameRate
+				* Minutes + FFrameRate * Seconds + Frames);
+
+			// Instantiate a new Region object with the above and add
+			// it to container.
+
+			FRegions.push_back
+			(
+				TRegion
+				(
+					RegionName,
+					TrackName,
+					RegionStartFrame,
+					RegionStopFrame,
+					RegionLength,
+					IsMono
+				)
+			);
+
+			// See if we need to update our session limits.
+
+			FStartFrame = std::min(RegionStartFrame, FStartFrame);
+			FStopFrame = std::max(RegionStopFrame, FStopFrame);
+		}
+
+		// Check for the >= Protools version 10.2.0 7 field format.
+
+		ExecResult = pcre_exec
+		(
+			RegEx7CompiledPattern,
+			0,
+			Line.c_str(),
+			Line.Length(),
+			0,
+			RegEx7MatchVector,
+			RegEx7MatchVectorSize
+		);
+
+		if(ExecResult >= 0)
+		{
+			int Offset1 = RegEx7MatchVector[2];
+			int Offset2 = RegEx7MatchVector[3];
+
+			AnsiString RegionName = Line.SubString(Offset1 + 1, Offset2 - Offset1);
+
+			int Hours, Minutes, Seconds, Frames;
+
+			int Offset3 = RegEx7MatchVector[4];
+			int Offset4 = RegEx7MatchVector[5];
+
+			ExtractHMSF
+			(
+				Line.SubString(Offset3 + 1, Offset4 - Offset3),
+				Hours,
+				Minutes,
+				Seconds,
+				Frames
+			);
+
+			int RegionStartFrame = (3600 * FFrameRate * Hours + 60 * FFrameRate
+				* Minutes + FFrameRate * Seconds + Frames);
+
+			int Offset5 = RegEx7MatchVector[6];
+			int Offset6 = RegEx7MatchVector[7];
+
+			ExtractHMSF
+			(
+				Line.SubString(Offset5 + 1, Offset6 - Offset5),
+				Hours,
+				Minutes,
+				Seconds,
+				Frames
+			);
+
+			int RegionStopFrame = (3600 * FFrameRate * Hours + 60 * FFrameRate
+				* Minutes + FFrameRate * Seconds + Frames);
+
+			int Offset7 = RegEx7MatchVector[8];
+			int Offset8 = RegEx7MatchVector[9];
+
+			ExtractHMSF
+			(
+				Line.SubString(Offset7 + 1, Offset8 - Offset7),
+				Hours,
+				Minutes,
+				Seconds,
+				Frames
+			);
+
+			int RegionLength = (3600 * FFrameRate * Hours + 60 * FFrameRate
+				* Minutes + FFrameRate * Seconds + Frames);
+
+			// Instantiate a new Region object with the above and add
+			// it to container.
+
+			FRegions.push_back
+			(
+				TRegion
+				(
+					RegionName,
+					TrackName,
+					RegionStartFrame,
+					RegionStopFrame,
+					RegionLength,
+					IsMono
+				)
+			);
+
+			// See if we need to update our session limits.
+
+			FStartFrame = std::min(RegionStartFrame, FStartFrame);
+			FStopFrame = std::max(RegionStopFrame, FStopFrame);
+		}
+	} // Loop ends.
+
+    // In the odd case of an empty session (one with no regions), we haven't updated
+    // our session boundaries so they are still at extreme values.
+    
+	if(FRegions.size() == 0)
+	{
+		FStartFrame = FStopFrame = 0;
+	}
+
+	// Check if we have an absurdly large start hour, in which case
+	// we cannot currently read this file (user should asjust start timecode).
+
+	if(FSessionStartHour >= HZ37_tooLargeSessionStartHour)
+	{
+		ShowMessage("Adjust your start timecode first (it's before 00:00:00:00)");
+		Reset();
+		return false;
+	}
+
+	// A last check if all went fine.
+
+	if(FFrameRate /* still */ == HZ37_defaultFrameRate || FSampleRate /* still */ == HZ37_defaultSampleRate)
+	{
+		ShowMessage("File wasn't read properly");
+		Reset();
+		return false;
+	}
+
+	return true;
+}
+
+//---------------------------------------------------------------------------
+
+// Extract Music Director fields from Input en return as fully formatted
+// string in Output. Returns true if succesfully parsed, else false.
+
+/*
+
+Title: Club The Beat
+Track: 2
+Composer(s): Daniel Aldridge
+CD Code: com039
+CD Title: Dance Unlimited
+Label: Clockwork Orange Music
+
+
+Title: Big Dance Dolls
+Track: 1
+Composer(s): Daniel Aldridge
+CD Code: com039
+CD Title: Dance Unlimited
+Label: Clockwork Orange Music
+
+
+tr1-Corporate_Structures-Aldridge_Daniel-com034-clockwork_orange_music
+tr2-Criminal_Investigation-David_Nerattini-dnb729-deneb_records
+tr03-Plop_Da_Whistle-Daniel_Backes_Peter_Moslener-ubm2141-ubm_music.aiff
+
+tr34-Astral_Drift-C_KroppT_Cross-jw2102-jw_media_music.mp3
+
+Title: Astral Drift
+Track: 34
+Composer(s): C. Kropp/T. Cross
+CD Code: jw2102
+CD Title: Dance Cuts
+Label: Jw Media Music
+
+case insensitive
+tr(\\d+)-(.+)-(.+)-(.+)-(.*)
+
+
+*/
+
+/* TODO -oHens Zimmerman -cNice to have : Pre-compile pattern */
+
+/* private */ bool TProtoolsData::ParseMusicDirector(AnsiString Input, AnsiString& Output)
+{
+
+	const char* ErrorPointer = 0;
+	int ErrorOffset = 0;
+	const unsigned char* TablePointer = pcre_maketables();
+	const int MatchVectorSize = 18; // n == 5, so (n + 1) * 3 == 18
+	int atchVector[MatchVectorSize] = { 0 };
+
+	pcre* CompiledPattern = pcre_compile
+	(
+		"^tr(\\d+)-([^-]+)-([^-]+)-([^-]+)-([^-]+)$",
+		PCRE_ANCHORED | PCRE_CASELESS | PCRE_DOLLAR_ENDONLY,
+		&ErrorPointer,
+		&ErrorOffset,
+		TablePointer
+	);
+
+	int ExecResult = pcre_exec
+	(
+		CompiledPattern,
+		0,
+		Input.c_str(),
+		Input.Length(),
+		0,
+		MatchVector,
+		MatchVectorSize
+	);
+
+	if(ExecResult >= 0)
+	{
+		int Offset1;
+		int Offset2 ;
+
+		Offset1 = MatchVector[2];
+		Offset2 = MatchVector[3];
+
+		AnsiString TrackNumber = Input.SubString(Offset1 + 1, Offset2 - Offset1);
+
+		return true;
+	}
+
+	return false;
+}
+
+//---------------------------------------------------------------------------
+
+int TProtoolsData::RegionUsageCount()
+{
+	return static_cast <int> (FRegionUsages.size());
+}
+
+//---------------------------------------------------------------------------
+
+AnsiString TProtoolsData::RegionUsageNameAtIndex(const int Index)
+{
+	return FRegionUsages[Index].Name;
+}
+
+//---------------------------------------------------------------------------
+
+int TProtoolsData::RegionUsageTimeAtIndex(const int Index)
+{
+	return FRegionUsages[Index].Length;
+}
+
+//---------------------------------------------------------------------------
+
+void TProtoolsData::RenameRegionUsage(const int Index, const AnsiString NewName)
+{
+	if((Index >= 0) && (Index < (static_cast <int> (FRegionUsages.size()))))
+	{
+    	FRegionUsages[Index].Name = NewName;
+    }
+}
+
+//---------------------------------------------------------------------------
+
+// When a user loads a new Protools text export file, reset should be called
+// to remove existing data from containers. Reset also resets other object vars
+// to default (pessimistic) values.
+
+void TProtoolsData::Reset()
+{
+	FRegions.clear();
+	FTracks.clear();
+
+	FFrameRate = HZ37_defaultFrameRate;
+	FSampleRate = HZ37_defaultSampleRate;
+	FStartFrame = INT_MAX;
+	FStopFrame = INT_MIN;
+	FSessionFileName = "Nothing loaded";
+	FSessionStartHour = HZ37_defaultSessionStart;
+}
+
+//---------------------------------------------------------------------------
+
+void TProtoolsData::SetSelectionStart(const int SelectionStart)
+{
+	FSelectionStart = SelectionStart;
+}
+
+//---------------------------------------------------------------------------
+
+void TProtoolsData::SetSelectionStop(const int SelectionStop)
+{
+	FSelectionStop = SelectionStop;
+}
+
+//---------------------------------------------------------------------------
+
+// Set the track state from a checkbox in a CheckListBox.
+
+void TProtoolsData::SetTrackState(bool Value, int Index)
+{
+	FTracks[Index].State = Value;
+}
+
+//---------------------------------------------------------------------------
+
+// Request to sort on name (Value = true) or not (Value = false).
+// In case the requested sort is already in place, false is returned.
+// Else true. This avoids recomputing the table when the sorted column
+// is accidentally clicked again.
+
+bool TProtoolsData::SortOnName(const bool Value)
+{
+	if(FSortOnName == Value)
+	{
+		return false;
+	}
+
+	FSortOnName = Value;
+
+	return true;
+}
+
+//---------------------------------------------------------------------------
+
+// Return amount of tracks read from Protools session.
+
+int TProtoolsData::TrackCount()
+{
+	return static_cast <int> (FTracks.size());
+}
+
+//---------------------------------------------------------------------------
+
+// Return the trackname at Index.
+
+AnsiString TProtoolsData::TrackNameAtIndex(const int Index)
+{
+	if(static_cast <unsigned> (Index) >= FTracks.size())
+	{
+		return "Out of bounds";
+	}
+
+	return FTracks[Index].TrackName;
+}
+
+//---------------------------------------------------------------------------
+
+// Return the track state at Index.
+
+bool TProtoolsData::TrackStateAtIndex(const int Index)
+{
+	if(static_cast <unsigned> (Index) >= FTracks.size())
+	{
+		return false;
+	}
+
+	return FTracks[Index].State;
+}
+
+//---------------------------------------------------------------------------
+
+int TProtoolsData::GetSampleRate()
+{
+	return FSampleRate;
+}
+
+//---------------------------------------------------------------------------
+
+AnsiString TProtoolsData::GetTitle()
+{
+	return FSessionFileName;
+}
+
+//---------------------------------------------------------------------------
+
+int TProtoolsData::SmallestStartFrame(const int SuggestedFrame)
+{
+	return std::max(SuggestedFrame, FStartFrame);
+}
+
+//---------------------------------------------------------------------------
+
+int TProtoolsData::LargestStopFrame(const int SuggestedFrame)
+{
+	return std::min(SuggestedFrame, FStopFrame);
+}
+
+//---------------------------------------------------------------------------
+
+

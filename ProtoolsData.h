@@ -19,24 +19,24 @@
 class TProtoolsData
 {
 private:
-    // Collection of all regions from a Protools session.
-    // This array is updated when a new file is read from disk.
+	// Collection of all regions from a Protools session.
+	// This array is updated when a new file is read from disk.
 
 	std::vector <TRegion> FRegions;
 
-    // Collection of filtered region usage (names with times) based on
-    // user choices. This is the extraction from the regions collection
-    // and is changed all the time when a user works with the interface.
-    
-    std::vector <TRegionUsage> FRegionUsages;
+	// Collection of filtered region usage (names with times) based on
+	// user choices. This is the extraction from the regions collection
+	// and is changed all the time when a user works with the interface.
+
+	std::vector <TRegionUsage> FRegionUsages;
 
 	// Collection of tracks, read from a Protools session text file.
 	// This array is also used to store user selections in terms of
 	// which track to use in the output and which not.
 
 	std::vector <TTrack> FTracks;
-	
-    // Framerate in frames per second (25 in almost all cases for PAL sessions).
+
+	// Framerate in frames per second (25 in almost all cases for PAL sessions).
 
 	int FFrameRate;
 
@@ -86,6 +86,15 @@ private:
 
 	bool ExtractHMSF(const AnsiString InputString, int& Hours, int& Mins, int& Secs, int& Frames);
 	AnsiString FindCommonName(const AnsiString S1, const AnsiString S2);
+	void GetRegionUsages
+	(
+		TStringList* TextData,
+		TStringList* MusicDirectorData,
+		const bool IncludeFrames,
+		bool& MusicDirectorFound,
+		const bool IncludeMusicDirectorScan
+	);
+	bool ParseMusicDirector(AnsiString Input, AnsiString& Output);
 	void Reset();
 
 protected:
@@ -105,7 +114,18 @@ public:
 	std::vector <TRegion> GetRegions();
 	void GetSessionBoundaries(int& SessionStart, int& SessionEnd);
 	int GetSampleRate();
-	void GetRegionUsages(TStringList* TextData, const bool IncludeFrames);
+	void GetRegionUsages
+	(
+		TStringList* TextData,
+		const bool IncludeFrames
+	);
+	void GetRegionUsages
+	(
+		TStringList* TextData,
+		TStringList* MusicDirectorData,
+		const bool IncludeFrames,
+		bool& MusicDirectorFound
+	);
 	AnsiString GetTitle();
 	std::vector <TTrack> GetTracks();
 	bool LoadFileWithName(const AnsiString Filename);
