@@ -10,19 +10,29 @@ File_7=TSourceModule,'c:\program files\borland\bds\4.0\include\dinkumware\xutili
 
 [Modules]
 Module0=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\ProtoolsData.cpp
-Module1=C:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\RegionUsage.cpp
-Module2=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\ProtoolsMusicExtractor.bdsproj
-Module3=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\MiniUniverse.cpp
-Module4=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\SettingsUnit.cpp
-Module5=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Controller.cpp
-Module6=default.htm
+Module1=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Controller.cpp
+Module2=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Storage.cpp
+Module3=C:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\RegionUsage.cpp
+Module4=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\ProtoolsMusicExtractor.bdsproj
+Module5=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\MiniUniverse.cpp
+Module6=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\SettingsUnit.cpp
 Module7=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Generic.cpp
-Module8=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Storage.cpp
-Module9=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Region.cpp
+Module8=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Region.cpp
+Module9=default.htm
 Count=10
 EditWindowCount=1
 
 [c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\ProtoolsData.cpp]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Controller.cpp]
+ModuleType=TSourceModule
+FormState=1
+FormOnTop=0
+
+[c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Storage.cpp]
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
@@ -45,20 +55,7 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Controller.cpp]
-ModuleType=TSourceModule
-FormState=1
-FormOnTop=0
-
-[default.htm]
-ModuleType=TURLModule
-
 [c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Generic.cpp]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Storage.cpp]
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
@@ -67,6 +64,9 @@ FormOnTop=0
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
+
+[default.htm]
+ModuleType=TURLModule
 
 [EditWindow0]
 ViewCount=10
@@ -102,14 +102,14 @@ LeftPanelSize=1907
 LeftPanelClients=DockSite1,DockSite2
 LeftPanelData=00000800010100000000E4150000000000000173070000000000000100000000C40D000009000000446F636B536974653101000000000323000009000000446F636B5369746532FFFFFFFF
 RightPanelSize=2258
-RightPanelClients=ToolForm,DockSite3
+RightPanelClients=DockSite3,ToolForm
 RightPanelData=00000800010100000000E41500000000000001D20800000000000001000000006711000009000000446F636B536974653301000000000323000008000000546F6F6C466F726DFFFFFFFF
 BottomPanelSize=0
-BottomPanelClients=ToDo List,DockSite0,DockSite4
-BottomPanelData=000008000102030000000E000000546F446F4C69737457696E646F7709000000446F636B536974653009000000446F636B53697465347830000000000000026A07000000000000FFFFFFFF
+BottomPanelClients=ToDo List,DockSite4,DockSite7,DockSite0
+BottomPanelData=000008000102040000000E000000546F446F4C69737457696E646F7709000000446F636B536974653409000000446F636B536974653709000000446F636B53697465307830000000000000026A07000000000000FFFFFFFF
 BottomMiddlePanelSize=0
-BottomMiddlePanelClients=DockSite5
-BottomMiddelPanelData=0000080001000100000009000000446F636B53697465350000000000000000000000000000000000FFFFFFFF
+BottomMiddlePanelClients=DockSite5,DockSite6,DockSite8
+BottomMiddelPanelData=0000080001000300000009000000446F636B536974653509000000446F636B536974653609000000446F636B53697465380000000000000000000000000000000000FFFFFFFF
 
 [View0]
 CustomEditViewType=TWelcomePageView
@@ -120,7 +120,7 @@ CustomEditViewType=TEditView
 Module=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Controller.cpp
 CursorX=14
 CursorY=3
-TopLine=1
+TopLine=533
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -175,7 +175,7 @@ CustomEditViewType=TEditView
 Module=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\Storage.cpp
 CursorX=12
 CursorY=49
-TopLine=31
+TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -195,9 +195,9 @@ EditViewName=c:\Documents and Settings\Administrator\My Documents\Borland Studio
 [View8]
 CustomEditViewType=TEditView
 Module=c:\Documents and Settings\Administrator\My Documents\Borland Studio Projects\Protools Music Extractor\ProtoolsData.cpp
-CursorX=73
-CursorY=29
-TopLine=1
+CursorX=52
+CursorY=278
+TopLine=505
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -295,7 +295,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=2258
 ClientHeight=4438
-TBDockHeight=7029
+TBDockHeight=6522
 LRDockWidth=2258
 Dockable=1
 StayOnTop=0
@@ -452,7 +452,7 @@ Visible=0
 Docked=1
 State=0
 Left=-10
-Top=728
+Top=-102
 Width=275
 Height=371
 MaxLeft=-1
@@ -556,8 +556,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-4
-Top=-22
+Left=-10
+Top=-1122
 Width=4330
 Height=2237
 MaxLeft=-1
@@ -589,7 +589,7 @@ Dockable=1
 StayOnTop=0
 
 [DockHosts]
-DockHostCount=6
+DockHostCount=9
 
 [DockSite0]
 DockSiteType=1
@@ -628,7 +628,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1907
 ClientHeight=3388
-TBDockHeight=1703
+TBDockHeight=3750
 LRDockWidth=1907
 Dockable=1
 StayOnTop=0
@@ -689,8 +689,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-126
-Top=3
+Left=-6
+Top=-1100
 Width=3830
 Height=5054
 MaxLeft=-1
@@ -703,7 +703,7 @@ Dockable=1
 StayOnTop=0
 TabPosition=1
 ActiveTabID=LocalVarsWindow
-TabDockClients=BreakpointWindow,ThreadStatusWindow,DebugLogView,CallStackWindow,WatchWindow,LocalVarsWindow
+TabDockClients=BreakpointWindow,CallStackWindow,WatchWindow,ThreadStatusWindow,DebugLogView,LocalVarsWindow
 
 [DockSite5]
 DockSiteType=1
@@ -712,8 +712,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-350
-Top=0
+Left=-356
+Top=-1100
 Width=2335
 Height=2310
 MaxLeft=-1
@@ -727,4 +727,13 @@ StayOnTop=0
 TabPosition=1
 ActiveTabID=FindReferencsForm
 TabDockClients=RefactoringForm,FindReferencsForm
+
+[DockSite6]
+DockSiteType=1
+
+[DockSite7]
+DockSiteType=1
+
+[DockSite8]
+DockSiteType=1
 

@@ -553,7 +553,7 @@ void TProtoolsData::GetRegionUsages
 			if(ParseMusicDirector(RegionName, MusicDirectorFields))
 			{
             	MusicDirectorFound = true;
-				MusicDirectorData->Add(MusicDirectorFields + "Duration: " + TC + "\n\n");
+				MusicDirectorData->Add(MusicDirectorFields + "Duration: " + TC + "\r\n\r\n");
             }
         }
 	}
@@ -1211,7 +1211,7 @@ tr(\\d+)-(.+)-(.+)-(.+)-(.*)
 
 		Output = AnsiString().sprintf
 		(
-			"Track:    %s\nTitle:    %s\nComposer: %s\nCD Code:  %s\nLabel:    %s\n",
+			"Track:    %s\r\nTitle:    %s\r\nComposer: %s\r\nCD Code:  %s\r\nLabel:    %s\r\n",
 			TrackNumber,
 			Title,
 			Artist,
