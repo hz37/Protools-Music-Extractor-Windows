@@ -229,7 +229,7 @@
           <VersionInfo Name="MajorVer">2</VersionInfo>
           <VersionInfo Name="MinorVer">0</VersionInfo>
           <VersionInfo Name="Release">0</VersionInfo>
-          <VersionInfo Name="Build">50</VersionInfo>
+          <VersionInfo Name="Build">47</VersionInfo>
           <VersionInfo Name="Debug">False</VersionInfo>
           <VersionInfo Name="PreRelease">False</VersionInfo>
           <VersionInfo Name="Special">False</VersionInfo>
@@ -241,13 +241,13 @@
         <VersionInfoKeys>
           <VersionInfoKeys Name="CompanyName">Hens Zimmerman Audio</VersionInfoKeys>
           <VersionInfoKeys Name="FileDescription">Protools Music Extractor</VersionInfoKeys>
-          <VersionInfoKeys Name="FileVersion">2.0.0.50</VersionInfoKeys>
+          <VersionInfoKeys Name="FileVersion">2.0.0.47</VersionInfoKeys>
           <VersionInfoKeys Name="InternalName">Protools Music Extractor</VersionInfoKeys>
           <VersionInfoKeys Name="LegalCopyright">Open Source MIT License</VersionInfoKeys>
           <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
           <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
           <VersionInfoKeys Name="ProductName">Protools Music Extractor</VersionInfoKeys>
-          <VersionInfoKeys Name="ProductVersion">2</VersionInfoKeys>
+          <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
           <VersionInfoKeys Name="Comments">henszimmerman@gmail.com</VersionInfoKeys>
         </VersionInfoKeys>
         <Debugging>

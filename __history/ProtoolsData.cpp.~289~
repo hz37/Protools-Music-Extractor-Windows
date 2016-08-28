@@ -639,9 +639,9 @@ bool TProtoolsData::LoadFileWithName(const AnsiString Filename)
 
 	Lines->LoadFromFile(Filename);
 
-	// Going though the file sequentially we move from track to track.
+    // Going though the file sequentially we move from track to track.
 	// TrackName will remember the current track we are parsing.
-
+    
 	AnsiString TrackName;
 
 	// Tracks are either mono or stereo (we do not implement surround sound yet).
@@ -1076,19 +1076,9 @@ bool TProtoolsData::LoadFileWithName(const AnsiString Filename)
 		}
 	} // Loop ends.
 
-	// Free all those pcre pointers.
-
-	pcre_free(SampleRateCompiledPattern);
-	pcre_free(FrameRateCompiledPattern);
-	pcre_free(StereoTrackNameCompiledPattern);
-	pcre_free(MonoTrackNameCompiledPattern);
-	pcre_free(SessionStartTimecodeCompiledPattern);
-	pcre_free(RegEx6CompiledPattern);
-	pcre_free(RegEx7CompiledPattern);
-
-	// In the odd case of an empty session (one with no regions), we haven't updated
-	// our session boundaries so they are still at extreme values.
-
+    // In the odd case of an empty session (one with no regions), we haven't updated
+    // our session boundaries so they are still at extreme values.
+    
 	if(FRegions.size() == 0)
 	{
 		FStartFrame = FStopFrame = 0;
